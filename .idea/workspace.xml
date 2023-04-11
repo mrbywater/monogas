@@ -5,17 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Header/Header.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/AboutUs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/Contacts.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/Content.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/OurProjects.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/Services.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Images/logo.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logo.svg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,6 +58,7 @@
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "last_opened_file_path": "C:/Users/Николай/Documents/GitHub/monogas",
+    "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -46,6 +68,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Николай\Documents\GitHub\monogas\src\Components\Images" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,7 +82,8 @@
       <option name="presentableId" value="Default" />
       <updated>1681208990816</updated>
       <workItem from="1681208991926" duration="710000" />
-      <workItem from="1681210707484" duration="785000" />
+      <workItem from="1681210707484" duration="1131000" />
+      <workItem from="1681211937346" duration="17233000" />
     </task>
     <servers />
   </component>

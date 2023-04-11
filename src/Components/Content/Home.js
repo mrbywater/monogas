@@ -1,8 +1,8 @@
-
+import "./Content.scss"
 const Home = () =>{
 
     return (
-        <div>hz</div>
+        <div className="homeCont">hz</div>
     )
 
 }
