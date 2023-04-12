@@ -1,0 +1,122 @@
+@import '../../App';
+$imgBlocksHeight:550px;
+
+
+.launchCont {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("../Images/background_2_blured.png");
+  height: 900px;
+  color: $text-color-light;
+  text-shadow: #000000 1px 0 10px;
+  font-size: 30px;
+}
+
+.requestButton {
+  width: 320px;
+  border: 1px solid white;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 35px;
+  margin-top: 20px;
+}
+
+.servicesCont {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 140px;
+}
+
+.servicesText {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-size: 30px;
+}
+
+.servicesButtonCont {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 75px;
+}
+
+.servicesButton {
+  width: 25%;
+  height: 200px;
+  border: 2px solid #000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 28px;
+  cursor: pointer;
+  transition: color 0.4s linear;
+  position: relative;
+  font-weight: bold;
+}
+
+.servicesButton:hover{
+  color: #fff;
+}
+.servicesButton::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: -1;
+  transition: transform 0.5s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+}
+
+.servicesButton::before{
+  transform: scaleY(0);
+}
+
+.servicesButton:hover::before{
+  transform: scaleY(1);
+}
+
+.separator {
+  margin: 120px 0px 45px 3%;
+  border-top: 3px solid black;
+  width: 94%;
+  border-radius: 30%;
+}
+
+.infoBlocks {
+  display: flex;
+  width: 42%;
+  height: $imgBlocksHeight;
+  font-size: 25px;
+  flex-direction: column;
+}
+
+.imgSizeForBlocks {
+  width: 100%;
+  height: $imgBlocksHeight;
+}
+
+.arrowUp {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 35px;
+  border-radius: 100%;
+  position: fixed;
+  right: 10px;
+  bottom: 50px;
+}

@@ -2,7 +2,8 @@
 
 .homeCont {
   width: 100%;
-  height: calc(100vh - 540px);
+  min-height: calc(100vh - 540px);
   display: flex;
-  flex: 1 0 auto;
+  flex-direction: column;
 }
+
