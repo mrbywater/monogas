@@ -3,7 +3,12 @@ import "./Home.scss"
 import test_1 from "../Images/test_1.jpg"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faAngleUp} from "@fortawesome/free-solid-svg-icons";
+import {useState, useEffect} from "react"
+
 const Home = () =>{
+
+    const [arrowUp, setArrowUp] = useState(false)
+
     const obj = [
         {
             headline : "1",
@@ -22,12 +27,30 @@ const Home = () =>{
         }
     ]
 
+    useEffect(() =>{
+        window.addEventListener("scroll", () =>{
+            if (window.scrollY > 400) {
+                setArrowUp(true)
+            } else {
+                setArrowUp(false)
+            }
+        })
+    }, [])
+
+    const scrollUp = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        })
+    }
 
     return (
         <div className="homeCont">
-            <div className="arrowUp">
-                <FontAwesomeIcon icon={faAngleUp} />
-            </div>
+            { arrowUp && (
+                <div className="arrowUp" onClick={scrollUp}>
+                    <FontAwesomeIcon icon={faAngleUp} />
+                </div>
+            )}
             <div className="launchCont">
                 <h1>Установка та обслуговування ГБО в Одесі</h1>
                 <h2>Monogas | Моногас</h2>

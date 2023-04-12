@@ -7,7 +7,8 @@ $imgBlocksHeight:550px;
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background-image: url("../Images/background_2_blured.png");
+  background: url("../Images/background_2.png");
+  background-size: cover;
   height: 900px;
   color: $text-color-light;
   text-shadow: #000000 1px 0 10px;
@@ -55,7 +56,7 @@ $imgBlocksHeight:550px;
   justify-content: center;
   align-items: center;
   display: flex;
-  font-size: 28px;
+  font-size: 1.3em;
   cursor: pointer;
   transition: color 0.4s linear;
   position: relative;
@@ -108,15 +109,17 @@ $imgBlocksHeight:550px;
 }
 
 .arrowUp {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border: 1px solid black;
   justify-content: center;
   display: flex;
   align-items: center;
-  font-size: 35px;
+  font-size: 25px;
   border-radius: 100%;
   position: fixed;
-  right: 10px;
+  right: 0.1em;
   bottom: 50px;
+  z-index: 1000;
+  cursor: pointer;
 }
