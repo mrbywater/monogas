@@ -1,6 +1,72 @@
 @import '../../App';
 $imgBlocksHeight:550px;
 
+@mixin button($bcolor,
+$url,
+$x1,
+$y1,
+$bor,
+$col) {
+  background: $bcolor;
+  -webkit-mask: url($url);
+  mask: url($url);
+  -webkit-mask-size: $x1 $y1;
+  mask-size: $x1 $y1;
+  border: $bor;
+  color: $col;
+}
+
+@-webkit-keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+@keyframes ani2 {
+  from {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+
+  to {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+}
+
+a {
+  color: #00ff95;
+}
+
+@-webkit-keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
+
+@keyframes ani {
+  from {
+    -webkit-mask-position: 0 0;
+    mask-position: 0 0;
+  }
+
+  to {
+    -webkit-mask-position: 100% 0;
+    mask-position: 100% 0;
+  }
+}
 
 .launchCont {
   display: flex;
@@ -31,34 +97,27 @@ $imgBlocksHeight:550px;
   display: flex;
   font-size: 1.3em;
   cursor: pointer;
-  transition: color 0.4s linear;
+  transition: 0.5s;
   position: relative;
   font-weight: bold;
+  color: #000000;
 }
 
-.servicesButton:hover{
-  color: #fff;
-}
-.servicesButton::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: #000;
-  z-index: -1;
-  transition: transform 0.5s;
-  transform-origin: 0 0;
-  transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+.servicesButton {
+  @include button(#000,
+          "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+          2300%,
+          100%,
+          none,
+          #fff);
+  cursor: pointer;
+  -webkit-animation: ani2 0.7s steps(22) forwards;
+  animation: ani2 0.7s steps(22) forwards;
 }
 
-.servicesButton::before{
-  transform: scaleY(0);
-}
-
-.servicesButton:hover::before{
-  transform: scaleY(1);
+.servicesButton:hover {
+    -webkit-animation: ani 0.7s steps(22) forwards;
+    animation: ani 0.7s steps(22) forwards;
 }
 
 

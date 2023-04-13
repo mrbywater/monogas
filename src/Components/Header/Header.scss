@@ -20,8 +20,9 @@
 .links {
   text-decoration: none;
   color: $text-color-light;
-  padding-right: 20px;
+  margin-right: 20px;
   font-size: 25px;
+  position: relative;
 }
 
 .themeIcon {
@@ -35,4 +36,30 @@
 
 .logo {
   padding-left: 40px;
+}
+
+.links:after{
+  backface-visibility: hidden;
+  border: 1px solid rgba($text-color-light, 0);
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.links:hover:after {
+  backface-visibility: hidden;
+  border-color: $text-color-light;
+  transition: width 400ms ease-in-out;
+  width: 100%;
+}
+
+.links:focus:after {
+  backface-visibility: hidden;
+  border-color: $text-color-light;
+  transition: width 400ms ease-in-out;
+  width: 100%;
 }
