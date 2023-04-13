@@ -1,6 +1,24 @@
-$primary-color: #000000;
-$secondary-color-blue: #323878;
-$text-color-light: #FFFFFF;
-*{
-  font-family: 'Rubik', sans-serif;;
+:root {
+  --primary-color: #000000;
+  --secondary-color-blue: #323878;
+  --text-color-header: #FFFFFF;
+  --background-color: #FFFFFF;
+  --text-shadow: #000000;
+  --text-color-body: #000000;
 }
+
+.darkMode {
+  --primary-color: #000000;
+  --secondary-color-blue: #fcd526;
+  --text-color-header: #a0abbd;
+  --background-color: #1F2023;
+  --text-shadow: #2d2f34;
+  --text-color-body: #a0abbd;
+}
+
+$primary-color: var(--primary-color);
+$secondary-color-blue: var(--secondary-color-blue);
+$text-color-header: var(--text-color-header);
+$background-color: var(--background-color);
+$text-shadow: var(--text-shadow);
+$text-color-body: var(--text-color-body)

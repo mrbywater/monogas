@@ -6,11 +6,20 @@
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/ArrowUp.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ArrowUp.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Content.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoBlock.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/RequestButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/RequestButton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Services.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Services.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +85,7 @@
       <workItem from="1681211937346" duration="17694000" />
       <workItem from="1681304036384" duration="12762000" />
       <workItem from="1681398312413" duration="6195000" />
-      <workItem from="1681405402457" duration="6362000" />
+      <workItem from="1681405402457" duration="18151000" />
     </task>
     <servers />
   </component>

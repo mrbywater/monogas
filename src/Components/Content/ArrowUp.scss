@@ -3,7 +3,7 @@
 .arrowUp {
   width: 30px;
   height: 30px;
-  border: 2px solid black;
+  border: 2px solid $text-color-body;
   justify-content: center;
   display: flex;
   align-items: center;
@@ -16,11 +16,12 @@
   cursor: pointer;
   visibility: hidden;
   opacity: 0;
+  color: $text-color-body;
 }
 
 .arrowUp:hover {
   background-color: $primary-color;
-  color: $text-color-light;
+  color: $text-color-body;
   transition: .3s ease;
 }
 

@@ -6,13 +6,14 @@ import {faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {useState, useEffect} from "react"
 
-
+const color = "red"
 
 const Header = () =>{
 
     const [changeTheme, setChangeTheme] = useState(true)
 
     const changePageTheme = () => {
+        document.body.classList.toggle('darkMode')
         if (!!changeTheme){
             setChangeTheme(false)
         } else {

@@ -3,17 +3,18 @@
 .footerCont {
   width: 100%;
   height: 400px;
-  background-color: grey;
+  background-color: #40434a;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   margin-top: 80px;
+  color: #a0abbd;
 }
 
 .lowerCont {
   height: 40px;
   background-color: $primary-color;
-  color: $text-color-light;
+  color: #FFFFFF;
   display: flex;
   justify-content: center;
   align-items: center;

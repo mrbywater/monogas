@@ -1,4 +1,5 @@
 import "./InfoBlock.scss"
+import "./Content.scss"
 
 const InfoBlock = (props) => {
 

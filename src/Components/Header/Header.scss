@@ -19,7 +19,7 @@
 
 .links {
   text-decoration: none;
-  color: $text-color-light;
+  color: $text-color-header;
   margin-right: 20px;
   font-size: 25px;
   position: relative;
@@ -40,7 +40,7 @@
 
 .links:after{
   backface-visibility: hidden;
-  border: 1px solid rgba($text-color-light, 0);
+  border: 1px solid rgba($text-color-header, 0);
   bottom: 0px;
   content: " ";
   display: block;
@@ -52,14 +52,14 @@
 
 .links:hover:after {
   backface-visibility: hidden;
-  border-color: $text-color-light;
+  border-color: $text-color-body;
   transition: width 400ms ease-in-out;
   width: 100%;
 }
 
 .links:focus:after {
   backface-visibility: hidden;
-  border-color: $text-color-light;
+  border-color: $text-color-header;
   transition: width 400ms ease-in-out;
   width: 100%;
 }

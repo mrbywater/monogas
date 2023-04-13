@@ -1,12 +1,15 @@
+@import "../../App";
+
 .requestButton {
   width: 320px;
-  border: 2px solid white;
+  border: 2px solid $text-color-header;
   height: 50px;
   justify-content: center;
   align-items: center;
   display: flex;
   font-size: 35px;
   margin-top: 20px;
-  box-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;;
+  box-shadow: 1px 1px 2px $text-shadow, 0 0 1em $text-shadow, 0 0 0.2em $text-shadow;
   cursor: pointer;
+  color: #a0abbd;
 }

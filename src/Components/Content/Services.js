@@ -30,8 +30,8 @@ const Services = () =>{
                 <h1>Послуги ГБО Monogas</h1>
             </div>
             <div className="flexCenteredBlock">
-                <h1>Всі послуги для ГБО в єдиному автосервісі</h1>
-                <RequestButton/>
+                <h1 className="headerFontSize">Всі послуги для ГБО в єдиному автосервісі</h1>
+                    <RequestButton/>
                 <div className="separator"></div>
             </div>
             <div className="flexCenteredBlock">
