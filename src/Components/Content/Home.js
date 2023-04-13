@@ -8,6 +8,7 @@ import {useState, useEffect} from "react"
 const Home = () =>{
 
     const [arrowUp, setArrowUp] = useState(false)
+    const [arrowAnimation, setArrowAnimation] = useState('')
 
     const obj = [
         {
@@ -30,12 +31,15 @@ const Home = () =>{
     useEffect(() =>{
         window.addEventListener("scroll", () =>{
             if (window.scrollY > 400) {
-                setArrowUp(true)
+                setArrowUp(true);
+                setArrowAnimation("arrowUpVisible")
             } else {
-                setArrowUp(false)
+                setArrowUp(false);
+                setArrowAnimation("arrowUpHidden")
             }
         })
     }, [])
+
 
     const scrollUp = () => {
         window.scrollTo({
@@ -46,17 +50,17 @@ const Home = () =>{
 
     return (
         <div className="homeCont">
-            { arrowUp && (
-                <div className="arrowUp" onClick={scrollUp}>
+            {(
+                <div className={`arrowUp ${arrowAnimation}`} onClick={scrollUp}>
                     <FontAwesomeIcon icon={faAngleUp} />
                 </div>
             )}
             <div className="launchCont">
-                <h1>Установка та обслуговування ГБО в Одесі</h1>
-                <h2>Monogas | Моногас</h2>
-                <h4>Ремонт й техничене обслуговування ГБО</h4>
-                <div className="requestButton">
-                    Оставить заявку
+                    <h1>Установка та обслуговування ГБО в Одесі</h1>
+                    <h2>Monogas | Моногас</h2>
+                    <h4>Ремонт й техничене обслуговування ГБО</h4>
+                    <div className="requestButton">
+                        Оставить заявку
                 </div>
             </div>
             <div className="servicesCont">

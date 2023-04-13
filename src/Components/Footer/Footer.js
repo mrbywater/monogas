@@ -40,7 +40,7 @@ const Footer = () =>{
                 </div>
             </div>
             <div className="lowerCont">
-                © 2023 СТО Monogas
+                © 2023 ГБО Monogas
             </div>
         </>
     )
