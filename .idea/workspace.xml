@@ -5,13 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Content/Home.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Images/background_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Images/background_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Components/Images/background_2_blured.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/ArrowUp.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/ArrowUp.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/InfoBlock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/InfoBlock.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/RequestButton.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/RequestButton.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/Services.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Images/background_2_sized.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Content.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,23 +47,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Николай/Documents/GitHub/monogas&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Николай/Documents/GitHub/monogas/src/Components/Images",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "watcher.settings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Николай\Documents\GitHub\monogas\src\Components\Images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Николай\Documents\GitHub\monogas\src\Components\Images" />
     </key>
@@ -72,7 +82,8 @@
       <workItem from="1681208991926" duration="710000" />
       <workItem from="1681210707484" duration="1131000" />
       <workItem from="1681211937346" duration="17694000" />
-      <workItem from="1681304036384" duration="12119000" />
+      <workItem from="1681304036384" duration="12762000" />
+      <workItem from="1681398312413" duration="6111000" />
     </task>
     <servers />
   </component>

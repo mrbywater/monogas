@@ -8,3 +8,17 @@
   padding-top: 80px;
 }
 
+.separator {
+  margin: 120px 0px 0px 3%;
+  border-top: 3px solid black;
+  width: 94%;
+  border-radius: 30%;
+}
+
+.flexCenteredBlock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 140px;
+}

@@ -1,14 +1,11 @@
 import "./Content.scss"
 import "./Home.scss"
+import {RequestButton} from "./RequestButton";
 import test_1 from "../Images/test_1.jpg"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faAngleUp} from "@fortawesome/free-solid-svg-icons";
-import {useState, useEffect} from "react"
+import {ArrowUp} from "./ArrowUp";
+import {InfoBlock} from "./InfoBlock";
 
 const Home = () =>{
-
-    const [arrowUp, setArrowUp] = useState(false)
-    const [arrowAnimation, setArrowAnimation] = useState('')
 
     const obj = [
         {
@@ -28,42 +25,16 @@ const Home = () =>{
         }
     ]
 
-    useEffect(() =>{
-        window.addEventListener("scroll", () =>{
-            if (window.scrollY > 400) {
-                setArrowUp(true);
-                setArrowAnimation("arrowUpVisible")
-            } else {
-                setArrowUp(false);
-                setArrowAnimation("arrowUpHidden")
-            }
-        })
-    }, [])
-
-
-    const scrollUp = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    }
-
     return (
         <div className="homeCont">
-            {(
-                <div className={`arrowUp ${arrowAnimation}`} onClick={scrollUp}>
-                    <FontAwesomeIcon icon={faAngleUp} />
-                </div>
-            )}
+            <ArrowUp/>
             <div className="launchCont">
                     <h1>Установка та обслуговування ГБО в Одесі</h1>
                     <h2>Monogas | Моногас</h2>
                     <h4>Ремонт й техничене обслуговування ГБО</h4>
-                    <div className="requestButton">
-                        Оставить заявку
-                </div>
+                    <RequestButton/>
             </div>
-            <div className="servicesCont">
+            <div className="flexCenteredBlock">
                 <div className="servicesText">
                     <h1>Послуги Monogas</h1>
                     <h2>Ремонт та сервісне обслуговування</h2>
@@ -91,33 +62,14 @@ const Home = () =>{
             <div className="separator"></div>
             <div>
                 {obj.map( (elm,i) => {
-                    if (i % 2 === 0) {
-                        return (
-                            <div className="servicesButtonCont">
-                                <div className="infoBlocks">
-                                    <h2>{elm.headline}</h2>
-                                    <p>{elm.text}</p>
-                                </div>
-                                <div className="infoBlocks">
-                                    <img src={elm.img} className="imgSizeForBlocks"/>
-                                </div>
-                            </div>
-                        )
-                    } else {
-                        return (
-                            <div className="servicesButtonCont">
-                                <div className="infoBlocks">
-                                    <img src={elm.img} className="imgSizeForBlocks"/>
-                                </div>
-                                <div className="infoBlocks">
-                                    <h2>{elm.headline}</h2>
-                                    <p>{elm.text}</p>
-                                </div>
-                            </div>
-                        )
-                    }
-                })
-                }
+                    return (
+                        <InfoBlock
+                        index = {i}
+                        headline={elm.headline}
+                        text={elm.text}
+                        img={elm.img}
+                    />)
+                })}
             </div>
         </div>
     )
