@@ -2,6 +2,7 @@ import "./Content.scss"
 import "./OurProjects.scss"
 import {BelowHeaderImage} from "./BelowHeaderImage";
 import {useState} from "react";
+import pepe from "../Images/PepeLaugh.jpg"
 
 const OurProjects = () =>{
 
@@ -35,13 +36,18 @@ const OurProjects = () =>{
             selector : 2
         },
         {
-            title : "Сервіс 2",
+            title : "Монтаж 2",
             img : "",
+            url : "",
+            selector : 1
+        },
+        {
+            title : "Сервіс 2",
+            img : pepe,
             url : "",
             selector : 2
         }
     ]
-
     const [filter, setFilter] = useState(subCategories)
 
     const categorieSwitcher = (elm) => () => {
@@ -67,11 +73,13 @@ const OurProjects = () =>{
                     </div>
                 ))}
             </div>
-            <div className="flexCenteredBlock headlineCont">
+            <div className="placementOfBlock">
                 {filter.map(elm => (
-                    <div className="categories" id={elm.selector}>
-                        {elm.title}
-                    </div>
+                    <a className="linkBlocks" href={elm.url} >
+                        <div className="blocksSize" id={elm.selector} style={{backgroundImage : `url(${elm.img})`}}>
+                            <span className="blockText">{elm.title}</span>
+                        </div>
+                    </a>
                 ))}
             </div>
         </div>
