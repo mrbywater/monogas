@@ -2,9 +2,11 @@ import "./RequestButton.scss"
 
 const RequestButton = () => {
     return (
-        <div className="requestButton">
-            Оставить заявку
-        </div>
+        <div className="buttonCont">
+            <div className="requestButton">
+                Оставить заявку
+            </div>
+        </div>    
     )
 }
 
