@@ -3,6 +3,7 @@ import "./Services.scss"
 import {RequestButton} from "./RequestButton";
 import {InfoBlock} from "./InfoBlock";
 import test_1 from "../Images/test_1.jpg";
+import {BelowHeaderImage} from "./BelowHeaderImage";
 
 const Services = () =>{
 
@@ -26,9 +27,9 @@ const Services = () =>{
 
     return (
         <div className="homeCont">
-            <div className="launchContServices">
-                <h1>Послуги ГБО Monogas</h1>
-            </div>
+            <BelowHeaderImage
+                headline = "Послуги ГБО Monogas"
+            />
             <div className="flexCenteredBlock">
                 <h1 className="headerFontSize">Всі послуги для ГБО в єдиному автосервісі</h1>
                     <RequestButton/>

@@ -1,18 +1,5 @@
 @import '../../App';
 
-.launchContServices {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  background: url("../Images/background_2_sized.png");
-  background-size: cover;
-  height: 11em;
-  color: $text-color-header;
-  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
-  font-size: 30px;
-}
-
 .headerFontSize {
   font-size: 50px;
   color: $text-color-body;
