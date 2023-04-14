@@ -42,10 +42,17 @@ const OurProjects = () =>{
         }
     ]
 
+    const [filter, setFilter] = useState(subCategories)
 
+    const categorieSwitcher = (elm) => () => {
 
-    const categorieSwitcher = () => {
+        const result = subCategories.filter(word => word.selector === elm.selector);
 
+        if (elm.selector === 0){
+
+            setFilter(subCategories)
+
+        } else setFilter(result)
     }
 
     return (
@@ -55,13 +62,13 @@ const OurProjects = () =>{
             />
             <div className="flexCenteredBlock headlineCont">
                 {headlines.map(elm => (
-                    <div className="categories" id={elm.selector}>
+                    <div className="categories" id={elm.selector} onClick={categorieSwitcher(elm)}>
                         {elm.headline}
                     </div>
                 ))}
             </div>
             <div className="flexCenteredBlock headlineCont">
-                {subCategories.map(elm => (
+                {filter.map(elm => (
                     <div className="categories" id={elm.selector}>
                         {elm.title}
                     </div>
