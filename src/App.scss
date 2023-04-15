@@ -5,7 +5,8 @@
   --background-color: #FFFFFF;
   --text-shadow: #000000;
   --text-color-body: #000000;
-  --hover-color: rgb(55,88,00,0.5);
+  --hover-color-after: rgb(252,213,38,0.3);
+  --hover-color-before: rgb(33,55,77,0);
 }
 
 .darkMode {
@@ -15,7 +16,8 @@
   --background-color: #1F2023;
   --text-shadow: #2d2f34;
   --text-color-body: #a0abbd;
-  --hover-color: rgb(33,55,77,0.5);
+  --hover-color-after: rgb(50,56,120,0.4);
+  --hover-color-before: rgb(33,55,77,0);
 }
 
 $primary-color: var(--primary-color);
@@ -24,4 +26,5 @@ $text-color-header: var(--text-color-header);
 $background-color: var(--background-color);
 $text-shadow: var(--text-shadow);
 $text-color-body: var(--text-color-body);
-$hover-color: var(--hover-color)
+$hover-color-after: var(--hover-color-after);
+$hover-color-before: var(--hover-color-before)
