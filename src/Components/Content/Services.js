@@ -4,29 +4,31 @@ import {RequestButton} from "./RequestButton";
 import {InfoBlock} from "./InfoBlock";
 import test_1 from "../Images/test_1.jpg";
 import {BelowHeaderImage} from "./BelowHeaderImage";
+import {ArrowUp} from "./ArrowUp";
 
 const Services = () =>{
 
     const servicesInfo = [
         {
             headline : "1",
-            text : "2",
+            text : ["2"],
             img : test_1
         },
         {
             headline : "3",
-            text : "4",
+            text : ["4"],
             img : test_1
         },
         {
             headline : "5",
-            text : "6",
+            text : ["6"],
             img : test_1
         }
     ]
 
     return (
         <div className="homeCont">
+            <ArrowUp/>
             <BelowHeaderImage
                 headline = "Послуги ГБО Monogas"
             />

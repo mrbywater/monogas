@@ -10,19 +10,27 @@ const Home = () =>{
     const obj = [
         {
             headline : "1",
-            text : "2",
+            text : ["1"],
             img : test_1
         },
         {
             headline : "3",
-            text : "4",
+            text : ["4"],
             img : test_1
         },
         {
             headline : "5",
-            text : "6",
+            text : ["6"],
             img : test_1
         }
+    ]
+
+    const buttonServices = [
+        "Установка ГБО 2-го покоління",
+        "Установка ГБО 4-го покоління",
+        "Установка ГБО на FSI, TSI, GDI",
+        "Установка ГБО на електромобілі",
+        "Установка ГБО на дизель"
     ]
 
     return (
@@ -40,23 +48,11 @@ const Home = () =>{
                     <h2>Ремонт та сервісне обслуговування</h2>
                 </div>
                 <div className="servicesButtonCont">
-                    <div className="servicesButton">
-                        Установка ГБО 2-го покоління
-                    </div>
-                    <div className="servicesButton">
-                        Установка ГБО 4-го покоління
-                    </div>
-                    <div className="servicesButton">
-                        Установка ГБО на FSI, TSI, GDI
-                    </div>
-                </div>
-                <div className="servicesButtonCont">
-                    <div className="servicesButton">
-                        Установка ГБО на електромобілі
-                    </div>
-                    <div className="servicesButton">
-                        Установка ГБО на дизель
-                    </div>
+                    {buttonServices.map(elm =>(
+                        <div className="servicesButton">
+                            {elm}
+                        </div>
+                    ))}
                 </div>
             </div>
             <div className="separator"></div>

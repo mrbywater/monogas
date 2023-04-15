@@ -11,10 +11,12 @@ const InfoBlock = (props) => {
 
         if (props.index % 2 === 0) {
             return (
-                <div className="servicesButtonCont">
+                <div className="infoBlocksCont">
                     <div className="infoBlocks">
                         <h2>{headline}</h2>
-                        <p>{text}</p>
+                        {text.map(elm => (
+                            <p>{elm}</p>
+                        ))}
                     </div>
                     <div className="infoBlocks">
                         <img src={img} className="imgSizeForBlocks"/>
@@ -23,7 +25,7 @@ const InfoBlock = (props) => {
             )
         }else {
             return (
-                <div className="servicesButtonCont">
+                <div className="infoBlocksCont">
                     <div className="infoBlocks">
                         <img src={img} className="imgSizeForBlocks"/>
                     </div>

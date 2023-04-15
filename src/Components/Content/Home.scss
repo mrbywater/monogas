@@ -22,6 +22,15 @@ $imgBlocksHeight:550px;
   color: $text-color-body;
 }
 
+.servicesButtonCont {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-around;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
 .servicesButton {
   width: 25%;
   height: 200px;
@@ -35,6 +44,7 @@ $imgBlocksHeight:550px;
   position: relative;
   font-weight: bold;
   color: $text-color-body;
+  margin-top: 100px;
 }
 .servicesButton:hover{
   color: #fff;

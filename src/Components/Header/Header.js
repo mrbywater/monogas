@@ -28,8 +28,8 @@ const Header = () =>{
                 <Link to="/" className='links'>Головна</Link>
                 <Link to="/services" className='links'>Послуги</Link>
                 <Link to="/works" className='links'>Наші роботи</Link>
-                <Link to="/contacts" className='links'>Контакти</Link>
                 <Link to="/about-us" className='links'>Про нас</Link>
+                <a href="#contacts" className='links'>Контакти</a>
                 <a href="https://www.instagram.com/zelenskiy_official/?hl=ru">
                     <FontAwesomeIcon icon={faInstagram} className="themeIcon"/>
                 </a>

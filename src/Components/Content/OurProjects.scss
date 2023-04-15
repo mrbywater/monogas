@@ -20,6 +20,15 @@
   color: $text-color-body;
 }
 
+.animation {
+  animation: 1.5s show ease;
+}
+
+@keyframes show {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .textHoverAnimation:after {
   backface-visibility: hidden;
   border: 1px solid $text-color-body;
@@ -43,7 +52,7 @@
 
 .linkBlocks {
   width: 30em;
-  height: 30em;
+  height: 25em;
   margin-top: 2em;
   object-fit: cover;
   text-decoration: none;
@@ -68,12 +77,6 @@
   overflow: hidden;
   transition: 0.5s;
   background-color: $hover-color-before;
-  animation: 5s show ease;
-}
-
-@keyframes show {
-  from { opacity: 0; }
-  to { opacity: 1; }
 }
 
 .blockText {

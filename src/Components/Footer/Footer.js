@@ -3,7 +3,7 @@ const Footer = () =>{
 
     return (
         <>
-            <div className="footerCont">
+            <div className="footerCont" id="contacts">
                 <div className="info">
                     <h1>Адреса</h1>
                     <span>

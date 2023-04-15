@@ -1,9 +1,10 @@
 import "./Content.scss"
 import "./OurProjects.scss"
 import {BelowHeaderImage} from "./BelowHeaderImage";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import pepe from "../Images/PepeLaugh.jpg"
 import car from "../Images/car.jpg"
+import {motion,AnimatePresence} from "framer-motion"
 
 const OurProjects = () =>{
 
@@ -49,16 +50,23 @@ const OurProjects = () =>{
             selector : 2
         }
     ]
+
     const [filter, setFilter] = useState(subCategories)
+    const [style, setStyle] = useState("")
 
     const categorieSwitcher = (elm) => () => {
-
+        setStyle("")
         const result = subCategories.filter(word => word.selector === elm.selector);
-
         if (elm.selector === 0){
             setFilter(subCategories)
-        } else setFilter(result)
+        } else {
+            setFilter(result)
+        }
     }
+
+    useEffect(() => {
+        setStyle("animation")
+    },[style]);
 
     return (
         <div className="homeCont">
@@ -76,7 +84,7 @@ const OurProjects = () =>{
                 <div className="placementOfBlock">
                     {filter.map(elm => (
                         <a className="linkBlocks" href={elm.url}>
-                            <div className="blocksSize" id={elm.selector}>
+                            <div className={`blocksSize ${style}`} id={elm.selector}>
                                 <span className="blockText">{elm.title}</span>
                                 <img className="innerImg" src={elm.img}></img>
                             </div>
