@@ -76,7 +76,8 @@ const OurProjects = () =>{
             <div className="placementOfBlock">
                 {filter.map(elm => (
                     <a className="linkBlocks" href={elm.url} >
-                        <div className="blocksSize" id={elm.selector} style={{backgroundImage : `url(${elm.img})`}}>
+                        <div className="blocksSize" id={elm.selector} >
+                            <img className="innerImg" src={elm.img}></img>
                             <span className="blockText">{elm.title}</span>
                         </div>
                     </a>
