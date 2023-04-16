@@ -52,21 +52,37 @@ const OurProjects = () =>{
     ]
 
     const [filter, setFilter] = useState(subCategories)
+    const [checker, setChecker] = useState(false)
     const [style, setStyle] = useState("")
+    const [prevSelector, setPrevSelector] = useState(0)
 
     const categorieSwitcher = (elm) => () => {
+
         setStyle("")
         const result = subCategories.filter(word => word.selector === elm.selector);
-        if (elm.selector === 0){
-            setFilter(subCategories)
-        } else {
-            setFilter(result)
-        }
+        
+        if (elm.selector !== prevSelector) {
+            setChecker(true)
+                if (elm.selector === 0){    
+                    setFilter(subCategories)
+                } else {
+                    setFilter(result)
+                }
+            }else{
+                setChecker(false)
+            }
+        
+        setPrevSelector(elm.selector)
     }
+    
 
     useEffect(() => {
-        setStyle("animation")
-    },[style]);
+        
+        if (checker) {
+            setStyle("animation")
+        }
+
+    },[prevSelector]);
 
     return (
         <div className="homeCont">

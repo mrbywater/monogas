@@ -23,7 +23,9 @@ const Header = () =>{
 
     return (
         <div className="headerCont">
-            <img src={Logo} className="logo" alt=""/>
+            <Link to="/">
+                <img src={Logo} className="logo" alt=""/>
+            </Link>    
             <div className="contextMenu">
                 <Link to="/" className='links'>Головна</Link>
                 <Link to="/services" className='links'>Послуги</Link>
