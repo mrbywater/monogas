@@ -32,10 +32,10 @@ const Header = () =>{
                 <Link to="/works" className='links'>Наші роботи</Link>
                 <Link to="/about-us" className='links'>Про нас</Link>
                 <a href="#contacts" className='links'>Контакти</a>
-                <a href="https://www.instagram.com/zelenskiy_official/?hl=ru">
+                <a href="https://www.instagram.com/monogasauto/">
                     <FontAwesomeIcon icon={faInstagram} className="themeIcon"/>
                 </a>
-                <a href="https://www.facebook.com/zelenskiy.official/?locale=ru_RU">
+                <a href="https://www.facebook.com/profile.php?id=100069663001399&is_tour_dismissed=true">
                     <FontAwesomeIcon icon={faFacebook} className="themeIcon"/>
                 </a>
                 <div >

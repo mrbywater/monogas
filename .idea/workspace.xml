@@ -5,27 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Content/AboutUs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ScrollToTop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/AboutUs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/ArrowUp.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ArrowUp.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Contacts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Content.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoBlock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoBlock.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/OurProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/OurProjects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/OurProjects.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/OurProjects.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +75,8 @@
       <workItem from="1681405402457" duration="18517000" />
       <workItem from="1681430577043" duration="122000" />
       <workItem from="1681478694152" duration="6889000" />
-      <workItem from="1681565489857" duration="18953000" />
+      <workItem from="1681565489857" duration="19415000" />
+      <workItem from="1681646257417" duration="1307000" />
     </task>
     <servers />
   </component>
