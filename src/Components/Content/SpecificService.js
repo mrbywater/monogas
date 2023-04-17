@@ -30,9 +30,9 @@ const SpecificService = () => {
 	const params = useParams()
  	const path = params.path
 
- 	const include = buttonServices.map(item => item.path.includes(path))
+ 	const include = buttonServices.filter(item => item.path === path)
 
- 	if (include.includes(true)) {
+ 	if (include.length) {
  		return (
 			buttonServices.map(item => {
 	    		if (path === item.path) {
