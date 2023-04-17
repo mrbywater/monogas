@@ -4,21 +4,22 @@ import {BelowHeaderImage} from "./BelowHeaderImage";
 import {InfoBlock} from "./InfoBlock";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCheck} from "@fortawesome/free-solid-svg-icons";
+
+ const AboutUsInformation = [
+    {
+        headline : "AboutUsInformation",
+        text : ["1", "2"],
+        img : ""
+    }
+]
+
+const advantages = [
+    "Первое",
+    "И",
+    "Дальше"
+]
+
 const AboutUs = () =>{
-
-    const AboutUsInformation = [
-        {
-            headline : "AboutUsInformation",
-            text : ["1", "2"],
-            img : ""
-        }
-    ]
-
-    const advantages = [
-        "Первое",
-        "И",
-        "Дальше"
-    ]
 
     return (
         <div className="homeCont">

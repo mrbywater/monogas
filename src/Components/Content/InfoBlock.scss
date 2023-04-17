@@ -1,5 +1,5 @@
 @import '../../App';
-$imgBlocksHeight:550px;
+$imgBlocksHeight:450px;
 
 .infoBlocks {
   display: flex;
@@ -16,6 +16,7 @@ $imgBlocksHeight:550px;
 }
 
 .infoBlocksCont {
+  overflow-x: hidden;
   display: flex;
   align-items: center;
   width: 100%;

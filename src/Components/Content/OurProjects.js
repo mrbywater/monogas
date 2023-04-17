@@ -6,50 +6,50 @@ import pepe from "../Images/PepeLaugh.jpg"
 import car from "../Images/car.jpg"
 import {motion,AnimatePresence} from "framer-motion"
 
+ const headlines = [
+    {
+        headline : "Всі роботи",
+        selector : 0,
+    },
+    {
+        headline : "Монтаж",
+        selector : 1,
+    },
+    {
+        headline : "Сервіс",
+        selector : 2,
+    }
+]
+
+
+const subCategories = [
+    {
+        title : "Монтаж 1",
+        img : car,
+        url : "",
+        selector : 1
+    },
+    {
+        title : "Сервіс 1",
+        img : "",
+        url : "",
+        selector : 2
+    },
+    {
+        title : "Монтаж 2",
+        img : "",
+        url : "",
+        selector : 1
+    },
+    {
+        title : "Сервіс 2",
+        img : pepe,
+        url : "",
+        selector : 2
+    }
+]
+
 const OurProjects = () =>{
-
-    const headlines = [
-        {
-            headline : "Всі роботи",
-            selector : 0,
-        },
-        {
-            headline : "Монтаж",
-            selector : 1,
-        },
-        {
-            headline : "Сервіс",
-            selector : 2,
-        }
-    ]
-
-
-    const subCategories = [
-        {
-            title : "Монтаж 1",
-            img : car,
-            url : "",
-            selector : 1
-        },
-        {
-            title : "Сервіс 1",
-            img : "",
-            url : "",
-            selector : 2
-        },
-        {
-            title : "Монтаж 2",
-            img : "",
-            url : "",
-            selector : 1
-        },
-        {
-            title : "Сервіс 2",
-            img : pepe,
-            url : "",
-            selector : 2
-        }
-    ]
 
     const [filter, setFilter] = useState(subCategories)
     const [checker, setChecker] = useState(false)

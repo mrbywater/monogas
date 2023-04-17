@@ -24,6 +24,16 @@
   margin-top: 140px;
 }
 
+.notFoundPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 9vh;
+  padding-top: 5%;
+  font-size: 2em;
+}  
+
 .belowHeader {
   display: flex;
   justify-content: center;

@@ -4,34 +4,28 @@ import {RequestButton} from "./RequestButton";
 import test_1 from "../Images/test_1.jpg"
 import {ArrowUp} from "./ArrowUp";
 import {InfoBlock} from "./InfoBlock";
+import {Link} from 'react-router-dom'
+import {buttonServices} from "./SpecificService"
+
+const obj = [
+    {
+        headline : "1",
+        text : ["1"],
+        img : test_1
+    },
+    {
+        headline : "3",
+        text : ["4"],
+        img : test_1
+    },
+    {
+        headline : "5",
+        text : ["6"],
+        img : test_1
+    }
+]
 
 const Home = () =>{
-
-    const obj = [
-        {
-            headline : "1",
-            text : ["1"],
-            img : test_1
-        },
-        {
-            headline : "3",
-            text : ["4"],
-            img : test_1
-        },
-        {
-            headline : "5",
-            text : ["6"],
-            img : test_1
-        }
-    ]
-
-    const buttonServices = [
-        "Установка ГБО 2-го покоління",
-        "Установка ГБО 4-го покоління",
-        "Установка ГБО на FSI, TSI, GDI",
-        "Установка ГБО на електромобілі",
-        "Установка ГБО на дизель"
-    ]
 
     return (
         <div className="homeCont">
@@ -49,9 +43,9 @@ const Home = () =>{
                 </div>
                 <div className="servicesButtonCont">
                     {buttonServices.map(elm =>(
-                        <div className="servicesButton">
-                            {elm}
-                        </div>
+                        <Link  to={"/services/" + elm.path} className="servicesButton">
+                            {elm.title}
+                        </Link > 
                     ))}
                 </div>
             </div>

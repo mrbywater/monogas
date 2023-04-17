@@ -8,6 +8,8 @@ import {Home} from "./Components/Content/Home";
 import {AboutUs} from "./Components/Content/AboutUs";
 import {OurProjects} from "./Components/Content/OurProjects";
 import {Services} from "./Components/Content/Services";
+import {NotFoundPage} from "./Components/Content/NotFoundPage";
+import {SpecificService} from "./Components/Content/SpecificService";
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
           <Route path="/services" element={<Services />}/>
           <Route path="/works" element={<OurProjects />}/>
           <Route path="/about-us" element={<AboutUs />}/>
+          <Route path="/services/:path" element={<SpecificService />}/>
+          <Route path="*" element={<NotFoundPage />}/>
         </Routes>
         <Footer/>
       </>
