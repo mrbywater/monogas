@@ -22,7 +22,7 @@ const InfoBlock = (props) => {
                     <div className="infoBlocks">
                         <h2>{headline}</h2>
                         {text.map(elm => (
-                            <p>{elm}</p>
+                            <span className="spanPadding">{elm}</span>
                         ))}
                     </div>
                     <div className="infoBlocks" data-aos="fade-left">
@@ -38,7 +38,9 @@ const InfoBlock = (props) => {
                     </div>
                     <div className="infoBlocks">
                         <h2>{headline}</h2>
-                        <p>{text}</p>
+                        {text.map(elm => (
+                            <span className="spanPadding">{elm}</span>
+                        ))}
                     </div>
                 </div>
             )

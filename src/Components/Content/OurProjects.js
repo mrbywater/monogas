@@ -2,9 +2,6 @@ import "./Content.scss"
 import "./OurProjects.scss"
 import {BelowHeaderImage} from "./BelowHeaderImage";
 import {useEffect, useState} from "react";
-import pepe from "../Images/PepeLaugh.jpg"
-import car from "../Images/car.jpg"
-import {motion,AnimatePresence} from "framer-motion"
 
  const headlines = [
     {
@@ -25,25 +22,25 @@ import {motion,AnimatePresence} from "framer-motion"
 const subCategories = [
     {
         title : "Монтаж 1",
-        img : car,
+        img : require("../Images/car.jpg"),
         url : "",
         selector : 1
     },
     {
         title : "Сервіс 1",
-        img : "",
+        img : require("../Images/car.jpg"),
         url : "",
         selector : 2
     },
     {
         title : "Монтаж 2",
-        img : "",
+        img : require("../Images/car.jpg"),
         url : "",
         selector : 1
     },
     {
         title : "Сервіс 2",
-        img : pepe,
+        img : require("../Images/car.jpg"),
         url : "",
         selector : 2
     }
