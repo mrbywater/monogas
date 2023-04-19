@@ -52,10 +52,12 @@ const OurProjects = () =>{
     const [checker, setChecker] = useState(false)
     const [style, setStyle] = useState("")
     const [prevSelector, setPrevSelector] = useState(0)
+    const [active, setActive] = useState(0);
 
-    const categorieSwitcher = (elm) => () => {
+    const categorieSwitcher = (elm, i) => () => {
 
         setStyle("")
+        setActive(i)
         const result = subCategories.filter(word => word.selector === elm.selector);
         
         if (elm.selector !== prevSelector) {
@@ -71,6 +73,8 @@ const OurProjects = () =>{
         
         setPrevSelector(elm.selector)
     }
+
+    console.log(active)
     
 
     useEffect(() => {
@@ -87,9 +91,9 @@ const OurProjects = () =>{
                 headline = "Наші роботи"
             />
             <div className="flexCenteredBlock headlineCont">
-                {headlines.map(elm => (
-                    <div className="categories" id={elm.selector} onClick={categorieSwitcher(elm)}>
-                        <span className="textHoverAnimation">{elm.headline}</span>
+                {headlines.map((elm, i )=> (
+                    <div className={`categories `} id={elm.selector} onClick={categorieSwitcher(elm, i)}>
+                        <span className={`textHoverAnimation ${i === active ? 'active' : ''}`}>{elm.headline}</span>
                     </div>
                 ))}
             </div>

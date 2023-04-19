@@ -1,30 +1,48 @@
 @import '../../App';
-$imgBlocksHeight:450px;
-
-.infoBlocks {
-  display: flex;
-  width: 42%;
-  height: $imgBlocksHeight;
-  font-size: 1.5em;
-  flex-direction: column;
-  color: $text-color-body;
-}
-
-.imgSizeForBlocks {
-  width: 100%;
-  height: $imgBlocksHeight;
-}
+$imgBlocksHeight:20em;
 
 .infoBlocksCont {
   overflow-x: hidden;
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   width: 100%;
+  min-height: $imgBlocksHeight;
   justify-content: space-around;
   margin-top: 120px;
   flex-wrap: wrap;
+  object-fit: cover;
+}
+
+.infoBlocks {
+  display: flex;
+  flex-direction: column;
+  width: 42%;
+  font-size: 1.5em;
+  color: $text-color-body;
+  position: relative;
+  overflow: hidden;
+}
+
+.imgSizeForBlocks {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .spanPadding {
   padding-top: 15px;
+}
+
+.headline {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding-bottom: 30px ;
+}
+
+.path {
+  text-decoration: none;
+  padding-top: 20px;
+  color: $text-color-body;
+  opacity: 0.3;
+  width: 7em;
 }

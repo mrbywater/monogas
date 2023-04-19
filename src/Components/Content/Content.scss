@@ -11,7 +11,7 @@
 .separator {
   margin: 120px 0px 0px 3%;
   width: 94%;
-  height: 2px;
+  height: 3px;
   background-color: #b1b0b0;
   opacity: 0.8;
   //box-shadow: 1px 1px 1px $text-shadow, 0 0 0.5em $text-shadow, 0 0 0.1em $text-shadow;
@@ -33,6 +33,7 @@
   height: 9vh;
   padding-top: 5%;
   font-size: 2em;
+  color: $text-color-body
 }  
 
 .belowHeader {

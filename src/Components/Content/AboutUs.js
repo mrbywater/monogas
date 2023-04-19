@@ -9,14 +9,23 @@ import {faCheck} from "@fortawesome/free-solid-svg-icons";
     {
         headline : "AboutUsInformation",
         text : ["1", "2"],
-        img : ""
+        img : require("../Images/cool_black_car_with_monogas.png")
     }
 ]
 
 const advantages = [
-    "Первое",
-    "И",
-    "Дальше"
+    {
+        title : "Первое",
+        description : "test"
+    },
+    { 
+        title : "И",
+        description : "test"
+    },
+    { 
+        title : "Дальше",
+        description : "test"
+    }
 ]
 
 const AboutUs = () =>{
@@ -30,7 +39,7 @@ const AboutUs = () =>{
             {AboutUsInformation.map( (elm,i) => {
                 return (
                     <InfoBlock
-                        index = {i}
+                        index = {1}
                         headline={elm.headline}
                         text={elm.text}
                         img={elm.img}
@@ -44,7 +53,7 @@ const AboutUs = () =>{
                         {advantages.map(elm =>(
                             <div className="advItem">
                                 <FontAwesomeIcon icon={faCheck} />
-                                <span className="textDecor">{elm}</span>
+                                <span className="textDecor"><i>{elm.title}</i> {elm.description}</span>
                             </div>
                         ))}
                     </div>

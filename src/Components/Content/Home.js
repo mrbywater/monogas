@@ -5,6 +5,7 @@ import {ArrowUp} from "./ArrowUp";
 import {InfoBlock} from "./InfoBlock";
 import {Link} from 'react-router-dom'
 import {buttonServices} from "./SpecificService"
+import {useEffect} from "react"
 
 const obj = [
     {
@@ -43,10 +44,10 @@ const obj = [
 const Home = () =>{
 
     return (
-        <div className="homeCont">
+        <div className="homeCont" >
             <ArrowUp/>
             <div className="launchCont">
-                    <h1>Установка та обслуговування ГБО в Одесі</h1>
+                    <h1> Установка та обслуговування ГБО в Одесі</h1>
                     <h2>Monogas | Моногас</h2>
                     <h4>Ремонт й техничене обслуговування ГБО</h4>
                     <RequestButton/>
@@ -78,7 +79,7 @@ const Home = () =>{
             </div>
         </div>
     )
-
 }
+
 
 export {Home}

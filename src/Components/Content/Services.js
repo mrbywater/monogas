@@ -5,6 +5,7 @@ import {InfoBlock} from "./InfoBlock";
 import test_1 from "../Images/cool_black_car_with_monogas.png";
 import {BelowHeaderImage} from "./BelowHeaderImage";
 import {ArrowUp} from "./ArrowUp";
+import {useRef, useEffect} from "react";
 
 const servicesInfoInstallation = [
     {
@@ -14,7 +15,8 @@ const servicesInfoInstallation = [
             "Встановлюється інжекторні двигуни.",
             "Газ під власним тиском виходить по видатковій магістралі з балона до редуктора, там тиск знижується до робочого, і газ перетворюється з рідкого в газоподібний стан, нагріваючись при цьому."
         ],
-        img : test_1
+        img : require("../Images/second_generation.jpg"),
+        path : "second_generation"
     },
     {
         headline : "Установка ГБО 4-го покоління",
@@ -26,7 +28,8 @@ const servicesInfoInstallation = [
             "ГБО 4 покоління – використовує систему циклічної подачі газу.",
             "За рахунок фазованого упорскування з'явилася можливість зменшити витрату палива, значно знизити кількість викидів у навколишнє середовище, знизити навантаження на випускні клапани та циліндро-поршневу систему, а також підвищити динамічні характеристики."
         ],
-        img : test_1
+        img : require("../Images/fouth_generation.webp"),
+        path : "fouth_generation"
     },
     {
         headline : "Установка ГБО на FSI, TSI, GDI",
@@ -38,17 +41,20 @@ const servicesInfoInstallation = [
             "ГБО на двигун TSI, GDI, TSI повинен гармонійно вписуватися в решту електроніки вашого автомобіля.",
             "«Рідна» прошивка, а також прошивка ГБО мають працювати злагоджено та не конфліктувати. Існують також універсальні варіанти, що підходять під будь-яку прошивку."
         ],
-        img : test_1
+        img : require("../Images/tsi_fsi_tfsi.jpg"),
+        path : "fsi_tsi_gdi"
     },
     {
         headline : "Установка ГБО на електромобілі",
         text : ["2"],
-        img : test_1
+        img : require("../Images/electro_car.jpg"),
+        path : "electric_car"
     },
     {
         headline : "Установка ГБО на дизель",
         text : ["2"],
-        img : test_1
+        img : require("../Images/disel.png"),
+        path : "diesel"
     }
 ]
 
@@ -88,11 +94,13 @@ const Services = () =>{
                 {servicesInfoInstallation.map( (elm,i) => {
                     return (
                         <InfoBlock
-                            index = {i}
+                            index={i}
                             headline={elm.headline}
                             text={elm.text}
                             img={elm.img}
-                        />)
+                            path={elm.path}
+                        />
+                    )
                 })}
             </div>
             <div className="separator"></div>
