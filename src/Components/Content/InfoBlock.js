@@ -20,7 +20,6 @@ const InfoBlock = (props) => {
 
     }, [])
 
-    console.log(path)
 
         if (props.index % 2 === 0) {
             return (

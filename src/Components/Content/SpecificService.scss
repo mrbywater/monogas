@@ -1,0 +1,42 @@
+@import '../../App';
+
+.flexCont {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;	
+  width: 90%;
+  margin-left: 5%;
+}
+
+.flexElementCont {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+  font-size: 1.5em;
+  line-height: 1.5em;
+  color: $text-color-body;
+}
+
+.textHeadline {
+  padding-bottom: 20px;
+}
+
+.textContent {
+  padding: 20px 0px 0px 20px;  
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageCont {
+  padding-top: 100px;
+  width: 50%;
+  height: 300px;
+}
+

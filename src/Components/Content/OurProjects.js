@@ -2,6 +2,8 @@ import "./Content.scss"
 import "./OurProjects.scss"
 import {BelowHeaderImage} from "./BelowHeaderImage";
 import {useEffect, useState} from "react";
+import {works} from "./SelectedProject.js";
+import {Link} from 'react-router-dom'
 
  const headlines = [
     {
@@ -18,37 +20,9 @@ import {useEffect, useState} from "react";
     }
 ]
 
-
-const subCategories = [
-    {
-        title : "Монтаж 1",
-        img : require("../Images/car.jpg"),
-        url : "",
-        selector : 1
-    },
-    {
-        title : "Сервіс 1",
-        img : require("../Images/car.jpg"),
-        url : "",
-        selector : 2
-    },
-    {
-        title : "Монтаж 2",
-        img : require("../Images/car.jpg"),
-        url : "",
-        selector : 1
-    },
-    {
-        title : "Сервіс 2",
-        img : require("../Images/car.jpg"),
-        url : "",
-        selector : 2
-    }
-]
-
 const OurProjects = () =>{
 
-    const [filter, setFilter] = useState(subCategories)
+    const [filter, setFilter] = useState(works)
     const [checker, setChecker] = useState(false)
     const [style, setStyle] = useState("")
     const [prevSelector, setPrevSelector] = useState(0)
@@ -58,12 +32,12 @@ const OurProjects = () =>{
 
         setStyle("")
         setActive(i)
-        const result = subCategories.filter(word => word.selector === elm.selector);
+        const result = works.filter(word => word.selector === elm.selector);
         
         if (elm.selector !== prevSelector) {
             setChecker(true)
                 if (elm.selector === 0){    
-                    setFilter(subCategories)
+                    setFilter(works)
                 } else {
                     setFilter(result)
                 }
@@ -100,12 +74,12 @@ const OurProjects = () =>{
             <div className="placementOfBlockCentered">
                 <div className="placementOfBlock">
                     {filter.map(elm => (
-                        <a className="linkBlocks" href={elm.url}>
+                        <Link className="linkBlocks" to={"/works/" + elm.url}>
                             <div className={`blocksSize ${style}`} id={elm.selector}>
                                 <span className="blockText">{elm.title}</span>
                                 <img className="innerImg" src={elm.img}></img>
                             </div>
-                        </a>
+                        </Link>
                     ))}
                 </div>
             </div>

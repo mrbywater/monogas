@@ -4,7 +4,7 @@ import {RequestButton} from "./RequestButton";
 import {ArrowUp} from "./ArrowUp";
 import {InfoBlock} from "./InfoBlock";
 import {Link} from 'react-router-dom'
-import {buttonServices} from "./SpecificService"
+import {services} from "./SpecificService"
 import {useEffect} from "react"
 
 const obj = [
@@ -58,7 +58,7 @@ const Home = () =>{
                     <h2>Ремонт та сервісне обслуговування</h2>
                 </div>
                 <div className="servicesButtonCont">
-                    {buttonServices.map(elm =>(
+                    {services.map(elm =>(
                         <Link  to={"/services/" + elm.path} className="servicesButton">
                             {elm.title}
                         </Link > 

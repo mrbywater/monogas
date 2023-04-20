@@ -10,6 +10,7 @@ import {OurProjects} from "./Components/Content/OurProjects";
 import {Services} from "./Components/Content/Services";
 import {NotFoundPage} from "./Components/Content/NotFoundPage";
 import {SpecificService} from "./Components/Content/SpecificService";
+import {SelectedProject} from "./Components/Content/SelectedProject"
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/works" element={<OurProjects />}/>
           <Route path="/about-us" element={<AboutUs />}/>
           <Route path="/services/:path" element={<SpecificService />}/>
+          <Route path="/works/:url" element={<SelectedProject />}/>
           <Route path="*" element={<NotFoundPage />}/>
         </Routes>
         <Footer/>

@@ -2,7 +2,6 @@ import "./Content.scss"
 import "./Services.scss"
 import {RequestButton} from "./RequestButton";
 import {InfoBlock} from "./InfoBlock";
-import test_1 from "../Images/cool_black_car_with_monogas.png";
 import {BelowHeaderImage} from "./BelowHeaderImage";
 import {ArrowUp} from "./ArrowUp";
 import {useRef, useEffect} from "react";
@@ -46,13 +45,27 @@ const servicesInfoInstallation = [
     },
     {
         headline : "Установка ГБО на електромобілі",
-        text : ["2"],
+        text : [
+            "Вартість встановлення:",
+            "4 циліндри - від 1000$",
+            "6 циліндри - від 1200$",
+            "8 циліндри - від 1400$",
+            "ГБО на двигун TSI, GDI, TSI повинен гармонійно вписуватися в решту електроніки вашого автомобіля.",
+            "«Рідна» прошивка, а також прошивка ГБО мають працювати злагоджено та не конфліктувати. Існують також універсальні варіанти, що підходять під будь-яку прошивку."
+        ],
         img : require("../Images/electro_car.jpg"),
         path : "electric_car"
     },
     {
         headline : "Установка ГБО на дизель",
-        text : ["2"],
+        text : [
+            "Вартість встановлення:",
+            "4 циліндри - від 1000$",
+            "6 циліндри - від 1200$",
+            "8 циліндри - від 1400$",
+            "ГБО на двигун TSI, GDI, TSI повинен гармонійно вписуватися в решту електроніки вашого автомобіля.",
+            "«Рідна» прошивка, а також прошивка ГБО мають працювати злагоджено та не конфліктувати. Існують також універсальні варіанти, що підходять під будь-яку прошивку."
+        ],
         img : require("../Images/disel.png"),
         path : "diesel"
     }
@@ -60,19 +73,40 @@ const servicesInfoInstallation = [
 
 const servicesInfoService = [
     {
-        headline : "1",
-        text : ["2"],
-        img : test_1
+        headline : "Установка ....",
+        text : [
+            "Вартість встановлення:",
+            "4 циліндри - від 1000$",
+            "6 циліндри - від 1200$",
+            "8 циліндри - від 1400$",
+            "ГБО на двигун TSI, GDI, TSI повинен гармонійно вписуватися в решту електроніки вашого автомобіля.",
+            "«Рідна» прошивка, а також прошивка ГБО мають працювати злагоджено та не конфліктувати. Існують також універсальні варіанти, що підходять під будь-яку прошивку."
+        ],
+        img : require("../Images/cool_black_car_with_monogas.png"),
     },
     {
-        headline : "3",
-        text : ["4"],
-        img : test_1
+        headline : "Установка ....",
+        text : [
+            "Вартість встановлення:",
+            "4 циліндри - від 1000$",
+            "6 циліндри - від 1200$",
+            "8 циліндри - від 1400$",
+            "ГБО на двигун TSI, GDI, TSI повинен гармонійно вписуватися в решту електроніки вашого автомобіля.",
+            "«Рідна» прошивка, а також прошивка ГБО мають працювати злагоджено та не конфліктувати. Існують також універсальні варіанти, що підходять під будь-яку прошивку."
+        ],
+        img : require("../Images/cool_black_car_with_monogas.png"),
     },
     {
-        headline : "5",
-        text : ["6"],
-        img : test_1
+        headline : "Установка ....",
+        text : [
+            "Вартість встановлення:",
+            "4 циліндри - від 1000$",
+            "6 циліндри - від 1200$",
+            "8 циліндри - від 1400$",
+            "ГБО на двигун TSI, GDI, TSI повинен гармонійно вписуватися в решту електроніки вашого автомобіля.",
+            "«Рідна» прошивка, а також прошивка ГБО мають працювати злагоджено та не конфліктувати. Існують також універсальні варіанти, що підходять під будь-яку прошивку."
+        ],
+        img : require("../Images/cool_black_car_with_monogas.png"),
     }
 ]
 
@@ -86,9 +120,9 @@ const Services = () =>{
             />
             <div className="flexCenteredBlock">
                 <h1 className="headerFontSize">Всі послуги для ГБО в єдиному автосервісі</h1>
-                    <RequestButton/>
-                <div className="separator"></div>
+                <RequestButton/>
             </div>
+            <div className="separator"></div>
             <div className="flexCenteredBlock">
                 <h1 className="headerFontSize">Монтаж ГБО</h1>
                 {servicesInfoInstallation.map( (elm,i) => {
