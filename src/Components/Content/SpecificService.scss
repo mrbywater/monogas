@@ -30,13 +30,18 @@
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .imageCont {
   padding-top: 100px;
   width: 50%;
   height: 300px;
+}
+
+.imgCont{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
