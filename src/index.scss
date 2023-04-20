@@ -18,6 +18,6 @@ code {
   font-family: 'Rubik', sans-serif;;
 }
 
-html {
+html:focus-within {
   scroll-behavior: smooth;
 }

@@ -3,9 +3,8 @@ import "./Home.scss"
 import {RequestButton} from "./RequestButton";
 import {ArrowUp} from "./ArrowUp";
 import {InfoBlock} from "./InfoBlock";
-import {Link} from 'react-router-dom'
 import {services} from "./SpecificService"
-import {useEffect} from "react"
+import {HashLink} from "react-router-hash-link"
 
 const obj = [
     {
@@ -44,7 +43,7 @@ const obj = [
 const Home = () =>{
 
     return (
-        <div className="homeCont" >
+        <div className="homeCont" id="top">
             <ArrowUp/>
             <div className="launchCont">
                     <h1> Установка та обслуговування ГБО в Одесі</h1>
@@ -59,9 +58,9 @@ const Home = () =>{
                 </div>
                 <div className="servicesButtonCont">
                     {services.map(elm =>(
-                        <Link  to={"/services/" + elm.path} className="servicesButton">
+                        <HashLink  to={"/services#" + elm.path} className="servicesButton">
                             {elm.title}
-                        </Link > 
+                        </HashLink >
                     ))}
                 </div>
             </div>

@@ -4,11 +4,10 @@ $imgBlocksHeight:20em;
 .infoBlocksCont {
   overflow-x: hidden;
   display: flex;
-  /*align-items: center;*/
   width: 100%;
   min-height: $imgBlocksHeight;
   justify-content: space-around;
-  margin-top: 120px;
+  padding-top: 120px;
   flex-wrap: wrap;
   object-fit: cover;
 }

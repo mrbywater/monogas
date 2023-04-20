@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
 import {faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {useState, useEffect} from "react"
+import {useState} from "react"
 
 const color = "red"
 

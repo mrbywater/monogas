@@ -23,7 +23,7 @@ const InfoBlock = (props) => {
 
         if (props.index % 2 === 0) {
             return (
-                <div className="infoBlocksCont" >
+                <div className="infoBlocksCont" id={path}>
                     <div className="infoBlocks">
                         <span className="headline">{headline}</span>
                         {text.map(elm => (
@@ -42,7 +42,7 @@ const InfoBlock = (props) => {
             )
         }else {
             return (
-                <div className="infoBlocksCont">
+                <div className="infoBlocksCont" id={path}>
                     <div className="infoBlocks" data-aos="fade-right">
                         <img src={img} className="imgSizeForBlocks" />
                     </div>
