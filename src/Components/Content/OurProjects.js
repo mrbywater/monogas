@@ -48,9 +48,6 @@ const OurProjects = () =>{
         setPrevSelector(elm.selector)
     }
 
-    console.log(active)
-    
-
     useEffect(() => {
         
         if (checker) {

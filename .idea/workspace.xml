@@ -6,19 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/ArrowUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ArrowUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/AboutUs.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoBlock.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoBlock.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/OurProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/OurProjects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/RequestButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/RequestButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Services.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Services.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/SpecificService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/SpecificService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/SpecificService.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/SpecificService.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ScrollToTop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/ScrollToTop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +92,8 @@
       <workItem from="1681652005432" duration="724000" />
       <workItem from="1681752809547" duration="668000" />
       <workItem from="1681824492845" duration="6549000" />
-      <workItem from="1682028248105" duration="5657000" />
+      <workItem from="1682028248105" duration="6051000" />
+      <workItem from="1682081444513" duration="15652000" />
     </task>
     <servers />
   </component>

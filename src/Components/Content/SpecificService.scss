@@ -24,7 +24,7 @@
 }
 
 .textContent {
-  padding: 20px 0px 0px 20px;  
+  padding: 10px 0px 0px 20px;
 }
 
 .container {
@@ -32,9 +32,10 @@
   flex-direction: column;
 }
 
-.imageCont {
+.image {
   padding-top: 100px;
-  height: 300px;
+  min-height: 300px;
+  max-height: 400px;
 }
 
 .imgCont{
