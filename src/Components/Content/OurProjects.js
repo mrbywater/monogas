@@ -58,7 +58,8 @@ const OurProjects = () =>{
                     {filter.map(elm => (
                         <Link className="linkBlocks" to={"/works/" + elm.url}>
                             <div className={`blocksSize ${style}`} id={elm.selector}>
-                                <span className="blockText">{elm.title}</span>
+                                <span className="blockText">{elm.model}</span>
+                                <span className="blockText">{elm.type}</span>
                                 <img className="innerImg" src={elm.img}></img>
                             </div>
                         </Link>

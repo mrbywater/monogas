@@ -3,7 +3,6 @@ import "./Home.scss"
 import {RequestButton} from "./RequestButton";
 import {ArrowUp} from "./ArrowUp";
 import {InfoBlock} from "./InfoBlock";
-import {services} from "./SpecificService"
 import {HashLink} from "react-router-hash-link"
 import {homeInfo, servicesName} from "./InfoList"
 

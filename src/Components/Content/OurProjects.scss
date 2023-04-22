@@ -80,6 +80,7 @@
   overflow: hidden;
   transition: 0.5s;
   background-color: $hover-color-before;
+  flex-direction: column;
 }
 
 .innerImg {
@@ -100,10 +101,11 @@
 
 .blockText {
   color: $text-color-header;
-  font-size: 3em;
+  font-size: 1.5em;
   opacity: 0;
   transition: 0.5s;
   text-shadow: 1px 1px 1px #000, 0 0 0.5em #000, 0 0 0.5em #000;
+  padding: 20px 0 20px 0;
 }
 
 .blockText:hover .innerImg {

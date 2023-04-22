@@ -1,0 +1,43 @@
+@import '../../App';
+
+
+.containerStyles {
+  width: 50%;
+  height: 600px;
+  margin: 120px auto 0 auto;
+  user-select: none;
+}
+
+.avtoInfoCont {
+  display: flex;
+  margin: 100px 0 0 5%;
+  flex-direction: column;
+  width: 90%;
+  color: $text-color-body;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.avtoInfoCont span {
+  padding-left: 20px;
+}
+
+.infoCont {
+  display: flex;
+  margin: 110px 0 0 5%;
+  flex-direction: column;
+  width: 90%;
+  color: $text-color-body;
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+
+.infoCont span {
+  padding-top: 10px;
+}
+
+.infoCont h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

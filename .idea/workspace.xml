@@ -5,19 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/ImageSlider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/ImageSlider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/SelectedProject.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/AboutUs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Content.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoBlock.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/OurProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/OurProjects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/RequestButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/RequestButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Services.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Services.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Services.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/SpecificService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/SpecificService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/OurProjects.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/OurProjects.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/SelectedProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/SelectedProject.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/SpecificService.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/SpecificService.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,7 +96,8 @@
       <workItem from="1681752809547" duration="668000" />
       <workItem from="1681824492845" duration="6549000" />
       <workItem from="1682028248105" duration="6051000" />
-      <workItem from="1682081444513" duration="15652000" />
+      <workItem from="1682081444513" duration="15922000" />
+      <workItem from="1682171990652" duration="14964000" />
     </task>
     <servers />
   </component>
