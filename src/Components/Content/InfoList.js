@@ -272,16 +272,11 @@ export const ourProjectsHedlines = [
     }
 ]
 
-const urlCreation = (model) => {
-    return model.replaceAll(" ","_")
-}
-
 export const works = [
     {
         model : "Toyota RAV 4 HV LE (HYBRID) 2018",
         type : "Монтаж",
         img : require("../Images/car.jpg"),
-        url : urlCreation("Toyota RAV 4 HV LE (HYBRID) 2018"),
         selector : 1,
         cost : "300$",
         subImage : [
@@ -309,7 +304,6 @@ export const works = [
         model : "Nissan Rogue SV AWD 2018",
         type : "Сервіс",
         img : require("../Images/car.jpg"),
-        url : urlCreation("Nissan Rogue SV AWD 2018"),
         selector : 2,
         cost : "300$",
         subImage : [
@@ -337,7 +331,6 @@ export const works = [
         model : "Ford Explorer 2.3 AWD XLT 2018",
         type : "Монтаж",
         img : require("../Images/car.jpg"),
-        url : urlCreation("Ford Explorer 2.3 AWD XLT 2018"),
         selector : 1,
         cost : "300$",
         subImage : [
@@ -365,7 +358,6 @@ export const works = [
         model : "Audi Q5 2014",
         type : "Сервіс",
         img : require("../Images/car.jpg"),
-        url : urlCreation("Audi Q5 2014"),
         selector : 2,
         cost : "300$",
         subImage : [

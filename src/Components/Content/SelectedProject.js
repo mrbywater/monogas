@@ -5,18 +5,19 @@ import {NotFoundPage} from "./NotFoundPage"
 import {BelowHeaderImage} from "./BelowHeaderImage"
 import {works} from "./InfoList"
 import {ImageSlider} from "./ImageSlider";
+import {urlCreation} from "./OurProjects.js"
 
 const SelectedProject = () => {
 
-	const params = useParams()
- 	const url = params.url
-	console.log(params,params.url,url)
- 	const include = works.filter(item => item.url === url)
+    const params = useParams()
+    const url = params.url
+    
+ 	const include = works.filter(item => urlCreation(item.model) === url)
 
  	if (include.length) {
  		return (
 			works.map(item => {
-	    		if (url === item.url) {
+	    		if (url === urlCreation(item.model)) {
 	    			return(
 	    				<div className="homeCont">
 							<BelowHeaderImage

@@ -5,6 +5,10 @@ import {useEffect, useState} from "react";
 import {Link} from 'react-router-dom'
 import {ourProjectsHedlines, works} from "./InfoList"
 
+export const urlCreation = (model) => {
+        return model.replaceAll(" ","_")
+    }
+
 const OurProjects = () =>{
 
     const [filter, setFilter] = useState(works)
@@ -56,7 +60,7 @@ const OurProjects = () =>{
             <div className="placementOfBlockCentered">
                 <div className="placementOfBlock">
                     {filter.map(elm => (
-                        <Link className="linkBlocks" to={"/works/" + elm.url}>
+                        <Link className="linkBlocks" to={"/works/" + urlCreation(`${elm.model}`)}>
                             <div className={`blocksSize ${style}`} id={elm.selector}>
                                 <span className="blockText">{elm.model}</span>
                                 <span className="blockText">{elm.type}</span>
