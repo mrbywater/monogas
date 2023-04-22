@@ -2,23 +2,8 @@ import "./Content.scss"
 import "./OurProjects.scss"
 import {BelowHeaderImage} from "./BelowHeaderImage";
 import {useEffect, useState} from "react";
-import {works} from "./SelectedProject.js";
 import {Link} from 'react-router-dom'
-
- const headlines = [
-    {
-        headline : "Всі роботи",
-        selector : 0,
-    },
-    {
-        headline : "Монтаж",
-        selector : 1,
-    },
-    {
-        headline : "Сервіс",
-        selector : 2,
-    }
-]
+import {ourProjectsHedlines, works} from "./InfoList"
 
 const OurProjects = () =>{
 
@@ -62,7 +47,7 @@ const OurProjects = () =>{
                 headline = "Наші роботи"
             />
             <div className="flexCenteredBlock headlineCont">
-                {headlines.map((elm, i )=> (
+                {ourProjectsHedlines.map((elm, i )=> (
                     <div className={`categories `} id={elm.selector} onClick={categorieSwitcher(elm, i)}>
                         <span className={`textHoverAnimation ${i === active ? 'active' : ''}`}>{elm.headline}</span>
                     </div>

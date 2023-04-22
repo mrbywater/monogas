@@ -2,33 +2,7 @@ import "./Content.scss"
 import {useParams} from "react-router";
 import {NotFoundPage} from "./NotFoundPage"
 import {BelowHeaderImage} from "./BelowHeaderImage"
-
-export const works = [
-    {
-        title : "Монтаж 1",
-        img : require("../Images/car.jpg"),
-        url : "work_installation_1",
-        selector : 1
-    },
-    {
-        title : "Сервіс 1",
-        img : require("../Images/car.jpg"),
-        url : "work_service_1",
-        selector : 2
-    },
-    {
-        title : "Монтаж 2",
-        img : require("../Images/car.jpg"),
-        url : "work_installation_2",
-        selector : 1
-    },
-    {
-        title : "Сервіс 2",
-        img : require("../Images/car.jpg"),
-        url : "work_service_2",
-        selector : 2
-    }
-]
+import {works} from "./InfoList"
 
 const SelectedProject = () => {
 
