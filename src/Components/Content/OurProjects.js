@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {ourProjectsHedlines, works} from "./InfoList"
 
 export const urlCreation = (model) => {
-        return model.replaceAll(" ","_")
+        return model.replaceAll(" ","_").toLowerCase()
     }
 
 const OurProjects = () =>{
@@ -14,18 +14,18 @@ const OurProjects = () =>{
     const [filter, setFilter] = useState(works)
     const [checker, setChecker] = useState(false)
     const [style, setStyle] = useState("")
-    const [prevSelector, setPrevSelector] = useState(0)
+    const [prevSelector, setPrevSelector] = useState("Всі роботи")
     const [active, setActive] = useState(0);
 
     const categorieSwitcher = (elm, i) => () => {
 
         setStyle("")
         setActive(i)
-        const result = works.filter(word => word.selector === elm.selector);
+        const result = works.filter(word => word.type === elm.headline);
         
-        if (elm.selector !== prevSelector) {
+        if (elm.headline !== prevSelector) {
             setChecker(true)
-                if (elm.selector === 0){    
+                if (elm.headline !== "Сервіс" && elm.headline !== "Монтаж"){    
                     setFilter(works)
                 } else {
                     setFilter(result)
@@ -34,7 +34,7 @@ const OurProjects = () =>{
                 setChecker(false)
             }
         
-        setPrevSelector(elm.selector)
+        setPrevSelector(elm.headline)
     }
 
     useEffect(() => {

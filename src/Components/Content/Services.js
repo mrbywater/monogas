@@ -9,19 +9,23 @@ import {servicesInfoInstallation, tableText} from "./InfoList"
 
 const Services = () =>{
 
-    const tableHandler = (category, fStyle, SStyle) => {
+    const tableHandler = (category, style) => {
         return (
             category.map((item,i) => {
                 if (i % 2 === 1) {
                     return (
-                        <div className={fStyle}>
-                            {item}
+                        <div className="elementCont">
+                            <div className="title text">{item.title}</div>
+                            <div className="time value">{item.time}</div>
+                            <div className="cost value">{item.cost}</div>
                         </div>
                     )
                 } else {
                     return (
-                        <div className={SStyle}>
-                            {item}
+                        <div className="elementCont">
+                            <div className={`title text ${style}`}>{item.title}</div>
+                            <div className={`time value ${style}`}>{item.time}</div>
+                            <div className={`cost value ${style}`}>{item.cost}</div>
                         </div>
                     )
                 }
@@ -59,18 +63,12 @@ const Services = () =>{
                 <h1 className="headerFontSize">Сервіс ГБО</h1>
             </div>
             <div className="tableCont">
-                <div className="title">
-                    <div className="headlineText">Найменування робіт</div>
-                    {tableHandler(tableText[0].title, "text", "text backgroundTableRow")}
+                <div className="elementCont">
+                                <div className="title headlineText">Найменування робіт</div>
+                                <div className="time headlineText">Час виконання</div>
+                                <div className="cost headlineText">Вартість, грн</div>
                 </div>
-                <div className="time">
-                    <div className="headlineText">Час виконання</div>
-                    {tableHandler(tableText[0].time, "value", "value backgroundTableRow")}
-                </div>
-                <div className="cost">
-                    <div className="headlineText">Вартість, грн</div>
-                    {tableHandler(tableText[0].cost, "value", "value backgroundTableRow")}
-                </div>
+                {tableHandler(tableText, "backgroundTableRow")}
             </div>
         </div>
     )
