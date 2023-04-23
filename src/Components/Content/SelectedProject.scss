@@ -1,6 +1,5 @@
 @import '../../App';
 
-
 .containerStyles {
   width: 50%;
   height: 600px;
@@ -14,7 +13,7 @@
   flex-direction: column;
   width: 90%;
   color: $text-color-body;
-  font-size: 1.5em;
+  @include adaptiv-font(24,17);
   line-height: 1.5em;
 }
 
@@ -28,7 +27,7 @@
   flex-direction: column;
   width: 90%;
   color: $text-color-body;
-  font-size: 1.5em;
+  @include adaptiv-font(24,18);
   line-height: 1.5em;
 }
 
@@ -40,4 +39,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .containerStyles {
+    width: 80%;
+    height: 300px;
+  }
+
+  .avtoInfoCont {
+    margin-top: 80px;
+  }
+
+  .infoCont {
+    margin-top: 80px;
+  }
+
 }

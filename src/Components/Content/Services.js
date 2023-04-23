@@ -65,8 +65,8 @@ const Services = () =>{
             <div className="tableCont">
                 <div className="elementCont">
                                 <div className="title headlineText">Найменування робіт</div>
-                                <div className="time headlineText">Час виконання</div>
-                                <div className="cost headlineText">Вартість, грн</div>
+                                <div className="time headlineText">Час</div>
+                                <div className="cost headlineText">Ціна, грн</div>
                 </div>
                 {tableHandler(tableText, "backgroundTableRow")}
             </div>

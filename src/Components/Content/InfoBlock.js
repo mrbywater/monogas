@@ -35,16 +35,16 @@ const InfoBlock = (props) => {
                             </Link > 
                         )}
                     </div>
-                    <div className="infoBlocks" data-aos="fade-left">
-                        <img src={img} className="imgSizeForBlocks"/>   
+                    <div className="infoBlocks">
+                        <img src={img} className="imgSizeForBlocks" data-aos="fade-left"/>
                     </div>
                 </div>
             )
         }else {
             return (
-                <div className="infoBlocksCont" id={path}>
-                    <div className="infoBlocks" data-aos="fade-right">
-                        <img src={img} className="imgSizeForBlocks" />
+                <div className="infoBlocksCont infoBlocksContProperReverse" id={path}>
+                    <div className="infoBlocks">
+                        <img src={img} className="imgSizeForBlocks" data-aos="fade-right"/>
                     </div>
                     <div className="infoBlocks">
                         <span className="headline">{headline}</span>

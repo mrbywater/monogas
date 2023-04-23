@@ -16,7 +16,7 @@ $imgBlocksHeight:20em;
   display: flex;
   flex-direction: column;
   width: 42%;
-  font-size: 1.5em;
+  @include adaptiv-font(24,17);
   color: $text-color-body;
   position: relative;
   overflow: hidden;
@@ -45,4 +45,34 @@ $imgBlocksHeight:20em;
   color: $text-color-body;
   opacity: 0.3;
   width: 7em;
+}
+
+@media only screen and (max-width: 768px) {
+  .infoBlocksCont {
+    padding-top: 80px;
+    flex-direction: column-reverse;
+  }
+
+  .infoBlocksContProperReverse {
+    flex-direction: column;
+  }
+
+  .infoBlocks {
+    width: 80%;
+    margin-left: 10%;
+    min-height: 300px;
+  }
+
+  .infoBlocks img{
+    height: 300px;
+  }
+
+  .headline {
+    margin-top: 50px;
+  }
+
+  .imgSizeForBlocks {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

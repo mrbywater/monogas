@@ -28,7 +28,7 @@ const SelectedProject = () => {
 							</div>
 							<div className="separator"/>
 							<div className="avtoInfoCont">
-								<h1>Дані по автомобілю:</h1>
+								<h2>Дані по автомобілю:</h2>
 								<span><b>Марка:</b> {item.avtoInfo[0]}</span>
 								<span><b>Модель:</b> {item.avtoInfo[1]}</span>
 								<span><b>Рік випуску:</b> {item.avtoInfo[2]}</span>

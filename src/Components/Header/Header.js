@@ -5,12 +5,23 @@ import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
 import {faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {useEffect, useState} from "react"
+import { slide as Menu } from 'react-burger-menu'
 
 const Header = () =>{
 
     let darkMode = localStorage.getItem('darkMode');
 
     const [changeTheme, setChangeTheme] = useState(faMoon)
+    const [menuOpen,setMenuOpen] = useState(false)
+
+    const  handleStateChange = (state) => {
+        setMenuOpen(state.isOpen)
+    }
+
+    const closeMenu = () =>{
+        setMenuOpen(false)
+    }
+
 
     const changePageTheme = () => {
 
@@ -45,9 +56,30 @@ const Header = () =>{
 
     return (
         <div className="headerCont">
-            <Link to="/">
-                <img src={Logo} className="logo" alt=""/>
-            </Link>    
+            <Menu
+                isOpen = {menuOpen}
+                onStateChange ={(state) => handleStateChange(state)}
+            >
+                <div className="sideBarHeader">
+                    <a href="https://forms.gle/YQdJPVQ7meeYaxRC6" className="requestButtonInHeader">Заявка</a>
+                    <a href="https://www.instagram.com/monogasauto/">
+                        <FontAwesomeIcon icon={faInstagram} className="themeIcon"/>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=100069663001399&is_tour_dismissed=true">
+                        <FontAwesomeIcon icon={faFacebook} className="themeIcon"/>
+                    </a>
+                </div>
+                <Link to="/" className='links' onClick={() => closeMenu()}>Головна</Link>
+                <Link to="/services" className='links' onClick={() => closeMenu()}>Послуги</Link>
+                <Link to="/works" className='links' onClick={() => closeMenu()}>Наші роботи</Link>
+                <Link to="/about-us" className='links' onClick={() => closeMenu()}>Про нас</Link>
+                <a href="#contacts" className='links' onClick={() => closeMenu()}>Контакти</a>
+            </Menu>
+            <div className="logoCont">
+                <Link to="/">
+                    <img src={Logo} className="logo" alt=""/>
+                </Link>
+            </div>
             <div className="contextMenu">
                 <Link to="/" className='links'>Головна</Link>
                 <Link to="/services" className='links'>Послуги</Link>
@@ -61,14 +93,12 @@ const Header = () =>{
                 <a href="https://www.facebook.com/profile.php?id=100069663001399&is_tour_dismissed=true">
                     <FontAwesomeIcon icon={faFacebook} className="themeIcon"/>
                 </a>
-                <div id="dark-mode-toggle">
-                  <FontAwesomeIcon icon={changeTheme} className="themeIcon" onClick={changePageTheme}/>
-                </div>
+            </div>
+            <div id="dark-mode-toggle" className="themeToggle">
+                <FontAwesomeIcon icon={changeTheme} className="themeIcon" onClick={changePageTheme}/>
             </div>
         </div>
-
     )
-
 }
 
 export {Header}

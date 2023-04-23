@@ -54,3 +54,17 @@
   font-size: 20px;
   color: $dots-color;
 }
+
+@media only screen and (max-width: 768px) {
+
+  .rightArrowStyles {
+    right: 0;
+    color: $secondary-color-blue;
+  }
+
+  .leftArrowStyles {
+    left: 0;
+    color: $secondary-color-blue;
+  }
+
+}

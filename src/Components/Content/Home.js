@@ -12,10 +12,10 @@ const Home = () =>{
         <div className="homeCont" id="top">
             <ArrowUp/>
             <div className="launchCont">
-                    <h1>Установка та обслуговування ГБО в Одесі</h1>
-                    <h2>Monogas | Моногас</h2>
-                    <h4>Ремонт й технічне обслуговування ГБО</h4>
-                    <RequestButton/>
+                <h1>Установка та обслуговування ГБО в Одесі</h1>
+                <h1>Monogas | Моногас</h1>
+                <h2>Ремонт й технічне обслуговування ГБО</h2>
+                <RequestButton/>
             </div>
             <div className="flexCenteredBlock">
                 <div className="servicesText">

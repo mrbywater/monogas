@@ -6,20 +6,21 @@ $imgBlocksHeight:550px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @include adaptiv-font(30,11);
   background: url("../Images/background_2.png");
   background-size: cover;
-  height: 25em;
+  min-height: 25em;
   color: $text-color-header;
   text-shadow: 1px 1px 2px $text-shadow, 0 0 1em $text-shadow, 0 0 0.2em $text-shadow;
-  font-size: 30px;
   user-select: none;
+  text-align: center;
 }
 
 .servicesText {
   display: flex;
   align-items: center;
   flex-direction: column;
-  font-size: 30px;
+  @include adaptiv-font(30,11);
   color: $text-color-body;
 }
 
@@ -48,7 +49,9 @@ $imgBlocksHeight:550px;
   color: $text-color-body;
   margin-top: 100px;
   text-decoration: none;
+  text-align: center;
 }
+
 .servicesButton:hover{
   color: #fff;
 }
@@ -70,5 +73,15 @@ $imgBlocksHeight:550px;
 }
 .servicesButton:hover::before{
   transform: scaleY(1);
+}
+
+@media only screen and (max-width: 768px) {
+
+  .servicesButton {
+    width: 70%;
+    margin-top: 50px;
+    height: 140px;
+  }
+
 }
 

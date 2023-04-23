@@ -52,7 +52,7 @@ const OurProjects = () =>{
             />
             <div className="flexCenteredBlock headlineCont">
                 {ourProjectsHedlines.map((elm, i )=> (
-                    <div className={`categories `} id={elm.selector} onClick={categorieSwitcher(elm, i)}>
+                    <div className="categories" id={elm.selector} onClick={categorieSwitcher(elm, i)}>
                         <span className={`textHoverAnimation ${i === active ? 'active' : ''}`}>{elm.headline}</span>
                     </div>
                 ))}
