@@ -2,12 +2,14 @@
 
 .headlineCont {
   flex-direction: row;
+  user-select: none;
 }
 
 .placementOfBlockCentered {
   display: flex;
   align-items: center;
   justify-content: center;
+  user-select: none;
 }
 
 .categories {

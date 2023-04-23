@@ -42,7 +42,7 @@ const SelectedProject = () => {
 								{item.text.map(elm => (
 									<span>{elm}</span>
 								))}
-								<span><b>Вартість {item.model}: {item.cost}</b></span>
+								<span><b>Вартість роботи над {item.model}: {item.cost}</b></span>
 							</div>
 						</div>
 					)
