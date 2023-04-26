@@ -72,6 +72,7 @@ const Header = () =>{
                 <Link to="/" className='links' onClick={() => closeMenu()}>Головна</Link>
                 <Link to="/services" className='links' onClick={() => closeMenu()}>Послуги</Link>
                 <Link to="/works" className='links' onClick={() => closeMenu()}>Наші роботи</Link>
+                <Link to="/shop" className='links' onClick={() => closeMenu()}>Магазин</Link>
                 <Link to="/about-us" className='links' onClick={() => closeMenu()}>Про нас</Link>
                 <a href="#contacts" className='links' onClick={() => closeMenu()}>Контакти</a>
             </Menu>
@@ -84,6 +85,7 @@ const Header = () =>{
                 <Link to="/" className='links'>Головна</Link>
                 <Link to="/services" className='links'>Послуги</Link>
                 <Link to="/works" className='links'>Наші роботи</Link>
+                <Link to="/shop" className='links'>Магазин</Link>
                 <Link to="/about-us" className='links'>Про нас</Link>
                 <a href="#contacts" className='links'>Контакти</a>
                 <a href="https://forms.gle/YQdJPVQ7meeYaxRC6" className="requestButtonInHeader">Заявка</a>
