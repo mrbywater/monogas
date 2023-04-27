@@ -1,10 +1,11 @@
 import "./Content.scss"
 import "./Shop.scss"
 import {BelowHeaderImage} from "./BelowHeaderImage";
-import {faMagnifyingGlass,faAngleDown} from "@fortawesome/free-solid-svg-icons";
+import {faMagnifyingGlass, faAngleDown, faCartShopping} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {useState} from "react";
-import {shopFilter} from "./InfoList"
+import {shopFilter, shopItems} from "./InfoList"
+import {MultiRangeSlider} from "./MultiRangeSlider";
+import {ShoppingCart} from "./ShoppingCart";
 
 const Shop = () => {
 
@@ -35,6 +36,7 @@ const Shop = () => {
 			<BelowHeaderImage
 				headline = "Магазин"
 			/>
+			<ShoppingCart/>
 			<div className="shopCont">
 				<div className="searchCont">
 					<div className="inputCont">
@@ -44,32 +46,47 @@ const Shop = () => {
 				</div>
 				<div className="belowSearchCont">
 					<div className="filterCont">
-					{shopFilter.map((elem, i) => {
-						return (
-							<div className="dropdown">
-								<button className="dropbtn" onClick={dropDownShow(elem.headline, i)}>
-									{elem.headline}
-									<FontAwesomeIcon icon={faAngleDown} className="dropDownArrow" id={i}/>
-								</button>
-								<div className="dropdownContent" id={elem.headline}>
-									{elem.items.map(text => {
-										return (
-											<a href="#">{text}</a>
-										)
-									})}
+						<MultiRangeSlider
+							min={0}
+							onChange={({ min, max }) => console.log(`min = ${min}, max = ${max}`)}
+							max={15000}
+						/>
+						{shopFilter.map((elem, i) => {
+							return (
+								<div className="dropdown">
+									<button className="dropbtn" onClick={dropDownShow(elem.headline, i)}>
+										{elem.headline}
+										<FontAwesomeIcon icon={faAngleDown} className="dropDownArrow" id={i}/>
+									</button>
+									<div className="dropdownContent" id={elem.headline}>
+										{elem.items.map(text => {
+											return (
+												<div>
+													<input type="checkbox"/>
+													<span className="checkboxText">{text}</span>
+												</div>
+											)
+										})}
+									</div>
 								</div>
-							</div>
-						)
-					})}
-						<div>
-
-						</div>
-						<div>
-
-						</div>
+							)
+						})}
 					</div>
 					<div className="shopItemsCont">
-
+						{shopItems.map(elm =>(
+							<div className="specificItemCont">
+								<div className="specificItem">
+									<div className="widthCont">
+										<img src={elm.img}/>
+										<span>{elm.headline}</span>
+										<div className="itemPriceCont">
+											<span>{elm.price}₴</span>
+											<FontAwesomeIcon icon={faCartShopping} />
+										</div>
+									</div>
+								</div>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>

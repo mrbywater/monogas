@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/MultiRangeSlider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/MultiRangeSlider.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ArrowUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ArrowUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.scss" afterDir="false" />
     </list>
@@ -89,6 +95,7 @@
       <workItem from="1682521355660" duration="2510000" />
       <workItem from="1682577806677" duration="7913000" />
       <workItem from="1682592152434" duration="1401000" />
+      <workItem from="1682605434769" duration="6734000" />
     </task>
     <servers />
   </component>

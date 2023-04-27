@@ -5,16 +5,13 @@ import "./ArrowUp.scss"
 
 const ArrowUp = () => {
 
-    const [arrowUp, setArrowUp] = useState(false)
     const [arrowAnimation, setArrowAnimation] = useState('')
 
     useEffect(() =>{
         window.addEventListener("scroll", () =>{
             if (window.scrollY > 400) {
-                setArrowUp(true);
                 setArrowAnimation("arrowUpVisible")
             } else {
-                setArrowUp(false);
                 setArrowAnimation("arrowUpHidden")
             }
         })
