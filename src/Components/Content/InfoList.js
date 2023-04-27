@@ -570,3 +570,22 @@ export const tableText = [
     }
 
 ]
+
+export const shopFilter = [
+        {
+            headline : "test1",
+            items : [
+                "1",
+                "2",
+                "3"
+            ]
+        },
+        {
+            headline : "test3",
+            items : [
+                "4",
+                "5",
+                "6"
+            ]
+        }
+    ]
