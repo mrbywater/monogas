@@ -2,7 +2,7 @@ import "./MultiRangeSlider.scss"
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 
-const MultiRangeSlider = ({ min, max, onChange }) => {
+const MultiRangeSlider = ({ min, max}) => {
     const [minVal, setMinVal] = useState(min);
     const [maxVal, setMaxVal] = useState(max);
     const minValRef = useRef(min);
@@ -36,40 +36,36 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
         }
     }, [maxVal, getPercent]);
 
-    // Get min and max values when their state changes
-    useEffect(() => {
-        onChange({ min: minVal, max: maxVal });
-    }, [minVal, maxVal, onChange]);
+    console.log(Number.parseInt(minVal))
 
     return (
         <div className="container">
-            <span className="header">Ціна </span>
+            <span className="header">Ціна</span>
             <input
                 type="range"
                 min={min}
                 max={max}
-                value={minVal}
+                value={minVal < min ? setMinVal(0) : minVal}
                 onChange={(event) => {
                     const value = Math.min(Number(event.target.value), maxVal - 1);
                     setMinVal(value);
                     minValRef.current = value;
                 }}
-                className="thumb thumb--left"
+                className= {Number.parseInt(minVal) ? "thumb thumb--left" : "thumb thumb--left start"}
                 style={{ zIndex: minVal > max - 100 && "5" }}
             />
             <input
                 type="range"
                 min={min}
                 max={max}
-                value={maxVal}
+                value={(maxVal > max ? setMaxVal(max) : maxVal) && (maxVal < min ? setMaxVal(min): maxVal)}
                 onChange={(event) => {
                     const value = Math.max(Number(event.target.value), minVal + 1);
                     setMaxVal(value);
                     maxValRef.current = value;
                 }}
-                className="thumb thumb--right"
+                className= {Number.parseInt(maxVal) ? "thumb thumb--right" : "thumb thumb--right end"}
             />
-
             <div className="slider">
                 <div className="slider__left-value">
                     <input
@@ -107,7 +103,6 @@ const MultiRangeSlider = ({ min, max, onChange }) => {
 MultiRangeSlider.propTypes = {
     min: PropTypes.number.isRequired,
     max: PropTypes.number.isRequired,
-    onChange: PropTypes.func.isRequired
 };
 
 export {MultiRangeSlider};

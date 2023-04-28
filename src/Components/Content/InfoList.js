@@ -573,19 +573,30 @@ export const tableText = [
 
 export const shopFilter = [
     {
-        headline : "test1",
-        items : [
-            "1",
-            "2",
-            "3"
+        headline : "Бренд",
+        brands : [
+            "Hana",
+            "Tomasetto",
+            "Torelli",
+            "Alex",
+            "Atiker",
+            "Digitronic",
+            "KME",
+            "LPGTECH",
         ]
     },
     {
-        headline : "test3",
+        headline : "Новий - б/в ",
         items : [
-            "4",
-            "5",
-            "6"
+            "Новий",
+            "Б/в"
+        ]
+    },
+    {
+        headline : "Статус товару",
+        items : [
+            "Є в наявності",
+            "Нема в наявності"
         ]
     }
 ]

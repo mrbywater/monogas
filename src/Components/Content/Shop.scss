@@ -37,6 +37,15 @@
   color: $primary-color;
 }
 
+.brandSearch {
+  width: 80%;
+  margin: 0 0 10px 5px;
+  height: 30px;
+  font-size: 16px;
+  border: 2px solid $primary-color;
+  border-radius: 7px;
+}
+
 .belowSearchCont {
   display: flex;
   height: 100%;
@@ -48,6 +57,7 @@
   flex-direction: column;
   border: 1px solid black;
   border-radius: 7px;
+  max-height: 1000px;
 }
 
 .shopItemsCont {
@@ -119,16 +129,16 @@
 }
 
 .dropdownContent {
-  display: none;
   width: 100%;
   z-index: 1;
   margin-bottom: 5px;
+  padding-left: 5px;
 }
 
 .dropdownContent span {
   color: black;
   padding-left: 8px;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .dropDownArrow {
@@ -138,7 +148,7 @@
 }
 
 .onClickDropDownContent {
-  display: block;
+  display: none;
 }
 
 .dropdownContent {
