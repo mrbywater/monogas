@@ -35,11 +35,13 @@ const Shop = () => {
 		})
 	}
 
-
-
 	const mainSearchFiltered = shopItems.filter(item => {
 		return item.headline.toLowerCase().includes(mainSearchInput.toLowerCase())
 	})
+
+	const price = shopItems.map(elm => elm.price)
+	let maxPrice = Math.max(...price)
+	let minPrice = Math.min(...price)
 
 	const brandsSearchFiltered = shopFilter[0].brands.filter(item => {
 		return item.toLowerCase().includes(brandSearchInput.toLowerCase())
@@ -65,8 +67,8 @@ const Shop = () => {
 				<div className="belowSearchCont">
 					<div className="filterCont">
 						<MultiRangeSlider
-							min={0}
-							max={15000}
+							min={minPrice}
+							max={maxPrice}
 						/>
 						{shopFilter.map((elem, i) => {
 							return (

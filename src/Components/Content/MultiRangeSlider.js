@@ -17,12 +17,12 @@ const MultiRangeSlider = ({ min, max}) => {
 
     // Set width of the range to decrease from the left side
     useEffect(() => {
-        const minPercent = getPercent(minVal);
+        let minPercent = minVal < min ? getPercent(min) : getPercent(minVal);
         const maxPercent = getPercent(maxValRef.current);
 
         if (range.current) {
             range.current.style.left = `${minPercent}%`;
-            range.current.style.width = `${maxPercent - minPercent}%`;
+            range.current.style.width = (`${maxPercent - minPercent}%`);
         }
     }, [minVal, getPercent]);
 
@@ -36,8 +36,6 @@ const MultiRangeSlider = ({ min, max}) => {
         }
     }, [maxVal, getPercent]);
 
-    console.log(Number.parseInt(minVal))
-
     return (
         <div className="container">
             <span className="header">Ціна</span>
@@ -45,48 +43,50 @@ const MultiRangeSlider = ({ min, max}) => {
                 type="range"
                 min={min}
                 max={max}
-                value={minVal < min ? setMinVal(0) : minVal}
+                value={minVal === "" ? min : minVal}
                 onChange={(event) => {
                     const value = Math.min(Number(event.target.value), maxVal - 1);
                     setMinVal(value);
                     minValRef.current = value;
                 }}
-                className= {Number.parseInt(minVal) ? "thumb thumb--left" : "thumb thumb--left start"}
+                className= "thumb thumb--left"
                 style={{ zIndex: minVal > max - 100 && "5" }}
             />
             <input
                 type="range"
                 min={min}
                 max={max}
-                value={(maxVal > max ? setMaxVal(max) : maxVal) && (maxVal < min ? setMaxVal(min): maxVal)}
+                value={maxVal === "" ? max : maxVal}
                 onChange={(event) => {
                     const value = Math.max(Number(event.target.value), minVal + 1);
                     setMaxVal(value);
                     maxValRef.current = value;
                 }}
-                className= {Number.parseInt(maxVal) ? "thumb thumb--right" : "thumb thumb--right end"}
+                className= "thumb thumb--right"
             />
             <div className="slider">
                 <div className="slider__left-value">
                     <input
-                        value={minVal}
+                        value={minVal > max ? setMinVal(max-1) : minVal}
                         min={min}
                         max={max}
                         style={{ width: "40px", height: "25px"}}
                         onChange={(e) => {
-                            setMinVal(e.target.value);
+                            const result = e.target.value.replace(/\D/g, '');
+                            setMinVal(result);
                         }}
                     />
                 </div>
                 <span className="betweenSlider">-</span>
                 <div className="slider__right-value">
                     <input
-                        value={maxVal}
+                        value={maxVal > max ? setMaxVal(max): maxVal}
                         min={min - 1}
                         max={max}
                         style={{ width: "40px", height: "25px"}}
                         onChange={(e) => {
-                            setMaxVal(e.target.value);
+                            const result = e.target.value.replace(/\D/g, '');
+                            setMaxVal(result);
                         }}
                     />
                 </div>
