@@ -1,13 +1,23 @@
 import "./MultiRangeSlider.scss"
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
+import {shopItems} from "./InfoList";
 
-const MultiRangeSlider = ({ min, max}) => {
+const MultiRangeSlider = ({ min, max,setPrice}) => {
+
     const [minVal, setMinVal] = useState(min);
     const [maxVal, setMaxVal] = useState(max);
+
     const minValRef = useRef(min);
     const maxValRef = useRef(max);
     const range = useRef(null);
+
+    const buttonOk = () => {
+        setPrice(shopItems.filter(elm => {
+            return elm.price >= Number(minVal) && elm.price <= Number(maxVal)
+        }))
+    }
+
 
     // Convert to percentage
     const getPercent = useCallback(
@@ -90,7 +100,7 @@ const MultiRangeSlider = ({ min, max}) => {
                         }}
                     />
                 </div>
-                <button className="okButton">
+                <button className="okButton" onClick={buttonOk}>
                     OK
                 </button>
                 <div className="slider__track" />

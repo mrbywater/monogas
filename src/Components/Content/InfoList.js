@@ -577,12 +577,14 @@ export const shopFilter = [
         brands : [
             "Hana",
             "Tomasetto",
-            "Torelli",
+            "Zenit",
             "Alex",
             "Atiker",
             "Digitronic",
             "KME",
             "LPGTECH",
+            "Parts Master",
+            "Stag"
         ]
     },
     {
@@ -603,34 +605,52 @@ export const shopFilter = [
 
 export const shopItems = [
     {
-       img : require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-       headline : "Ремкомплект редуктора Tomasetto AT-07 повний",
-       price : "391"
+        img : require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+        headline : "Ремкомплект редуктора Tomasetto AT-07 повний",
+        price : "391",
+        brand : "Tomasetto",
+        condition : "Новий",
+        amount : 1
     },
     {
         img : require("../Images/ShopItemImages/forsunka_hana.webp"),
         headline : "Форсунка Hana 2001 Rail, Type B",
-        price : "575"
+        price : "575",
+        brand : "Hana",
+        condition : "Новий",
+        amount : 0
     },
     {
         img : require("../Images/ShopItemImages/reductor_tomas.webp"),
         headline : "Редуктор Tomasetto AT09 Nordic",
-        price : "1376"
+        price : "1376",
+        brand : "Tomasetto",
+        condition : "Б/в",
+        amount : 5
     },
     {
         img : require("../Images/ShopItemImages/datchik_stag.webp"),
         headline : "Датчик тиску Stag PS-04 plus",
-        price : "298"
+        price : "298",
+        brand : "Stag",
+        condition : "Новий",
+        amount : 1
     },
     {
         img : require("../Images/ShopItemImages/datchik_stag.webp"),
         headline : "Датчик тиску та вакууму MAP Sensor Zenit",
-        price : "1210"
+        price : "1210",
+        brand : "Zenit",
+        condition : "Б/в",
+        amount : 1
     },
     {
         img : require("../Images/ShopItemImages/zaslonka_master.webp"),
         headline : "Дросельна заслінка Parts Master",
-        price : "3399"
+        price : "3399",
+        brand : "Parts Master",
+        condition : "Новий",
+        amount : 1
     },
 
 ]
