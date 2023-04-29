@@ -43,7 +43,7 @@
 }
 
 .active {
-  border-top: 2px solid $text-color-body;
+  box-shadow: 0 2px 0 $text-color-body inset;
 }
 
 .textHoverAnimation:after {

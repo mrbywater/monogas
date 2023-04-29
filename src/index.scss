@@ -17,6 +17,7 @@ code {
 *{
   font-family: 'Rubik', sans-serif;;
   -webkit-tap-highlight-color: transparent;
+  transition: .15s;
 }
 
 html:focus-within {

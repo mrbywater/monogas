@@ -37,7 +37,7 @@ const SpecificService = () => {
 	        								<span className="textHeadline">
 	        									<b>{item.headline}</b>
 	        								</span>
-	        								<div className="container">
+	        								<div className="containerText">
 												{item.content.map(content => (
 													<span className="textContent">
 														{content}
