@@ -6,7 +6,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {shopFilter, shopItems} from "./InfoList"
 import {MultiRangeSlider} from "./MultiRangeSlider";
 import {ShoppingCart} from "./ShoppingCart";
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 
 const Shop = () => {
 
@@ -14,9 +14,15 @@ const Shop = () => {
 	const [brandSearchInput, setBrandSearchInput] = useState('');
 	const [priceFiltered, setPriceFiltered] = useState(shopItems)
 	const [brandChecked, setBrandChecked] = useState([])
+	const [conditionChecked, setConditionChecked] = useState([])
+	const [amountChecked, setAmountChecked] = useState([])
 
 	const ArrowUp = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>'
 	const ArrowDown = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>'
+	const price = shopItems.map(elm => elm.price)
+
+	let maxPrice = Math.max(...price)
+	let minPrice = Math.min(...price)
 
 	const dropDownShow = (id, index) => () => {	
 
@@ -37,29 +43,48 @@ const Shop = () => {
 		})
 	}
 
-	const price = shopItems.map(elm => elm.price)
-	let maxPrice = Math.max(...price)
-	let minPrice = Math.min(...price)
-
 	const brandsSearchFiltered = shopFilter[0].brands.filter(item => {
 		return item.toLowerCase().includes(brandSearchInput.toLowerCase())
 	})
 
-	const handleChange = () => {
+	const handleChangeBrand = () => {
 		setBrandChecked(Array.from(document.querySelectorAll("input[name='brand']:checked")).map((elem) => elem.value))
 	}
+
+	const handleChangeCondition = () => {
+		setConditionChecked(Array.from(document.querySelectorAll("input[name='Новий']:checked, input[name='Б/в']:checked")).map((elem) => elem.value))
+		setAmountChecked(Array.from(document.querySelectorAll("input[name='Є в наявності']:checked, input[name='Нема в наявності']:checked")).map((elem) => elem.value))
+	}
+
+	console.log(conditionChecked)
 
 	const brandFiltered = priceFiltered.filter(item => {
 		if (brandChecked.length === 0 ) {
 			return priceFiltered
 		} else {
-			return item.brand.includes(brandChecked)
+			return brandChecked.includes(item.brand)
 		}
 	})
 
-	console.log("Brandcheck",brandChecked,brandFiltered)
+	const conditionFiltered = brandFiltered.filter(item => {
+		if (conditionChecked.length === 0 ) {
+			return brandFiltered
+		} else {
+			return conditionChecked.includes(item.condition)
+		}
+	})
 
-	const mainSearchFiltered = priceFiltered.filter(item => {
+	const amountFiltered = conditionFiltered.filter(item => {
+		if (amountChecked.length === 0 || amountChecked.length === 2) {
+			return conditionFiltered
+		} else {
+			if (amountChecked.includes("Нема в наявності")) {
+				return item.amount === 0
+			} else return item.amount
+		}
+	})
+
+	const mainSearchFiltered = amountFiltered.filter(item => {
 		return item.headline.toLowerCase().includes(mainSearchInput.toLowerCase())
 	})
 
@@ -107,7 +132,7 @@ const Shop = () => {
 											(brandsSearchFiltered.sort().map(text => {
 												return (
 													<div>
-														<input type="checkbox" value={text} name="brand" onChange={handleChange}/>
+														<input type="checkbox" value={text} name="brand" onChange={handleChangeBrand}/>
 														<span>{text}</span>
 													</div>
 												)
@@ -117,7 +142,7 @@ const Shop = () => {
 											(elem.items.map(text => {
 												return (
 													<div>
-														<input type="checkbox" value={text} name={text}/>
+														<input type="checkbox" value={text} name={text} onChange={handleChangeCondition}/>
 														<span>{text}</span>
 													</div>
 												)
