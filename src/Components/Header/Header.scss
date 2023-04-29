@@ -113,6 +113,10 @@
   opacity: 0;
 }
 
+.logoCont {
+  display: flex;
+}
+
 @media only screen and (max-width: 768px) {
   .contextMenu {
     visibility: hidden;
