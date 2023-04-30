@@ -14,6 +14,7 @@ const Shop = () => {
 	const [brandSearchInput, setBrandSearchInput] = useState('');
 	const [priceFiltered, setPriceFiltered] = useState(shopItems)
 	const [brandChecked, setBrandChecked] = useState([])
+	const [checked, setCheked] = useState(false)
 	const [conditionChecked, setConditionChecked] = useState([])
 	const [amountChecked, setAmountChecked] = useState([])
 
@@ -26,7 +27,7 @@ const Shop = () => {
 
 	const dropDownShow = (id, index) => () => {	
 
-		shopFilter.map(item =>{
+		shopFilter.map(item => {
 
 			let elm = document.getElementById(index)
 
@@ -44,8 +45,34 @@ const Shop = () => {
 	}
 
 	const brandsSearchFiltered = shopFilter[0].brands.filter(item => {
-		return item.toLowerCase().includes(brandSearchInput.toLowerCase())
+		if (item.toLowerCase().includes(brandSearchInput.toLowerCase())) {
+			if (brandChecked.length > 0) {
+				console.log('--------------------')
+				if (brandChecked.includes(item)) {
+					console.log("includes",document.getElementById(item))
+					document.getElementById(item).checked = true
+					return item
+				} else {
+					console.log("not includes",document.getElementById(item))
+					document.getElementById(item).checked = false
+					return item
+				}
+			} else {
+				return item
+			}
+		}
 	})
+
+
+	// const brandsChecked = brandsSearchFiltered.map(item => {
+	// 		if (brandsSearchFiltered.length > 0) {
+	// 			if (brandChecked.includes(item)) {
+	// 				return document.getElementById(item).checked = true
+	// 			} else {
+	// 				return document.getElementById(item).checked = false
+	// 			}
+	// 		}
+	// 	})
 
 	const handleChangeBrand = () => {
 		setBrandChecked(Array.from(document.querySelectorAll("input[name='brand']:checked")).map((elem) => elem.value))
@@ -55,8 +82,6 @@ const Shop = () => {
 		setConditionChecked(Array.from(document.querySelectorAll("input[name='Новий']:checked, input[name='Б/в']:checked")).map((elem) => elem.value))
 		setAmountChecked(Array.from(document.querySelectorAll("input[name='Є в наявності']:checked, input[name='Нема в наявності']:checked")).map((elem) => elem.value))
 	}
-
-	console.log(conditionChecked)
 
 	const brandFiltered = priceFiltered.filter(item => {
 		if (brandChecked.length === 0 ) {
@@ -132,7 +157,7 @@ const Shop = () => {
 											(brandsSearchFiltered.sort().map(text => {
 												return (
 													<div>
-														<input type="checkbox" value={text} name="brand" onChange={handleChangeBrand}/>
+														<input type="checkbox" value={text} name="brand" onChange={handleChangeBrand} id={text}/>
 														<span>{text}</span>
 													</div>
 												)

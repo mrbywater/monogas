@@ -87,6 +87,13 @@
   left: 160px;
   border: 1px solid black;
   border-radius: 5px;
+  cursor: pointer;
+  background-color: rgb(0,0,0,0.05);
+  color: rgb(0,0,0,0.8);
+}
+
+.okButton:hover {
+  color: rgb(0,0,0,1);
 }
 
 /* Removing the default appearance */
