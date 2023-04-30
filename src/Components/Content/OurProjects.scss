@@ -1,0 +1,145 @@
+@import "../../App";
+
+.headlineCont {
+  flex-direction: row;
+  user-select: none;
+}
+
+.placementOfBlockCentered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.categories {
+  @include adaptiv-font(40,23);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  cursor: pointer;
+  color: $text-color-body;
+  text-align: center;
+}
+
+.categories:nth-child(2) {
+  margin: 0 5%;
+}
+
+.animation {
+  animation: 1s show ease;
+}
+
+
+@keyframes show {
+  from { 
+    opacity: 0.2;
+    transform: scale(0);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.active {
+  box-shadow: 0 2px 0 $text-color-body inset;
+}
+
+.textHoverAnimation:after {
+  backface-visibility: hidden;
+  border: 1px solid $text-color-body;
+  opacity: 0;
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.textHoverAnimation:hover:after {
+  backface-visibility: hidden;
+  border-color: $text-color-body;
+  transition: width 400ms ease-in-out;
+  width: 100%;
+  opacity: 1;
+}
+
+.linkBlocks {
+  width: 30em;
+  height: 25em;
+  margin-top: 2em;
+  object-fit: cover;
+  text-decoration: none;
+}
+
+.blocksSize {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid $text-color-body;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+  background-color: $hover-color-before;
+  flex-direction: column;
+}
+
+.innerImg {
+  z-index: -1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.placementOfBlock {
+  justify-content: space-around;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 100px;
+}
+
+.blockText {
+  color: $text-color-header;
+  font-size: 1.5em;
+  opacity: 0;
+  transition: 0.5s;
+  text-shadow: 1px 1px 1px #000, 0 0 0.5em #000, 0 0 0.5em #000;
+  padding: 20px 0 20px 0;
+}
+
+.blockText:hover .innerImg {
+  transform: scale(2);
+}
+
+.blocksSize:hover {
+  background-color: $hover-color-after;
+}
+
+.blocksSize:hover .blockText{
+  opacity: 1;
+  transition: 0.5s;
+}
+
+.blocksSize:hover .innerImg{
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .placementOfBlock {
+    margin-top: 80px;
+  }
+
+  .linkBlocks {
+    height: 20em;
+    margin-top: 4em;
+  }
+}

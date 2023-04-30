@@ -1,0 +1,55 @@
+@import '../../App';
+
+.flexCont {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 100px;	
+  width: 90%;
+  margin-left: 5%;
+}
+
+.flexElementCont {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  @include adaptiv-font(24,17);
+  line-height: 1.5em;
+  color: $text-color-body;
+}
+
+.textHeadline {
+  padding-bottom: 20px;
+}
+
+.textContent {
+  padding: 10px 0px 0px 20px;
+}
+
+.containerText {
+  display: flex;
+  flex-direction: column;
+}
+
+.image {
+  padding-top: 100px;
+  min-height: 300px;
+  max-height: 400px;
+}
+
+.imgCont{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .image {
+    max-height: 200px;
+    max-width: 300px;
+  }
+
+}
+

@@ -1,0 +1,204 @@
+@import '../../App';
+@import "../Content/Content";
+
+.headerCont {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  background-color: $primary-color;
+  position: fixed;
+  z-index: 10000;
+  user-select: none;
+}
+
+.contextMenu {
+  display: flex;
+  flex: 1;
+  justify-content: right;
+  align-items: center;
+}
+
+.links {
+  text-decoration: none;
+  color: $text-color-header;
+  margin-right: 20px;
+  font-size: 22px;
+  position: relative;
+}
+
+.themeIcon {
+  font-size: 35px;
+  color: $secondary-color-blue;
+  padding-left: 10px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.logo {
+  padding-left: 40px;
+  height: 80px;
+}
+
+.themeToggle {
+  display: flex;
+  align-items: center;
+  padding-right: 40px;
+}
+
+.links:after{
+  backface-visibility: hidden;
+  border: 1px solid $text-color-header;
+  opacity: 0;
+  bottom: 0px;
+  content: " ";
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  transition: all 280ms ease-in-out;
+  width: 0;
+}
+
+.links:hover:after {
+  backface-visibility: hidden;
+  border-color: $text-color-header;
+  transition: width 400ms ease-in-out;
+  width: 100%;
+  opacity: 1;
+}
+
+.selected {
+  color: black;
+}
+
+.requestButtonInHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: $text-color-header;
+  margin-right: 20px;
+  font-size: 22px;
+  position: relative;
+  border: 1px solid $text-color-header;
+  width: 85px;
+  height: 31px;
+}
+
+.requestButtonInHeader:hover{
+  color: $primary-color;
+}
+.requestButtonInHeader::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $text-color-header;
+  z-index: -1;
+  transition: transform 0.2s;
+  transform-origin: 0 0;
+  transition-timing-function: cubic-bezier(0.5,1.6,0.4,0.7);
+}
+.requestButtonInHeader::before{
+  transform: scaleX(0);
+}
+.requestButtonInHeader:hover::before{
+  transform: scaleX(1);
+}
+
+.bm-burger-button {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.logoCont {
+  display: flex;
+}
+
+@media only screen and (max-width: 768px) {
+  .contextMenu {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+  }
+
+  .sideBarHeader {
+    display: flex !important;
+    padding-bottom: 30px !important;
+  }
+
+  .logo {
+    display: flex;
+    padding: 0;
+    pointer-events: none;
+  }
+
+  .logoCont {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .links:hover:after {
+    opacity: 0;
+  }
+
+  .bm-burger-button {
+    position: fixed;
+    width: 36px;
+    height: 30px;
+    left: 40px;
+    top: 25px;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .bm-burger-bars {
+    background: #373a47;
+  }
+
+  .bm-burger-bars-hover {
+    background: #a90000;
+  }
+
+  .bm-cross-button {
+    height: 24px;
+    width: 24px;
+  }
+
+  .bm-cross {
+    background: #bdc3c7;
+  }
+
+  .bm-menu-wrap {
+    position: fixed;
+    height: 100%;
+  }
+
+  .bm-menu {
+    background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1.15em;
+  }
+
+  .bm-morph-shape {
+    fill: #373a47;
+  }
+
+  .bm-item-list {
+    color: #b8b7ad;
+    padding: 0.8em;
+  }
+
+  .bm-item {
+    padding-bottom: 10px;
+  }
+
+  .bm-overlay {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+

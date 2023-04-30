@@ -1,0 +1,41 @@
+@import "../../App";
+
+.slideStylesCont {
+  width: 60%;
+  margin: 120px 0 0 20%;
+}
+
+.imgSlide {
+  position: absolute;
+  top: 0;
+  width: 100%; 
+  height: 100%;
+}
+
+.slick-slide {
+  position: relative;
+  height: 600px !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: $text-color-body !important;
+}
+
+.slick-dots li button:before {
+  color: $text-color-body !important;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .slick-slide {
+    height: 300px !important;
+  }
+
+  .slideStylesCont {
+    width: 80%;
+    margin: 80px 0 0 10%;
+
+  }
+
+}

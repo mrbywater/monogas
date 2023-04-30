@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ImageSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ImageSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ImageSlider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ImageSlider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/MultiRangeSlider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/MultiRangeSlider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2OHEDp8XJn4z4QbDa7aASrQT21U" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Николай/Documents/GitHub/monogas/src/Components/Images&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Николай\Documents\GitHub\monogas\src\Components\Images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Николай\Documents\GitHub\monogas\src\Components\Images" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="" />
+      <created>1681208990816</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681208990816</updated>
+      <workItem from="1681208991926" duration="710000" />
+      <workItem from="1681210707484" duration="1131000" />
+      <workItem from="1681211937346" duration="17694000" />
+      <workItem from="1681304036384" duration="12762000" />
+      <workItem from="1681398312413" duration="6195000" />
+      <workItem from="1681405402457" duration="18517000" />
+      <workItem from="1681430577043" duration="122000" />
+      <workItem from="1681478694152" duration="6889000" />
+      <workItem from="1681565489857" duration="19415000" />
+      <workItem from="1681646257417" duration="1366000" />
+      <workItem from="1681652005432" duration="724000" />
+      <workItem from="1681752809547" duration="668000" />
+      <workItem from="1681824492845" duration="6549000" />
+      <workItem from="1682028248105" duration="6051000" />
+      <workItem from="1682081444513" duration="15922000" />
+      <workItem from="1682171990652" duration="15597000" />
+      <workItem from="1682251979953" duration="11403000" />
+      <workItem from="1682275060806" duration="12779000" />
+      <workItem from="1682521355660" duration="2510000" />
+      <workItem from="1682577806677" duration="7913000" />
+      <workItem from="1682592152434" duration="1401000" />
+      <workItem from="1682605434769" duration="6942000" />
+      <workItem from="1682689967294" duration="13436000" />
+      <workItem from="1682807743368" duration="548000" />
+      <workItem from="1682853720311" duration="4074000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

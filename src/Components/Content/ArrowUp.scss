@@ -1,0 +1,46 @@
+@import '../../App';
+
+.arrowUp {
+  width: 30px;
+  height: 30px;
+  border: 2px solid $text-color-body;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  border-radius: 100%;
+  position: fixed;
+  right: 0.1em;
+  bottom: 3em;
+  z-index: 1000;
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+  color: $text-color-body;
+}
+
+.arrowUp:hover {
+  background-color: $text-color-body;
+  color: $background-color;
+  transition: .3s ease;
+}
+
+.arrowUpHidden {
+  transition: .5s ease;
+  transform: translateY(0px);
+}
+
+.arrowUpVisible {
+  visibility: visible;
+  opacity: 1;
+  transition: .5s ease;
+  transform: translateY(25px);
+}
+
+@media only screen and (max-width: 1100px) {
+  .arrowUp {
+    visibility: visible;
+    opacity: 0;
+    position: absolute;
+  }
+}

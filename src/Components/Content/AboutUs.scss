@@ -1,0 +1,20 @@
+@import "../../App";
+
+.infoListCont {
+  display: flex;
+  justify-content: left;
+  align-items: start;
+  width: 92%;
+  flex-direction: column;
+  @include adaptiv-font(30,17);
+  color: $text-color-body;
+}
+
+.advItem {
+  display: flex;
+  margin: 25px 0px 0px 30px;
+}
+
+.textDecor {
+  margin-left: 15px;
+}

@@ -1,0 +1,70 @@
+@import '../../App';
+
+.homeCont {
+  width: 100%;
+  min-height: calc(100vh - 640px);
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+}
+
+.separator {
+  margin: 120px 0px 0px 3%;
+  width: 94%;
+  height: 3px;
+  background-color: #b1b0b0;
+  opacity: 0.8;
+}
+
+.flexCenteredBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 120px;
+}
+
+.notFoundPage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height : 100px; 
+  font-size: 4em;
+  color: $text-color-body
+}  
+
+.notFoundPage span {
+  position: absolute;
+  top: 20%;
+}
+
+.belowHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("../Images/background_2_sized.png");
+  background-size: cover;
+  height: 11em;
+  color: $text-color-header;
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
+  @include adaptiv-font(30,15);
+  user-select: none;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .flexCenteredBlock {
+    margin-top: 80px;
+  }
+
+  .homeCont {
+    min-height: calc(100vh - 1000px);
+  }
+
+  .separator {
+    margin-top: 80px;
+  }
+}
