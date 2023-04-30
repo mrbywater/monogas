@@ -7,13 +7,6 @@ import {shopFilter, shopItems} from "./InfoList"
 import {MultiRangeSlider} from "./MultiRangeSlider";
 import {ShoppingCart} from "./ShoppingCart";
 import React, {useState, useEffect} from "react";
-<<<<<<< HEAD
-const initialBrands = shopFilter[0].brands.map((i) => ({
-		title: i,
-		checked: false
-	}));
-=======
->>>>>>> Nick_Kabachenko
 
 // all of the constants that not recalculated on next render has to be moved out of component
 // + it's better to move it to separate `helper.js` file
@@ -32,7 +25,7 @@ const price = shopItems.map(elm => elm.price)
 let maxPrice = Math.max(...price)
 let minPrice = Math.min(...price)
 
-export const Shop = () => {
+const Shop = () => {
 	const [mainSearchInput, setMainSearchInput] = useState('');
 	const [brandSearchInput, setBrandSearchInput] = useState('');
 	const [priceFiltered, setPriceFiltered] = useState(shopItems);
@@ -42,26 +35,7 @@ export const Shop = () => {
 	const [amountChecked, setAmountChecked] = useState([]);
 	const [brandsChecked, setBrandsChecked] = useState(checkedInitial);
 
-<<<<<<< HEAD
-	const [testBrands, setTestBrands] = useState(initialBrands);
-	const [test, setTest] = useState([]);
-	const [stateValue, setStateValue] = useState(false);
-
-	const ArrowUp = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>'
-	const ArrowDown = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>'
-	const price = shopItems.map(elm => elm.price)
-
-	let maxPrice = Math.max(...price)
-	let minPrice = Math.min(...price)
-	useEffect(()=>{
-		console.log('test', test)
-	}, [test]);
-	const dropDownShow = (id, index) => () => {	
-=======
-
-
 	const dropDownShow = (id, index) => () => {
->>>>>>> Nick_Kabachenko
 
 		shopFilter.map(item => {
 
@@ -83,25 +57,6 @@ export const Shop = () => {
 	// few comments despite that we're not using this value anymore
 	// huge calculations better to put into useMemo hooks with corresponding dependencies
 	const brandsSearchFiltered = shopFilter[0].brands.filter(item => {
-<<<<<<< HEAD
-		return item.toLowerCase().includes(brandSearchInput.toLowerCase());
-		// if (item.toLowerCase().includes(brandSearchInput.toLowerCase())) {
-		// 	if (brandChecked.length > 0) {
-		// 		console.log('--------------------')
-		// 		if (brandChecked.includes(item)) {
-		// 			console.log("includes",document.getElementById(item))
-		// 			document.getElementById(item).checked = true
-		// 			return item
-		// 		} else {
-		// 			console.log("not includes",document.getElementById(item))
-		// 			document.getElementById(item).checked = false
-		// 			return item
-		// 		}
-		// 	} else {
-				// return brandChecked.includes(item)
-		// 	}
-		// }
-=======
 		if (item.toLowerCase().includes(brandSearchInput.toLowerCase())) {
 			if (brandChecked.length > 0) {
 				console.log('--------------------')
@@ -121,7 +76,6 @@ export const Shop = () => {
 				return item
 			}
 		}
->>>>>>> Nick_Kabachenko
 	})
 
 
@@ -174,26 +128,6 @@ export const Shop = () => {
 		return item.headline.toLowerCase().includes(mainSearchInput.toLowerCase())
 	})
 
-<<<<<<< HEAD
-	const testHandleBrand = ({title}) => (e) => {
-		e.preventDefault();
-		e.stopPropagation();
-		e.target.checked = true;
-		setStateValue(val => !val);
-	}
-
-	return (
-		<div>
-			{testBrands.map(brand => {
-							console.log('brand', brand.title,'test.includes(brand.title)', test.includes(brand.title));
-							return  (<div key={brand.title}>
-								<input id={brand.title}  checked={stateValue} type="checkbox" value={brand.title}  onClick={testHandleBrand(brand)} />
-								<span>{brand.title}</span>
-							</div>);
-						})}
-		</div>
-		)
-=======
 	const onChangeChecked = (brandName) => (e) => {
 		setBrandsChecked(brands => ({
 			...brands,
@@ -204,7 +138,6 @@ export const Shop = () => {
 	// every element that return to us for render from fx. `.map` method
 	// needs to have key for the root tag of it
 	// https://ru.legacy.reactjs.org/docs/lists-and-keys.html
->>>>>>> Nick_Kabachenko
 
 	return (
 		<div className="homeCont">
@@ -250,11 +183,6 @@ export const Shop = () => {
 													}}
 												/> : null
 										}
-<<<<<<< HEAD
-
-
-
-=======
 										{elem.brands &&
 											(Object.keys(brandsChecked).map(text => {
 												const isChecked = brandsChecked[text];
@@ -273,7 +201,6 @@ export const Shop = () => {
 												);
 											}))
 										}
->>>>>>> Nick_Kabachenko
 										{elem.items &&
 											(elem.items.map(text => {
 												return (
@@ -315,18 +242,6 @@ export const Shop = () => {
 		</div>
 	)
 }
-<<<<<<< HEAD
+
 export {Shop}
 
-// {elem.brands &&
-// 											(brandsSearchFiltered.sort().map(text => {
-// 												return (
-// 													<div>
-// 														<input type="checkbox" value={text} name="brand" onChange={handleChangeBrand} id={text}/>
-// 														<span>{text}</span>
-// 													</div>
-// 												)
-// 											}))
-// 										}
-=======
->>>>>>> Nick_Kabachenko
