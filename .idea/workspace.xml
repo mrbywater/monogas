@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/ImageSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ImageSlider.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/ImageSlider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ImageSlider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/MultiRangeSlider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/MultiRangeSlider.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,22 +32,24 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Николай/Documents/GitHub/monogas/src/Components/Images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/monogas&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;watcher.settings&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -95,6 +94,10 @@
       <workItem from="1682689967294" duration="13436000" />
       <workItem from="1682807743368" duration="548000" />
       <workItem from="1682853720311" duration="4074000" />
+      <workItem from="1682864325413" duration="68000" />
+      <workItem from="1682864395505" duration="27000" />
+      <workItem from="1682864432966" duration="11000" />
+      <workItem from="1682864515374" duration="2128000" />
     </task>
     <servers />
   </component>

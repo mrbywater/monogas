@@ -6,7 +6,11 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {shopFilter, shopItems} from "./InfoList"
 import {MultiRangeSlider} from "./MultiRangeSlider";
 import {ShoppingCart} from "./ShoppingCart";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+const initialBrands = shopFilter[0].brands.map((i) => ({
+		title: i,
+		checked: false
+	}));
 
 const Shop = () => {
 
@@ -18,13 +22,19 @@ const Shop = () => {
 	const [conditionChecked, setConditionChecked] = useState([])
 	const [amountChecked, setAmountChecked] = useState([])
 
+	const [testBrands, setTestBrands] = useState(initialBrands);
+	const [test, setTest] = useState([]);
+	const [stateValue, setStateValue] = useState(false);
+
 	const ArrowUp = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>'
 	const ArrowDown = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>'
 	const price = shopItems.map(elm => elm.price)
 
 	let maxPrice = Math.max(...price)
 	let minPrice = Math.min(...price)
-
+	useEffect(()=>{
+		console.log('test', test)
+	}, [test]);
 	const dropDownShow = (id, index) => () => {	
 
 		shopFilter.map(item => {
@@ -45,22 +55,23 @@ const Shop = () => {
 	}
 
 	const brandsSearchFiltered = shopFilter[0].brands.filter(item => {
-		if (item.toLowerCase().includes(brandSearchInput.toLowerCase())) {
-			if (brandChecked.length > 0) {
-				console.log('--------------------')
-				if (brandChecked.includes(item)) {
-					console.log("includes",document.getElementById(item))
-					document.getElementById(item).checked = true
-					return item
-				} else {
-					console.log("not includes",document.getElementById(item))
-					document.getElementById(item).checked = false
-					return item
-				}
-			} else {
-				return item
-			}
-		}
+		return item.toLowerCase().includes(brandSearchInput.toLowerCase());
+		// if (item.toLowerCase().includes(brandSearchInput.toLowerCase())) {
+		// 	if (brandChecked.length > 0) {
+		// 		console.log('--------------------')
+		// 		if (brandChecked.includes(item)) {
+		// 			console.log("includes",document.getElementById(item))
+		// 			document.getElementById(item).checked = true
+		// 			return item
+		// 		} else {
+		// 			console.log("not includes",document.getElementById(item))
+		// 			document.getElementById(item).checked = false
+		// 			return item
+		// 		}
+		// 	} else {
+				// return brandChecked.includes(item)
+		// 	}
+		// }
 	})
 
 
@@ -113,6 +124,25 @@ const Shop = () => {
 		return item.headline.toLowerCase().includes(mainSearchInput.toLowerCase())
 	})
 
+	const testHandleBrand = ({title}) => (e) => {
+		e.preventDefault();
+		e.stopPropagation();
+		e.target.checked = true;
+		setStateValue(val => !val);
+	}
+
+	return (
+		<div>
+			{testBrands.map(brand => {
+							console.log('brand', brand.title,'test.includes(brand.title)', test.includes(brand.title));
+							return  (<div key={brand.title}>
+								<input id={brand.title}  checked={stateValue} type="checkbox" value={brand.title}  onClick={testHandleBrand(brand)} />
+								<span>{brand.title}</span>
+							</div>);
+						})}
+		</div>
+		)
+
 	return (
 		<div className="homeCont">
 			<BelowHeaderImage
@@ -137,6 +167,7 @@ const Shop = () => {
 							max={maxPrice}
 							setPrice={setPriceFiltered}
 						/>
+						
 						{shopFilter.map((elem, i) => {
 							return (
 								<div className="dropdown">
@@ -153,16 +184,9 @@ const Shop = () => {
 													onChange={(event) => setBrandSearchInput(event.target.value)}
 												/> : null
 										}
-										{elem.brands &&
-											(brandsSearchFiltered.sort().map(text => {
-												return (
-													<div>
-														<input type="checkbox" value={text} name="brand" onChange={handleChangeBrand} id={text}/>
-														<span>{text}</span>
-													</div>
-												)
-											}))
-										}
+
+
+
 										{elem.items &&
 											(elem.items.map(text => {
 												return (
@@ -200,3 +224,14 @@ const Shop = () => {
 	)
 }
 export {Shop}
+
+// {elem.brands &&
+// 											(brandsSearchFiltered.sort().map(text => {
+// 												return (
+// 													<div>
+// 														<input type="checkbox" value={text} name="brand" onChange={handleChangeBrand} id={text}/>
+// 														<span>{text}</span>
+// 													</div>
+// 												)
+// 											}))
+// 										}
