@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/ShopItem.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/ShopItem.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/AboutUs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/AboutUs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ImageSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ImageSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ImageSlider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ImageSlider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/SelectedProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/SelectedProject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/SelectedProject.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/SelectedProject.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,14 +46,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/monogas&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Telegram D/feature_-_checkboxes_+_filtering.patch&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -52,25 +61,8 @@
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-=======
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/Telegram D/feature_-_checkboxes_+_filtering.patch",
-    "list.type.of.created.stylesheet": "SCSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.tools",
-    "vue.rearranger.settings.migration": "true"
->>>>>>> Nick_Kabachenko
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Николай\Documents\GitHub\monogas\src\Components\Images" />
@@ -115,12 +107,12 @@
       <workItem from="1682864325413" duration="68000" />
       <workItem from="1682864395505" duration="27000" />
       <workItem from="1682864432966" duration="11000" />
-<<<<<<< HEAD
-      <workItem from="1682864515374" duration="2128000" />
-=======
       <workItem from="1682864515374" duration="2872000" />
       <workItem from="1682893075997" duration="1341000" />
->>>>>>> Nick_Kabachenko
+      <workItem from="1682947815374" duration="9313000" />
+      <workItem from="1682957368675" duration="8000" />
+      <workItem from="1682969751519" duration="819000" />
+      <workItem from="1683037718710" duration="110000" />
     </task>
     <servers />
   </component>

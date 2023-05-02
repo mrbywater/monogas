@@ -15,15 +15,11 @@ const ImageSlider = ( {slides} ) => {
     };
 
     return (
-        <div className="slideStylesCont">
-            <Slider {...settings}>
-                {slides.map(img => (
-                    // <div className="slideStyles">
-                        <img className="imgSlide" src={img}/>
-                    // </div>    
-                ))}
-            </Slider>
-        </div>
+        <Slider {...settings}>
+            {slides.map(img => (
+                <img className="imgSlide" src={img}/>
+            ))}
+        </Slider>
     );
 };
 

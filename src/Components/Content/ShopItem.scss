@@ -1,0 +1,32 @@
+@import '../../App';
+
+.itemCont {
+  display: flex;
+  width: 90%;
+  margin: 120px 0 0 5%;
+  border: 1px solid black;
+  flex-direction: column;
+}
+
+.itemNameCont {
+  font-size: 30px;
+}
+
+.itemDescription {
+  display: flex;
+}
+
+.itemDescription > div {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.descriptionCont {
+  display: flex;
+  flex: 1;
+}
+
+.sliderCont {
+  width: 50%;
+}

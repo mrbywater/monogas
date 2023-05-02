@@ -7,6 +7,8 @@ import {shopFilter, shopItems} from "./InfoList"
 import {MultiRangeSlider} from "./MultiRangeSlider";
 import {ShoppingCart} from "./ShoppingCart";
 import React, {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
+import {urlCreation} from "./OurProjects.js"
 
 // all of the constants that not recalculated on next render has to be moved out of component
 // + it's better to move it to separate `helper.js` file
@@ -17,6 +19,8 @@ const checkedInitial = shopFilter[0].brands.reduce((acc,title) => {
 		[title]: false
 	}
 },{});
+
+
 
 const ArrowUp = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>'
 const ArrowDown = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>'
@@ -29,8 +33,7 @@ const Shop = () => {
 	const [mainSearchInput, setMainSearchInput] = useState('');
 	const [brandSearchInput, setBrandSearchInput] = useState('');
 	const [priceFiltered, setPriceFiltered] = useState(shopItems);
-	const [brandChecked, setBrandChecked] = useState([]);
-	// const [checked, setCheked] = useState(false);
+	const [brandCheckedTrue, setBrandCheckedTrue] = useState([]);
 	const [conditionChecked, setConditionChecked] = useState([]);
 	const [amountChecked, setAmountChecked] = useState([]);
 	const [brandsChecked, setBrandsChecked] = useState(checkedInitial);
@@ -45,52 +48,9 @@ const Shop = () => {
 				document.getElementById(id).classList.toggle("onClickDropDownContent");
 
 			}
-			// mr.Bywater this can be shortened to
-			// elm.innerHTM = document.getElementById(id).classList.length === 1 ? ArrowUp : ArrowDown;
-			if (document.getElementById(id).classList.length === 1) {
-				elm.innerHTML  = ArrowUp
-			} else {
-				elm.innerHTML  = ArrowDown
-			}
+
+			elm.innerHTML = document.getElementById(id).classList.length === 1 ? ArrowUp : ArrowDown;
 		})
-	}
-	// few comments despite that we're not using this value anymore
-	// huge calculations better to put into useMemo hooks with corresponding dependencies
-	const brandsSearchFiltered = shopFilter[0].brands.filter(item => {
-		if (item.toLowerCase().includes(brandSearchInput.toLowerCase())) {
-			if (brandChecked.length > 0) {
-				console.log('--------------------')
-				// can be shortened to
-				// document.getElementById(item).checked = brandChecked.includes(item)
-				// return item;
-				if (brandChecked.includes(item)) {
-					console.log("includes",document.getElementById(item))
-					document.getElementById(item).checked = true
-					return item
-				} else {
-					console.log("not includes",document.getElementById(item))
-					document.getElementById(item).checked = false
-					return item
-				}
-			} else {
-				return item
-			}
-		}
-	})
-
-
-	// const brandsChecked = brandsSearchFiltered.map(item => {
-	// 		if (brandsSearchFiltered.length > 0) {
-	// 			if (brandChecked.includes(item)) {
-	// 				return document.getElementById(item).checked = true
-	// 			} else {
-	// 				return document.getElementById(item).checked = false
-	// 			}
-	// 		}
-	// 	})
-
-	const handleChangeBrand = () => {
-		setBrandChecked(Array.from(document.querySelectorAll("input[name='brand']:checked")).map((elem) => elem.value))
 	}
 
 	const handleChangeCondition = () => {
@@ -99,10 +59,10 @@ const Shop = () => {
 	}
 
 	const brandFiltered = priceFiltered.filter(item => {
-		if (brandChecked.length === 0 ) {
+		if (brandCheckedTrue.every(elem => elem === undefined)) {
 			return priceFiltered
 		} else {
-			return brandChecked.includes(item.brand)
+			return brandCheckedTrue.includes(item.brand)
 		}
 	})
 
@@ -129,11 +89,24 @@ const Shop = () => {
 	})
 
 	const onChangeChecked = (brandName) => (e) => {
+
 		setBrandsChecked(brands => ({
 			...brands,
 			[brandName]: !brands[brandName]
 		}))
+
+
 	};
+
+	useEffect(()=>{
+
+		setBrandCheckedTrue(Object.entries(brandsChecked).map(item => {
+			if (item[1] === true) {
+				return item[0]
+			}
+		}))
+
+	}, [brandsChecked])
 
 	// every element that return to us for render from fx. `.map` method
 	// needs to have key for the root tag of it
@@ -184,7 +157,7 @@ const Shop = () => {
 												/> : null
 										}
 										{elem.brands &&
-											(Object.keys(brandsChecked).map(text => {
+											(Object.keys(brandsChecked).sort().map(text => {
 												const isChecked = brandsChecked[text];
 												const shouldRender = text.toLowerCase().includes(brandSearchInput.toLowerCase());
 												return shouldRender && (
@@ -192,7 +165,7 @@ const Shop = () => {
 														<input
 															type="checkbox"
 															checked={isChecked}
-															value={isChecked}
+															value={text}
 															name="brand"
 															onChange={onChangeChecked(text)}
 														/>
@@ -225,9 +198,12 @@ const Shop = () => {
 						{mainSearchFiltered.map(elm =>(
 							<div key={elm.headline+'_shop_items'} className="specificItemCont">
 								<div className="specificItem">
-									<div className="widthCont">
-										<img src={elm.img}/>
-										<span>{elm.headline}</span>
+									<div className="widthCont" style={!elm.amount ? {opacity : 0.4} : null}>
+										<Link to={"/shop/" + urlCreation(elm.headline)}>
+											<img src={elm.img[0]}/>
+											<span className="itemHeadline">{elm.headline}</span>
+										</Link>
+										{!elm.amount && <span className="itemAmount">Немає в наявності</span>}
 										<div className="itemPriceCont">
 											<span>{elm.price}₴</span>
 											<FontAwesomeIcon icon={faCartShopping} />

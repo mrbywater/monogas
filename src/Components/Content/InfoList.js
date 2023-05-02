@@ -605,7 +605,13 @@ export const shopFilter = [
 
 export const shopItems = [
     {
-        img : require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+        img : [
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+        ],
         headline : "Ремкомплект редуктора Tomasetto AT-07 повний",
         price : "391",
         brand : "Tomasetto",
@@ -613,7 +619,13 @@ export const shopItems = [
         amount : 1
     },
     {
-        img : require("../Images/ShopItemImages/forsunka_hana.webp"),
+        img : [
+            require("../Images/ShopItemImages/forsunka_hana.webp"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+        ],
         headline : "Форсунка Hana 2001 Rail, Type B",
         price : "575",
         brand : "Hana",
@@ -621,7 +633,13 @@ export const shopItems = [
         amount : 0
     },
     {
-        img : require("../Images/ShopItemImages/reductor_tomas.webp"),
+        img : [
+            require("../Images/ShopItemImages/reductor_tomas.webp"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+        ],
         headline : "Редуктор Tomasetto AT09 Nordic",
         price : "1376",
         brand : "Tomasetto",
@@ -629,7 +647,13 @@ export const shopItems = [
         amount : 5
     },
     {
-        img : require("../Images/ShopItemImages/datchik_stag.webp"),
+        img : [
+            require("../Images/ShopItemImages/datchik_stag.webp"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+        ],
         headline : "Датчик тиску Stag PS-04 plus",
         price : "298",
         brand : "Stag",
@@ -637,7 +661,13 @@ export const shopItems = [
         amount : 1
     },
     {
-        img : require("../Images/ShopItemImages/datchik_stag.webp"),
+        img : [
+            require("../Images/ShopItemImages/datchik_davleniya_zenit.webp"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+        ],
         headline : "Датчик тиску та вакууму MAP Sensor Zenit",
         price : "1210",
         brand : "Zenit",
@@ -645,7 +675,13 @@ export const shopItems = [
         amount : 1
     },
     {
-        img : require("../Images/ShopItemImages/zaslonka_master.webp"),
+        img : [
+            require("../Images/ShopItemImages/zaslonka_master.webp"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+        ],
         headline : "Дросельна заслінка Parts Master",
         price : "3399",
         brand : "Parts Master",

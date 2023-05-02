@@ -23,7 +23,9 @@ const SelectedProject = () => {
 							<BelowHeaderImage
                 				headline = {`${item.type} ${item.model}`}
             				/>
-							<ImageSlider slides={item.subImage} />
+							<div className="slideStylesCont">
+								<ImageSlider slides={item.subImage} />
+							</div>
 							<div className="separator"/>
 							<div className="avtoInfoCont">
 								<h2>Дані по автомобілю:</h2>
