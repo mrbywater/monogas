@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import {shopItems} from "./InfoList";
 
-const MultiRangeSlider = ({ min, max,setPrice}) => {
+const MultiRangeSlider = ({ min, max, setPrice, setCurrentPage}) => {
 
     const [minVal, setMinVal] = useState(min);
     const [maxVal, setMaxVal] = useState(max);
@@ -16,6 +16,7 @@ const MultiRangeSlider = ({ min, max,setPrice}) => {
         setPrice(shopItems.filter(elm => {
             return elm.price >= Number(minVal) && elm.price <= Number(maxVal)
         }))
+        setCurrentPage(1)
     }
 
 

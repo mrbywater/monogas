@@ -606,87 +606,108 @@ export const shopFilter = [
 export const shopItems = [
     {
         img : [
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+            require("../Images/ShopItemImages/remcomplect_tomas/1.jpg"),
+            require("../Images/ShopItemImages/remcomplect_tomas/2.webp"),
+            require("../Images/ShopItemImages/remcomplect_tomas/3.webp"),
+            require("../Images/ShopItemImages/remcomplect_tomas/4.webp"),
         ],
         headline : "Ремкомплект редуктора Tomasetto AT-07 повний",
         price : "391",
         brand : "Tomasetto",
         condition : "Новий",
-        amount : 1
+        amount : 1,
+        description: [
+            "Ремкомплект для редуктора Tomasetto пропан-набір від італійського виробника, служить для заміни практично всіх деталей, що зношуються газового редуктора. Ремкомплект для редуктора Томасетто пропан виготовляють на сучасному обладнанні із застосуванням новітніх технологій. При виробництві застосовують високоякісні матеріали, що дозволяє набувати мембранам додаткових покращених характеристик.",
+            "Переваги: дуже низька проникність газу, висока чутливість, стійкість до бензину та олії, додано фільтр та кришку фільтра, підвищений ресурс.",
+            "Ремонтний комплект Tomasetto - оригінальний, виготовлений в Італії. Включає в себе мембрани газові 1-го і 2-го ступеня, тосольна мембрана, а також кільця ущільнювачів. З недавнього часу виробник додав до нього фільтр грубої очистки, кришку фільтра та 3 болти під шестигранний ключ для закріплення кришки фільтра. У комплект пружина 2-го ступеня не входить.",
+            "Ремкомплект Томасетто підходить для редукторів серії АТ та АТ-07 Це редуктора 1. 2. 3 покоління ГБО без фільтра та з фільтром відповідно.",
+            "Серед них моделі: RGTA3500, RGTA3510, RGTA3520, RGTA3000, RGTA3100, RGTA3200.",
+            "Країна-виробник товару: Італія"
+        ]
     },
     {
         img : [
-            require("../Images/ShopItemImages/forsunka_hana.webp"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+            require("../Images/ShopItemImages/forsunka_hana/1.webp"),
         ],
         headline : "Форсунка Hana 2001 Rail, Type B",
         price : "575",
         brand : "Hana",
         condition : "Новий",
-        amount : 0
+        amount : 0,
+        description: [
+            "Hana 2001 Rail – продукт корейської компанії Hana Engineering, який вигідно відрізняється серед конкурентів високою якістю, швидкодією, низькою шумністю та оптимальною ціною. Форсунки Hana 2001 Rail зберігають свої робочі характеристики протягом тривалого терміну експлуатації і добре зарекомендували себе при роботі в наших умовах за рахунок високої стійкості до забруднення.",
+            "Hana 2001 Rail – форсунка для впорскування автогазових систем 4 покоління, яка здійснює дозовану подачу газу у впускний колектор. Форсунки Hana 2001 Rail можуть використовуватися як у пропан-бутановому, так і метановому ГБО.",
+            "Форсунка Hana 2001 Rail, Type B (червоні, 26-39 Нр) призначена для збирання у форсуночні рейки за допомогою спеціальних монтажних наборів. Ця модель розрахована на роботу в системах потужністю 26-39 к.с. на циліндр.",
+            "Країна-виробник товару: Південна Корея"
+        ]
     },
     {
         img : [
-            require("../Images/ShopItemImages/reductor_tomas.webp"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+            require("../Images/ShopItemImages/reductor_tomas/1.webp")
         ],
         headline : "Редуктор Tomasetto AT09 Nordic",
         price : "1376",
         brand : "Tomasetto",
         condition : "Б/в",
-        amount : 5
+        amount : 5,
+        description: [
+            "Редуктор GreenGas AT09 Nordic призначений для установки ГБО 4 покоління на інжекторні двигуни і може забезпечувати стабільний тиск в системах до 170 л. с. Даний редуктор має вбудований фільтр грубого очищення, а також електроклапан підвищує безпеку системи. GreenGas AT09 Nordic – популярний редуктор від світового лідера в сфері ГБО італійської компанії Tomasetto. Ця модель проста в установці, налаштуванні і обслуговуванні, а в комплекті поставки є повний монтажний набір.",
+            "Країна-виробник товару: Італія"
+        ]
     },
     {
         img : [
-            require("../Images/ShopItemImages/datchik_stag.webp"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+            require("../Images/ShopItemImages/datchik_stag/1.webp"),
+            require("../Images/ShopItemImages/datchik_stag/2.webp"),
+            require("../Images/ShopItemImages/datchik_stag/3.webp"),
+            require("../Images/ShopItemImages/datchik_stag/4.webp"),
+            require("../Images/ShopItemImages/datchik_stag/5.webp"),
         ],
         headline : "Датчик тиску Stag PS-04 plus",
         price : "298",
         brand : "Stag",
         condition : "Новий",
-        amount : 1
+        amount : 1,
+        description: [
+            "Даний датчик призначений для вимірювання: тиску газу, вакууму, розрідження та температури газу.",
+            "Сумісний з усіма системами: Stag (GoFast, ECO, 4+, Qbox, Qnext і т.д.), Digitronic (Maxi2, Maxi2Titan, 6,8 cyl на базі AC), LPGTECH (DUO, ONE, 204, 104, 306, 308, Symbo), Yota (RED, Blue, Falcon), Europegas та багатьма іншими",
+            "Має роз'єм підключення 5-pin, газовий вхід/вихід 12мм, вакуумний вхід/вихід 5мм",
+            "В комплекті: Газовий трійник на 12мм, Кріпильна скоба, Вакуумний трійник на 5мм",
+            "Країна-виробник товару: Польща"
+        ]
     },
     {
         img : [
-            require("../Images/ShopItemImages/datchik_davleniya_zenit.webp"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+            require("../Images/ShopItemImages/datchik_davleniya_zenit/1.webp"),
+            require("../Images/ShopItemImages/datchik_davleniya_zenit/2.webp"),
+            require("../Images/ShopItemImages/datchik_davleniya_zenit/3.webp"),
+            require("../Images/ShopItemImages/datchik_davleniya_zenit/4.webp")
         ],
         headline : "Датчик тиску та вакууму MAP Sensor Zenit",
         price : "1210",
         brand : "Zenit",
         condition : "Б/в",
-        amount : 1
+        amount : 1,
+        description: [
+            "До вашої уваги пропонується датчик тиску та вакууму Zenit AA 612, сфера застосування якого інжекторна система розподіленого упорскування ГБО 4 покоління Zenit, Autronik, Torelli. Датчик ГБО Zenit AA 612 служить для вимірювання показань: вимірювання тиску газу у летючій фазі, на відрізку від газового редуктора до газових форсунок, вимірювання показань вакууму у впускному колекторі ДВЗ автомобіля.",
+            "Після цього зібрані дані з обробленими показниками передаються в газовий блок управління (ЕБУ). Ці дані необхідні для правильної та коректної роботи інжекторної системи.",
+            "Існує два типи 4-х контактних тупикових MAP Sensor Zenit AA 612: 5 Вт та 12 Вт. Це значення вибирається при підключенні діагностичним інтерфейсом до інжекторної системи. В наявності завжди обидва варіанти датчика тиску та вакууму Zenit AA 612, просто вкажіть у коментарях який саме мап сенсор Зеніт 4 піни застосовано у вашій системі.",
+            "Країна-виробник товару: Італія"
+        ]
     },
     {
         img : [
-            require("../Images/ShopItemImages/zaslonka_master.webp"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg"),
-            require("../Images/ShopItemImages/remcomplect_tomas.jpg")
+            require("../Images/ShopItemImages/zaslonka_master/1.webp")
         ],
         headline : "Дросельна заслінка Parts Master",
         price : "3399",
         brand : "Parts Master",
         condition : "Новий",
-        amount : 1
-    },
-
+        amount : 1,
+        description: [
+            "Дросельна заслінка Parts Master 4891735AC CHRYSLER\\DODGE\\JEEP",
+            "Підходить для авто: CHRYSLER 200 2011-2014, CHRYSLER SEBRING 2007-2008, DODGE AVENGER 2008-2014, DODGE CALIBER 2007-2012, DODGE JOURNEY 2009-2016, JEEP COMPASS 2010-2016, JEEP PATRIOT 2007-2016, JEEP RENEGADE 2016",
+            "Країна-виробник товару: Китай"
+        ]
+    }
 ]

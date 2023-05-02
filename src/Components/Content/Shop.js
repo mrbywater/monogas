@@ -1,7 +1,7 @@
 import "./Content.scss"
 import "./Shop.scss"
 import {BelowHeaderImage} from "./BelowHeaderImage";
-import {faMagnifyingGlass, faAngleUp, faCartShopping} from "@fortawesome/free-solid-svg-icons";
+import {faMagnifyingGlass, faAngleUp, faCartShopping, faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {shopFilter, shopItems} from "./InfoList"
 import {MultiRangeSlider} from "./MultiRangeSlider";
@@ -9,6 +9,7 @@ import {ShoppingCart} from "./ShoppingCart";
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import {urlCreation} from "./OurProjects.js"
+import {Pagination} from "./Pagination";
 
 // all of the constants that not recalculated on next render has to be moved out of component
 // + it's better to move it to separate `helper.js` file
@@ -37,7 +38,8 @@ const Shop = () => {
 	const [conditionChecked, setConditionChecked] = useState([]);
 	const [amountChecked, setAmountChecked] = useState([]);
 	const [brandsChecked, setBrandsChecked] = useState(checkedInitial);
-
+	const [currentPage, setCurrentPage] = useState(1)
+	const [itemsPerPage] = useState(2)
 	const dropDownShow = (id, index) => () => {
 
 		shopFilter.map(item => {
@@ -56,6 +58,7 @@ const Shop = () => {
 	const handleChangeCondition = () => {
 		setConditionChecked(Array.from(document.querySelectorAll("input[name='Новий']:checked, input[name='Б/в']:checked")).map((elem) => elem.value))
 		setAmountChecked(Array.from(document.querySelectorAll("input[name='Є в наявності']:checked, input[name='Нема в наявності']:checked")).map((elem) => elem.value))
+		setCurrentPage(1)
 	}
 
 	const brandFiltered = priceFiltered.filter(item => {
@@ -88,24 +91,29 @@ const Shop = () => {
 		return item.headline.toLowerCase().includes(mainSearchInput.toLowerCase())
 	})
 
-	const onChangeChecked = (brandName) => (e) => {
+	const lastItemIndex = currentPage * itemsPerPage
+	const firstItemIndex = lastItemIndex - itemsPerPage
+	const currentItem = mainSearchFiltered.slice(firstItemIndex,lastItemIndex)
 
+	const nextPage = () => setCurrentPage(prev => prev + 1)
+	const prevPage = () => setCurrentPage(prev => prev - 1)
+
+	const paginate = pageNumber => setCurrentPage(pageNumber)
+
+	const onChangeChecked = (brandName) => (e) => {
 		setBrandsChecked(brands => ({
 			...brands,
 			[brandName]: !brands[brandName]
 		}))
-
-
+		setCurrentPage(1)
 	};
 
 	useEffect(()=>{
-
 		setBrandCheckedTrue(Object.entries(brandsChecked).map(item => {
 			if (item[1] === true) {
 				return item[0]
 			}
 		}))
-
 	}, [brandsChecked])
 
 	// every element that return to us for render from fx. `.map` method
@@ -117,7 +125,7 @@ const Shop = () => {
 			<BelowHeaderImage
 				headline = "Магазин"
 			/>
-			<ShoppingCart/>
+			<ShoppingCart />
 			<div className="shopCont">
 				<div className="searchCont">
 					<div className="inputCont">
@@ -135,8 +143,8 @@ const Shop = () => {
 							min={minPrice}
 							max={maxPrice}
 							setPrice={setPriceFiltered}
+							setCurrentPage={setCurrentPage}
 						/>
-						
 						{shopFilter.map((elem, i) => {
 							return (
 								<div className="dropdown" key={elem.headline}>
@@ -194,24 +202,38 @@ const Shop = () => {
 							)
 						})}
 					</div>
-					<div className="shopItemsCont">
-						{mainSearchFiltered.map(elm =>(
-							<div key={elm.headline+'_shop_items'} className="specificItemCont">
-								<div className="specificItem">
-									<div className="widthCont" style={!elm.amount ? {opacity : 0.4} : null}>
-										<Link to={"/shop/" + urlCreation(elm.headline)}>
-											<img src={elm.img[0]}/>
-											<span className="itemHeadline">{elm.headline}</span>
-										</Link>
-										{!elm.amount && <span className="itemAmount">Немає в наявності</span>}
-										<div className="itemPriceCont">
-											<span>{elm.price}₴</span>
-											<FontAwesomeIcon icon={faCartShopping} />
+					<div className="itemsAndNavigationCont">
+						<div className="shopItemsCont">
+							{currentItem.map(elm =>(
+								<div key={elm.headline+'_shop_items'} className="specificItemCont">
+									<div className="specificItem">
+										<div className="widthCont" style={!elm.amount ? {opacity : 0.4} : null}>
+											<Link to={"/shop/" + urlCreation(elm.headline)}>
+												<img src={elm.img[0]}/>
+												<span className="itemHeadline">{elm.headline}</span>
+											</Link>
+											{!elm.amount && <span className="itemAmount">Немає в наявності</span>}
+											<div className="itemPriceCont">
+												<span>{elm.price}₴</span>
+												<FontAwesomeIcon icon={faCartShopping} />
+											</div>
 										</div>
 									</div>
 								</div>
+							))}
+						</div>
+						<div className="pagesNavigationCont">
+							<FontAwesomeIcon icon={faAngleLeft} onClick={prevPage} className={currentPage === 1 ? "disabled" : ""}/>
+							<div className="pagesCont">
+								<Pagination
+									itemsPerPage = {itemsPerPage}
+									totalItems = {mainSearchFiltered.length}
+									paginate = {paginate}
+									currentPage = {currentPage}
+								/>
 							</div>
-						))}
+							<FontAwesomeIcon icon={faAngleRight} onClick={nextPage} className={currentPage === Math.ceil(mainSearchFiltered.length / itemsPerPage) ? "disabled" : ""}/>
+						</div>
 					</div>
 				</div>
 			</div>

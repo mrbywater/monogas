@@ -58,7 +58,6 @@
   border: 1px solid black;
   border-radius: 7px;
   max-height: 1000px;
-
 }
 
 .sliderCont {
@@ -67,9 +66,9 @@
 
 .shopItemsCont {
   display: flex;
-  flex: 5;
   justify-content: space-evenly;
   flex-wrap: wrap;
+  min-height: 605px;
 }
 
 .specificItemCont {
@@ -170,6 +169,74 @@
 
 .dropdownContent {
   animation: append-animate .4s ease;
+}
+
+.itemsAndNavigationCont {
+  display: flex;
+  flex-direction: column;
+  flex: 5;
+}
+
+.pagesNavigationCont {
+  border-top: 1px solid rgb(0,0,0,0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin-left: 5%;
+  height: 70px;
+}
+
+.pagesNavigationCont svg{
+  width: 60px;
+  height: 40px;
+  border: 1px solid $primary-color;
+  border-radius: 5px;
+  background-color: rgb(0,0,0,0.05);
+  color: rgb(0,0,0,0.8);
+  cursor: pointer;
+}
+
+.pagesNavigationCont svg:hover {
+  color: $secondary-color-blue
+}
+
+.pagesCont {
+  display: flex;
+}
+
+.page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 45px;
+  height: 40px;
+  margin: 0 10px;
+  border: 1px solid rgb(0,0,0,0.2);
+  border-radius: 5px;
+  background-color: rgb(0,0,0,0.05);
+  color: rgb(0,0,0,0.8);
+  cursor: pointer;
+  user-select: none;
+}
+
+.page:hover {
+  color: $secondary-color-blue;
+  border: 1px solid rgb(0,0,0,1);
+}
+
+.activeButton {
+  border: 1px solid rgb(0,0,0,1);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.disabled:hover {
+  color: $primary-color;
 }
 
 @keyframes append-animate {
