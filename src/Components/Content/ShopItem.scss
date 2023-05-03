@@ -9,6 +9,8 @@
 
 .itemNameCont {
   font-size: 30px;
+  border-bottom:3px solid #b1b0b0;
+  padding-bottom: 40px;
 }
 
 .itemDescription {
@@ -129,6 +131,10 @@
 .deliveryPostCont svg {
   margin-right: 5px;
   font-size: 20px;
+}
+
+#right {
+  text-align: end;
 }
 
 .payingCont {

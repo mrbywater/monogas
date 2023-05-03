@@ -574,18 +574,6 @@ export const tableText = [
 export const shopFilter = [
     {
         headline : "Бренд",
-        brands : [
-            "Hana",
-            "Tomasetto",
-            "Zenit",
-            "Alex",
-            "Atiker",
-            "Digitronic",
-            "KME",
-            "LPGTECH",
-            "Parts Master",
-            "Stag"
-        ]
     },
     {
         headline : "Новий - б/в ",

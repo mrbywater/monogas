@@ -6,15 +6,41 @@ import {urlCreation} from "./OurProjects";
 import {NotFoundPage} from "./NotFoundPage";
 import {BelowHeaderImage} from "./BelowHeaderImage";
 import {ImageSlider} from "./ImageSlider";
-import {faCartShopping, faTruck, faStore, faWallet, faShieldHeart} from "@fortawesome/free-solid-svg-icons";
+import {
+    faCartShopping,
+    faTruck,
+    faStore,
+    faWallet,
+    faShieldHeart,
+    faMagnifyingGlass
+} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import React from "react";
+import React, {useEffect} from "react";
+
 const ShopItem = () => {
+
+    useEffect(()=> {
+        localStorage.setItem('search', '')
+    },[])
 
     const params = useParams()
     const item = params.item
 
     const include = shopItems.filter(elem =>  urlCreation(elem.headline) === item)
+
+    const toMainSearch = () =>{
+        window.location.href='/shop/#mainSearch'
+    }
+
+    const saveToLS = (e) => {
+        localStorage.setItem('search', e.target.value);
+    }
+
+    const enterPress = (e) => {
+        if (e.key === "Enter") {
+            window.location.href='/shop/#mainSearch'
+        }
+    }
 
     if (include.length) {
         return (
@@ -24,6 +50,16 @@ const ShopItem = () => {
                         <div className="homeCont">
                             <BelowHeaderImage/>
                             <div className="itemCont">
+                                <div className="searchCont">
+                                    <div className="inputCont">
+                                        <input
+                                            placeholder ="Пошук..."
+                                            onChange={saveToLS}
+                                            onKeyDown={enterPress}
+                                        />
+                                        <FontAwesomeIcon icon={faMagnifyingGlass} className="searchIcon" onClick={toMainSearch}/>
+                                    </div>
+                                </div>
                                 <div className="itemNameCont">
                                     <span>
                                         {elem.headline}
@@ -50,18 +86,18 @@ const ShopItem = () => {
                                         <div className="deliveryCont">
                                             <div className="deliveryHeadline">Доставка:</div>
                                             <div className="deliveryPostCont">
-                                                <div>
+                                                <div className="deliveryPostCont">
                                                     <FontAwesomeIcon icon={faTruck}/>
                                                     <span>Самовивіз з відділень поштових операторів</span>
                                                 </div>
-                                                <span>За тарифами перевізника</span>
+                                                <span id="right">За тарифами перевізника</span>
                                             </div>
                                             <div className="deliveryPostCont">
-                                                <div>
+                                                <div className="deliveryPostCont">
                                                     <FontAwesomeIcon icon={faStore}/>
                                                     <span>Самовивіз з нашого магазину</span>
                                                 </div>
-                                                <span>Безкоштово</span>
+                                                <span id="right">Безкоштово</span>
                                             </div>
                                         </div>
                                         <div className="payingCont">
