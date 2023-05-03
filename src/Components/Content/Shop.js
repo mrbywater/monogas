@@ -134,7 +134,7 @@ const Shop = () => {
 		setSelectedValue(event.target.value)
 		setCurrentPage(1)
 	}
-
+	console.log(currentItem.length)
 
 	// every element that return to us for render from fx. `.map` method
 	// needs to have key for the root tag of it
@@ -235,26 +235,35 @@ const Shop = () => {
 					</div>
 					<div className="itemsAndNavigationCont">
 						<div className="shopItemsCont">
-							{currentItem.map(elm =>(
-								<div key={elm.headline+'_shop_items'} className="specificItemCont">
-									<div className="specificItem">
-										<div className="widthCont" style={!elm.amount ? {opacity : 0.4} : null}>
-											<Link to={"/shop/" + urlCreation(elm.headline)}>
-												<img src={elm.img[0]}/>
-												<span className="itemHeadline">{elm.headline}</span>
-											</Link>
-											{!elm.amount && <span className="itemAmount">Немає в наявності</span>}
-											<div className="itemPriceCont">
-												<span>{elm.price}₴</span>
-												<FontAwesomeIcon icon={faCartShopping} />
+							{!!currentItem.length ?
+								(currentItem.map(elm =>(
+									<div key={elm.headline+'_shop_items'} className="specificItemCont">
+										<div className="specificItem">
+											<div className="widthCont" style={!elm.amount ? {opacity : 0.4} : null}>
+												<Link to={"/shop/" + urlCreation(elm.headline)}>
+													<img src={elm.img[0]}/>
+													<span className="itemHeadline">{elm.headline}</span>
+												</Link>
+												{!elm.amount && <span className="itemAmount">Немає в наявності</span>}
+												<div className="itemPriceCont">
+													<span>{elm.price}₴</span>
+													<FontAwesomeIcon icon={faCartShopping} />
+												</div>
 											</div>
 										</div>
 									</div>
+								))) :
+								<div className="noItems">
+									На Ваш запит нічого не знайдено
 								</div>
-							))}
+							}
 						</div>
 						<div className="pagesNavigationCont">
-							<FontAwesomeIcon icon={faAngleLeft} onClick={prevPage} className={currentPage === 1 ? "disabled" : ""}/>
+							<FontAwesomeIcon
+								icon={faAngleLeft}
+								onClick={prevPage}
+								className={currentPage === 1 ? "disabled" : ""}
+							/>
 							<div className="pagesCont">
 								<Pagination
 									itemsPerPage = {itemsPerPage}
@@ -263,7 +272,11 @@ const Shop = () => {
 									currentPage = {currentPage}
 								/>
 							</div>
-							<FontAwesomeIcon icon={faAngleRight} onClick={nextPage} className={currentPage === Math.ceil(sortMainSearchFiltered.length / itemsPerPage) ? "disabled" : ""}/>
+							<FontAwesomeIcon
+								icon={faAngleRight}
+								onClick={nextPage}
+								className={currentPage === Math.ceil(sortMainSearchFiltered.length / itemsPerPage) || Math.ceil(sortMainSearchFiltered.length / itemsPerPage) === 0 ? "disabled" : ""}
+							/>
 						</div>
 					</div>
 				</div>

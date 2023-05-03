@@ -141,6 +141,12 @@
   flex: 5;
 }
 
+.noItems {
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+}
+
 .dropbtn {
   background-color: #FFFFFF;
   font-size: 22px;
@@ -209,7 +215,7 @@
 .pagesNavigationCont svg{
   width: 60px;
   height: 40px;
-  border: 1px solid $primary-color;
+  outline: 2px solid $primary-color;
   border-radius: 5px;
   background-color: rgb(0,0,0,0.05);
   color: rgb(0,0,0,0.8);
@@ -242,11 +248,12 @@
 
 .page:hover {
   color: $secondary-color-blue;
-  border: 1px solid rgb(0,0,0,1);
+  outline: 2px solid rgb(0,0,0,1);
+  transition: none !important;
 }
 
 .activeButton {
-  border: 2px solid rgb(0,0,0,1);
+  outline: 2px solid rgb(0,0,0,1);
 }
 
 .disabled {
