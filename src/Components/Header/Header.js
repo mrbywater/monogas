@@ -4,8 +4,9 @@ import {Link} from 'react-router-dom'
 import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
 import {faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {useEffect, useState} from "react"
+import React, {useEffect, useState} from "react"
 import { slide as Menu } from 'react-burger-menu'
+import {ShoppingCart} from "../Content/ShoppingCart";
 
 const Header = () =>{
 
@@ -89,13 +90,8 @@ const Header = () =>{
                 <Link to="/about-us" className='links'>Про нас</Link>
                 <a href="#contacts" className='links'>Контакти</a>
                 <a href="https://forms.gle/YQdJPVQ7meeYaxRC6" className="requestButtonInHeader">Заявка</a>
-                <a href="https://www.instagram.com/monogasauto/">
-                    <FontAwesomeIcon icon={faInstagram} className="themeIcon"/>
-                </a>
-                <a href="https://www.facebook.com/profile.php?id=100069663001399&is_tour_dismissed=true">
-                    <FontAwesomeIcon icon={faFacebook} className="themeIcon"/>
-                </a>
             </div>
+            <ShoppingCart />
             <div id="dark-mode-toggle" className="themeToggle">
                 <FontAwesomeIcon icon={changeTheme} className="themeIcon" onClick={changePageTheme}/>
             </div>

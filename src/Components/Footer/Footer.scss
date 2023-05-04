@@ -30,6 +30,18 @@
   @include adaptiv-font(20,15);
 }
 
+.socialCont{
+  display: flex;
+}
+
+.socialIcon {
+  color: $secondary-color-blue;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  margin-right: 25px;
+}
+
 .map {
   height: 350px;
 }
@@ -38,7 +50,7 @@
 
   .footerCont {
     flex-direction: column;
-    height: 800px;
+    height: 845px;
     margin-top: 80px;
   }
 

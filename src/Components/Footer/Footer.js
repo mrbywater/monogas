@@ -1,4 +1,6 @@
 import "./Footer.scss"
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faFacebook, faInstagram} from "@fortawesome/free-brands-svg-icons";
 const Footer = () =>{
 
     return (
@@ -28,6 +30,14 @@ const Footer = () =>{
                         Сергей : +380000000
                         <p>monogasauto@gmail.com</p>
                     </span>
+                    <div className="socialCont">
+                        <a href="https://www.instagram.com/monogasauto/">
+                            <FontAwesomeIcon icon={faInstagram} className="socialIcon"/>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100069663001399&is_tour_dismissed=true">
+                            <FontAwesomeIcon icon={faFacebook} className="socialIcon"/>
+                        </a>
+                    </div>
                 </div>
                 <div className="info">
                     <iframe

@@ -5,7 +5,6 @@ import {faMagnifyingGlass, faAngleUp, faCartShopping, faAngleLeft, faAngleRight}
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {shopFilter, shopItems} from "./InfoList"
 import {MultiRangeSlider} from "./MultiRangeSlider";
-import {ShoppingCart} from "./ShoppingCart";
 import React, {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import {urlCreation} from "./OurProjects.js"
@@ -41,6 +40,7 @@ const Shop = () => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const [itemsPerPage] = useState(2)
 	const [selectedValue, setSelectedValue] = useState("relevance")
+	const [shoppingCartItems, setShoppingCartItems] = useState([])
 
 	useEffect(()=>{
 		setBrandCheckedTrue(Object.entries(brandsChecked).map(item => {
@@ -111,6 +111,19 @@ const Shop = () => {
 		return item.headline.toLowerCase().includes(mainSearchInput.toLowerCase())
 	})
 
+
+	const addShoppingCartItem = (item) => {
+		// if (shoppingCartItems.includes(item) === true){
+		// 	return console.log(shoppingCartItems)
+		// }else {
+		// 	return setShoppingCartItems([...shoppingCartItems, item])
+		// }
+	}
+
+	useEffect(() => {
+		console.log(shoppingCartItems)
+	},[shoppingCartItems])
+
 	const sortMainSearchFiltered = selectedValue === "minToMax" ? mainSearchFiltered.sort((a, b) => a.price - b.price) : selectedValue === "maxToMin" ? mainSearchFiltered.sort((a, b) => b.price - a.price) : mainSearchFiltered
 
 	const lastItemIndex = currentPage * itemsPerPage
@@ -134,7 +147,6 @@ const Shop = () => {
 		setSelectedValue(event.target.value)
 		setCurrentPage(1)
 	}
-	console.log(currentItem.length)
 
 	// every element that return to us for render from fx. `.map` method
 	// needs to have key for the root tag of it
@@ -144,7 +156,6 @@ const Shop = () => {
 			<BelowHeaderImage
 				headline = "Магазин"
 			/>
-			<ShoppingCart />
 			<div className="shopCont">
 				<div className="searchCont">
 					<div className="inputCont">
@@ -247,7 +258,7 @@ const Shop = () => {
 												{!elm.amount && <span className="itemAmount">Немає в наявності</span>}
 												<div className="itemPriceCont">
 													<span>{elm.price}₴</span>
-													<FontAwesomeIcon icon={faCartShopping} />
+													<FontAwesomeIcon icon={faCartShopping} onClick={addShoppingCartItem({elm})}/>
 												</div>
 											</div>
 										</div>
