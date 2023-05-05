@@ -7,29 +7,80 @@ import {useEffect, useState} from "react";
 const ShoppingCart = () => {
 
     const items = JSON.parse(localStorage.getItem("shoppingCart"))
-    const totalPrice = items.map(item => +item.price)
+
+    const [itemInnerPrices, setItemInnerPrices] =useState(items)
 
     const [isOpen, setIsOpen] = useState(false)
-    const [previousValue, setPreviousValue] = useState(1)
-    const [endSum, setEndSum]  = useState(totalPrice.reduce((elem , acc) => elem + acc, 0))
+    // const [endArray, setEndArray] = useState(itemInnerPrices)
+    // const [totalPrice, setTotalPrice] = useState(items.map(item => +item.price))
+
+
 
     const close = () => {
         setIsOpen(false)
     }
 
     const saveValue = (id, price) => (e) => {
-        setPreviousValue(e.target.value)
+        setItemInnerPrices(items.map(item => {
+            if (id === item.headline) {
+                return {
+                    headline: item.headline,
+                    price:e.target.value * price
+                }
+            } else {
+               return {
+                   headline: item.headline,
+                   price:+item.price
+               }
+            }
+        }))
+
         localStorage.setItem(id, e.target.value)
         localStorage.setItem(`${id}_price`, e.target.value * price)
 
         document.getElementById(id).innerHTML=`${e.target.value * price}₴`
-        console.log(previousValue, e.target.value)
-        const innerPrice = +document.querySelector('.itemsInCart > div').innerHTML.replace(/\D/g, '')
 
-
+        // setItemInnerPrices(items.map(item => (
+        //     {
+        //         headline: item.headline,
+        //         price:+item.price
+        //     }
+        // )))
     }
 
+     const handleKeyPress=(amount) => (e) =>{
+         if (e.target.value >= amount) {
+             e.preventDefault();
+         }
+     }
 
+    // useEffect(()=>{
+    //     setTotalPrice(endArray.map(item => +item.price))
+    // },[endArray])
+    //
+    useEffect(()=>{
+        // if (itemInnerPrices.length !== 0) {
+        //     setTotalPrice(endArray.map(item => +item.price))
+        // }
+        // setItemInnerPrices(items.map(item => {
+        //     if (itemInnerPrices.every(elem => elem.headline.include(item.headline))) {
+        //         return {
+        //             headline: item.headline,
+        //             price: +item.price
+        //         }
+        //     }
+        // }))
+        setItemInnerPrices(items)
+
+       items.map(item=> {{
+           if (!itemInnerPrices.includes(item)) {
+               itemInnerPrices.push(item)
+           }
+           }}
+       )
+
+        // console.log("TotalPrice",totalPrice,"endArray",endArray,"itemInnerPrices",itemInnerPrices)
+    },[items.length])
 
     return (
         <>
@@ -52,16 +103,17 @@ const ShoppingCart = () => {
                                         onChange={saveValue(item.headline, item.price)}
                                         min={1}
                                         max={item.amount}
+                                        onKeyDown={handleKeyPress(item.amount)}
                                     />
-                                    <div id={item.headline}>{item.price}₴</div>
+                                    <div id={item.headline}>{localStorage.getItem(`${item.headline}_price`) !== null ? localStorage.getItem(`${item.headline}_price`) : item.price}₴</div>
                                     <FontAwesomeIcon icon={faXmark} className="closeItemCross"/>
                                 </div>
                             ))}
                             <div className="totalCont">
-                                <div className="totalPrice" id={totalPrice}>
-                                    {endSum}₴
+                                <div className="totalPrice">
+                                    {/*{(totalPrice.reduce((elm,acc)=> elm + acc, 0) === 0 ) ? `${items.map(item => +item.price).reduce((elm,acc)=> elm + acc, 0)}₴` : `${totalPrice.reduce((elm,acc)=> elm + acc, 0)}₴`}*/}
                                 </div>
-                                <div className="acceptButton">Оформити замовлення</div>
+                                <div className="acceptButton" onClick={()=>{console.log(itemInnerPrices)}}>Оформити замовлення</div>
                             </div>
                         </div>
                     </div>

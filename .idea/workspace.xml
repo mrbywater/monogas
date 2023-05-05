@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/ShopItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShopItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/ShopItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShopItem.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,6 +106,7 @@
       <workItem from="1683126235129" duration="16439000" />
       <workItem from="1683150849262" duration="1347000" />
       <workItem from="1683243043303" duration="4192000" />
+      <workItem from="1683302798932" duration="14392000" />
     </task>
     <servers />
   </component>
