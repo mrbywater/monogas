@@ -269,24 +269,6 @@
   cursor: pointer;
 }
 
-.cart-div {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 9999;
-  width: 80%;
-  max-width: 600px;
-  max-height: 80%;
-  overflow: auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-}
-
 .cart-div.show {
   opacity: 1;
 }

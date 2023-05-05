@@ -31,9 +31,6 @@ function App() {
             <Route path="*" element={<NotFoundPage />}/>
         </Routes>
         <Footer/>
-        <div className="cart-div">
-
-        </div>
     </>
   );
 }

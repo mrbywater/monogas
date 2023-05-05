@@ -12,8 +12,11 @@ import {Pagination} from "./Pagination";
 
 // all of the constants that not recalculated on next render has to be moved out of component
 // + it's better to move it to separate `helper.js` file
-
 const createBrands = shopItems.map(item => item.brand)
+
+if (localStorage.getItem('shoppingCart') === null) {
+	localStorage.setItem('shoppingCart', '[]')
+}
 
 const checkedInitial = createBrands.reduce((acc,title) => {
 	return {
@@ -40,7 +43,7 @@ const Shop = () => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const [itemsPerPage] = useState(2)
 	const [selectedValue, setSelectedValue] = useState("relevance")
-	const [shoppingCartItems, setShoppingCartItems] = useState([])
+	const [shoppingCartItems, setShoppingCartItems] = useState(JSON.parse(localStorage.getItem('shoppingCart')))
 
 	useEffect(()=>{
 		setBrandCheckedTrue(Object.entries(brandsChecked).map(item => {
@@ -51,11 +54,13 @@ const Shop = () => {
 	}, [brandsChecked])
 
 	useEffect(()=> {
+
 		if (!localStorage.getItem('search')) {
 			setMainSearchInput('')
 		} else {
 			setMainSearchInput(localStorage.getItem('search'))
 		}
+
 	},[])
 
 	useEffect(()=> {
@@ -112,17 +117,17 @@ const Shop = () => {
 	})
 
 
-	const addShoppingCartItem = (item) => {
-		// if (shoppingCartItems.includes(item) === true){
-		// 	return console.log(shoppingCartItems)
-		// }else {
-		// 	return setShoppingCartItems([...shoppingCartItems, item])
-		// }
+	const addShoppingCartItem = (item) => (e) =>{
+
+		if (shoppingCartItems.every(elem => elem.headline !== item.headline)) {
+			setShoppingCartItems([...shoppingCartItems, item])
+		}
+
 	}
 
 	useEffect(() => {
-		console.log(shoppingCartItems)
-	},[shoppingCartItems])
+		localStorage.setItem('shoppingCart', JSON.stringify(shoppingCartItems))
+	}, [shoppingCartItems])
 
 	const sortMainSearchFiltered = selectedValue === "minToMax" ? mainSearchFiltered.sort((a, b) => a.price - b.price) : selectedValue === "maxToMin" ? mainSearchFiltered.sort((a, b) => b.price - a.price) : mainSearchFiltered
 
@@ -258,7 +263,7 @@ const Shop = () => {
 												{!elm.amount && <span className="itemAmount">Немає в наявності</span>}
 												<div className="itemPriceCont">
 													<span>{elm.price}₴</span>
-													<FontAwesomeIcon icon={faCartShopping} onClick={addShoppingCartItem({elm})}/>
+													<FontAwesomeIcon icon={faCartShopping} onClick={addShoppingCartItem(elm)} style={!elm.amount ? {pointerEvents: "none"} : ""}/>
 												</div>
 											</div>
 										</div>

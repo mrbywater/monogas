@@ -634,7 +634,7 @@ export const shopItems = [
             require("../Images/ShopItemImages/reductor_tomas/1.webp")
         ],
         headline : "Редуктор Tomasetto AT09 Nordic",
-        price : "1376",
+        price : "1372",
         brand : "Tomasetto",
         condition : "Б/в",
         amount : 5,

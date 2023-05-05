@@ -15,9 +15,11 @@ import {
     faMagnifyingGlass
 } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 
 const ShopItem = () => {
+
+    const [shoppingCartItems, setShoppingCartItems] = useState(JSON.parse(localStorage.getItem('shoppingCart')))
 
     useEffect(()=> {
         localStorage.setItem('search', '')
@@ -41,6 +43,18 @@ const ShopItem = () => {
             window.location.href='/shop/#mainSearch'
         }
     }
+
+    const addShoppingCartItem = (item) => (e) =>{
+
+        if (shoppingCartItems.every(elem => elem.headline !== item.headline)) {
+            setShoppingCartItems([...shoppingCartItems, item])
+        }
+
+    }
+
+    useEffect(() => {
+        localStorage.setItem('shoppingCart', JSON.stringify(shoppingCartItems))
+    }, [shoppingCartItems])
 
     if (include.length) {
         return (
@@ -78,8 +92,11 @@ const ShopItem = () => {
                                                     <span style={{color: "red"}}>Нема в наявності</span>
                                                 }
                                             </div>
-                                            <div className="shoppingButtonCont">
-                                                <FontAwesomeIcon icon={faCartShopping} style={{transition:"none"}}/>
+                                            <div className="shoppingButtonCont" onClick={addShoppingCartItem(elem)}>
+                                                <FontAwesomeIcon
+                                                    icon={faCartShopping}
+                                                    style={!elem.amount ? {pointerEvents: "none", transition:"none"} : {transition:"none"}}
+                                                />
                                                 <span>Купити</span>
                                             </div>
                                         </div>
