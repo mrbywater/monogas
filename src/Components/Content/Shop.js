@@ -18,6 +18,7 @@ if (localStorage.getItem('shoppingCart') === null) {
 	localStorage.setItem('shoppingCart', '[]')
 }
 
+
 const checkedInitial = createBrands.reduce((acc,title) => {
 	return {
 		...acc,
@@ -43,7 +44,8 @@ const Shop = () => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const [itemsPerPage] = useState(2)
 	const [selectedValue, setSelectedValue] = useState("relevance")
-	const [shoppingCartItems, setShoppingCartItems] = useState(JSON.parse(localStorage.getItem('shoppingCart')))
+	const [shoppingCartItems, setShoppingCartItems] = useState([])
+	const [len, setLen] = useState(0)
 
 	useEffect(()=>{
 		setBrandCheckedTrue(Object.entries(brandsChecked).map(item => {
@@ -116,18 +118,28 @@ const Shop = () => {
 		return item.headline.toLowerCase().includes(mainSearchInput.toLowerCase())
 	})
 
-
-	const addShoppingCartItem = (item) => (e) =>{
+	const addShoppingCartItem =  (item)  => (e) => {
 
 		if (shoppingCartItems.every(elem => elem.headline !== item.headline)) {
-			setShoppingCartItems([...shoppingCartItems, item])
+			setShoppingCartItems([...JSON.parse(localStorage.getItem('shoppingCart')), item])
 		}
 
+		console.log(shoppingCartItems, JSON.parse(localStorage.getItem('shoppingCart')))
 	}
 
-	useEffect(() => {
+	useEffect(()=>{
+
 		localStorage.setItem('shoppingCart', JSON.stringify(shoppingCartItems))
+
 	}, [shoppingCartItems])
+
+	useEffect(()=>{
+
+		if (JSON.parse(localStorage.getItem('shoppingCart')).length < shoppingCartItems.length) {
+			setShoppingCartItems([])
+		}
+
+	}, [JSON.parse(localStorage.getItem('shoppingCart')).length])
 
 	const sortMainSearchFiltered = selectedValue === "minToMax" ? mainSearchFiltered.sort((a, b) => a.price - b.price) : selectedValue === "maxToMin" ? mainSearchFiltered.sort((a, b) => b.price - a.price) : mainSearchFiltered
 
@@ -263,7 +275,11 @@ const Shop = () => {
 												{!elm.amount && <span className="itemAmount">Немає в наявності</span>}
 												<div className="itemPriceCont">
 													<span>{elm.price}₴</span>
-													<FontAwesomeIcon icon={faCartShopping} onClick={addShoppingCartItem(elm)} style={!elm.amount ? {pointerEvents: "none"} : ""}/>
+													<FontAwesomeIcon
+														onClick={addShoppingCartItem(elm)}
+														icon={faCartShopping}
+														style={!elm.amount ? {pointerEvents: "none"} : ""}
+													/>
 												</div>
 											</div>
 										</div>
