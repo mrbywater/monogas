@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Components/Context/ShoppingCartContext.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/InfoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ShopItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShopItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.scss" afterDir="false" />
     </list>
@@ -114,7 +116,10 @@
       <workItem from="1683405461898" duration="501000" />
       <workItem from="1683413761190" duration="3000" />
       <workItem from="1683416340075" duration="1974000" />
-      <workItem from="1683448416132" duration="9580000" />
+      <workItem from="1683448416132" duration="9651000" />
+      <workItem from="1683461665631" duration="23000" />
+      <workItem from="1683461727407" duration="98000" />
+      <workItem from="1683479471175" duration="10024000" />
     </task>
     <servers />
   </component>

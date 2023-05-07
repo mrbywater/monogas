@@ -13,11 +13,12 @@ import {SpecificService} from "./Components/Content/SpecificService";
 import {SelectedProject} from "./Components/Content/SelectedProject"
 import {Shop} from "./Components/Content/Shop"
 import {ShopItem} from "./Components/Content/ShopItem"
+import {ShoppingCartProvider} from "./Components/Context/ShoppingCartContext"
 
 function App() {
 
   return (
-    <>
+    <ShoppingCartProvider>
         <Header/>
         <Routes >
             <Route path="/" element={<Home />}/>
@@ -31,7 +32,7 @@ function App() {
             <Route path="*" element={<NotFoundPage />}/>
         </Routes>
         <Footer/>
-    </>
+    </ShoppingCartProvider>
   );
 }
 

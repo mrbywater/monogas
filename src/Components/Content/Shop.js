@@ -5,19 +5,15 @@ import {faMagnifyingGlass, faAngleUp, faCartShopping, faAngleLeft, faAngleRight}
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {shopFilter, shopItems} from "./InfoList"
 import {MultiRangeSlider} from "./MultiRangeSlider";
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import {Link} from "react-router-dom";
 import {urlCreation} from "./OurProjects.js"
 import {Pagination} from "./Pagination";
+import {ShoppingCartContext} from "../Context/ShoppingCartContext";
 
 // all of the constants that not recalculated on next render has to be moved out of component
 // + it's better to move it to separate `helper.js` file
 const createBrands = shopItems.map(item => item.brand)
-
-if (localStorage.getItem('shoppingCart') === null) {
-	localStorage.setItem('shoppingCart', '[]')
-}
-
 
 const checkedInitial = createBrands.reduce((acc,title) => {
 	return {
@@ -34,6 +30,9 @@ let maxPrice = Math.max(...price)
 let minPrice = Math.min(...price)
 
 const Shop = () => {
+
+	const { addItemToCart } = useContext(ShoppingCartContext)
+
 	const [mainSearchInput, setMainSearchInput] = useState('');
 	const [brandSearchInput, setBrandSearchInput] = useState('');
 	const [priceFiltered, setPriceFiltered] = useState(shopItems);
@@ -44,8 +43,6 @@ const Shop = () => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const [itemsPerPage] = useState(2)
 	const [selectedValue, setSelectedValue] = useState("relevance")
-	const [shoppingCartItems, setShoppingCartItems] = useState([])
-	const [len, setLen] = useState(0)
 
 	useEffect(()=>{
 		setBrandCheckedTrue(Object.entries(brandsChecked).map(item => {
@@ -117,29 +114,6 @@ const Shop = () => {
 	const mainSearchFiltered = amountFiltered.filter(item => {
 		return item.headline.toLowerCase().includes(mainSearchInput.toLowerCase())
 	})
-
-	const addShoppingCartItem =  (item)  => (e) => {
-
-		if (shoppingCartItems.every(elem => elem.headline !== item.headline)) {
-			setShoppingCartItems([...JSON.parse(localStorage.getItem('shoppingCart')), item])
-		}
-
-		console.log(shoppingCartItems, JSON.parse(localStorage.getItem('shoppingCart')))
-	}
-
-	useEffect(()=>{
-
-		localStorage.setItem('shoppingCart', JSON.stringify(shoppingCartItems))
-
-	}, [shoppingCartItems])
-
-	useEffect(()=>{
-
-		if (JSON.parse(localStorage.getItem('shoppingCart')).length < shoppingCartItems.length) {
-			setShoppingCartItems([])
-		}
-
-	}, [JSON.parse(localStorage.getItem('shoppingCart')).length])
 
 	const sortMainSearchFiltered = selectedValue === "minToMax" ? mainSearchFiltered.sort((a, b) => a.price - b.price) : selectedValue === "maxToMin" ? mainSearchFiltered.sort((a, b) => b.price - a.price) : mainSearchFiltered
 
@@ -276,7 +250,7 @@ const Shop = () => {
 												<div className="itemPriceCont">
 													<span>{elm.price}₴</span>
 													<FontAwesomeIcon
-														onClick={addShoppingCartItem(elm)}
+														onClick={addItemToCart(elm)}
 														icon={faCartShopping}
 														style={!elm.amount ? {pointerEvents: "none"} : ""}
 													/>

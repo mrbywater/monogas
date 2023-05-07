@@ -15,9 +15,12 @@ import {
     faMagnifyingGlass
 } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
+import {ShoppingCartContext} from "../Context/ShoppingCartContext";
 
 const ShopItem = () => {
+
+    const { addItemToCart } = useContext(ShoppingCartContext)
 
     const [shoppingCartItems, setShoppingCartItems] = useState(JSON.parse(localStorage.getItem('shoppingCart')))
 
@@ -92,7 +95,7 @@ const ShopItem = () => {
                                                     <span style={{color: "red"}}>Нема в наявності</span>
                                                 }
                                             </div>
-                                            <div className="shoppingButtonCont" onClick={addShoppingCartItem(elem)}>
+                                            <div className="shoppingButtonCont" onClick={addItemToCart(elem)}>
                                                 <FontAwesomeIcon
                                                     icon={faCartShopping}
                                                     style={!elem.amount ? {pointerEvents: "none", transition:"none"} : {transition:"none"}}
