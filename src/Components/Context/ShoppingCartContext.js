@@ -1,13 +1,24 @@
-import {useState, createContext} from "react";
+import {useState, createContext, useEffect} from "react";
 
 export const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({ children }) => {
 
-    const [shopItems, setShopItems] = useState([]);
+    const [shopCart, setShopCart] = useState(localStorage.getItem('shoppingCart').length !== 0 ? JSON.parse(localStorage.getItem('shoppingCart')) : []);
+    const [priceArray, setPriceArray] = useState(0)
+    const [isOpen, setIsOpen] = useState(false)
+
+    useEffect(()=>{
+
+        setPriceArray(shopCart.map(elm => elm.price * elm.quantity))
+
+        localStorage.setItem('shoppingCart', JSON.stringify(shopCart))
+
+    }, [shopCart])
+
     const addItemToCart = (item) => (e) => {
 
-        setShopItems(prevCartItems => {
+        setShopCart(prevCartItems => {
             const existingCartItem = prevCartItems.find(elm => elm.headline === item.headline);
             if (existingCartItem) {
                 return prevCartItems;
@@ -18,20 +29,16 @@ export const ShoppingCartProvider = ({ children }) => {
             }
         });
 
-        // if (!shopItems.includes(item)){
-        //     setShopItems([...shopItems, item])
-        // }
     }
 
-
     const removeItemFromCart = (item) => (e) => {
-        const newShopItems = shopItems.filter(elem => item.headline !== elem.headline);
-        setShopItems(newShopItems);
+        const newShopItems = shopCart.filter(elem => item.headline !== elem.headline);
+        setShopCart(newShopItems);
     };
 
     const increaseItemQuantity = (item) => (e) =>  {
 
-        const newShopItems = shopItems.map(cartItem => {
+        const newShopItems = shopCart.map(cartItem => {
 
                 if (cartItem.headline === item.headline) {
                     if (cartItem.quantity < item.amount) {
@@ -44,12 +51,12 @@ export const ShoppingCartProvider = ({ children }) => {
                 }
         });
 
-        setShopItems(newShopItems);
+        setShopCart(newShopItems);
     };
 
     const decreaseItemQuantity = (item) => (e) => {
 
-        const newShopItems = shopItems.map(cartItem => {
+        const newShopItems = shopCart.map(cartItem => {
 
                 if (cartItem.headline === item.headline) {
                     if (cartItem.quantity > 1) {
@@ -62,11 +69,22 @@ export const ShoppingCartProvider = ({ children }) => {
                 }
         });
 
-        setShopItems(newShopItems);
+        setShopCart(newShopItems);
     };
 
     return (
-        <ShoppingCartContext.Provider value={{ shopItems, addItemToCart, removeItemFromCart, increaseItemQuantity, decreaseItemQuantity }}>
+        <ShoppingCartContext.Provider
+            value={{
+                shopCart,
+                priceArray,
+                isOpen,
+                setIsOpen,
+                addItemToCart,
+                removeItemFromCart,
+                increaseItemQuantity,
+                decreaseItemQuantity
+            }}
+        >
             {children}
         </ShoppingCartContext.Provider>
     );

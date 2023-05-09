@@ -62,6 +62,10 @@
   margin-left: 10px;
 }
 
+.shoppingButtonContInCart span {
+  margin-left: 10px;
+}
+
 .shoppingButtonCont {
   width: 140px;
   height: 45px;
@@ -69,7 +73,7 @@
   justify-content: center;
   align-items: center;
   display: flex;
-  font-size: 24px;
+  font-size: 22px;
   cursor: pointer;
   transition: color 0.4s linear;
   position: relative;
@@ -102,6 +106,59 @@
 }
 .shoppingButtonCont:hover::before{
   transform: scaleX(1);
+}
+
+.shoppingButtonContInCart {
+  width: 140px;
+  height: 45px;
+  border: 2px solid #00a046;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 22px;
+  transition: color 0.4s linear;
+  position: relative;
+  font-weight: bold;
+  color: #006227;
+  text-decoration: none;
+  text-align: center;
+  margin-left: 15px;
+  user-select: none;
+}
+
+.noItemAmount {
+  pointer-events: none;
+  transition: none;
+  opacity: .4;
+}
+
+.alreadyCheckedInCart {
+  position: relative;
+}
+
+.alreadyCheckedInCart svg{
+  color: #00a046;
+  transition: none !important;
+  cursor: default !important;
+}
+
+.alreadyChecked {
+  position: absolute;
+  background-color: #00a046;
+  border-radius: 30px;
+  width: 12px;
+  height: 12px;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 17px;
+  right: -2px;
+  border: 1px solid white;
+}
+
+.alreadyChecked svg {
+  color: white;
 }
 
 .deliveryCont {

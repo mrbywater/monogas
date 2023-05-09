@@ -1,0 +1,156 @@
+@import '../../App';
+
+.orderCont {
+  //border: 1px solid black;
+  height: 1800px;
+  width: 90%;
+  margin: 0 0 0 5%;
+  display: flex;
+  flex-direction: column;
+}
+
+.orderLogoCont {
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(177, 176, 176, .8);
+}
+
+.orderLogo {
+    height: 80px;
+    border-radius: 5px;
+}
+
+.headerSpan {
+  margin: 70px 0;
+  font-size: 50px;
+}
+
+.blockCont {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  margin-bottom: 50px;
+}
+
+.blockHeadline {
+  display: flex;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.blockHeadline span {
+  font-size: 24px;
+}
+
+.blockHeadline div {
+  background-color: rgb(0, 0, 0, .2);
+  width: 30px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  margin-right: 15px;
+}
+
+#shoppingCart {
+  position: absolute;
+  right: 35%;
+  top: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  color: $secondary-color-blue;
+}
+
+#shoppingCart:hover {
+  color: crimson;
+}
+
+.infoContactsCont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.infoContactsCont div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 40%;
+  height: 100px;
+}
+
+.infoContactsCont input {
+  height: 40px;
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.infoContactsCont span {
+  margin-bottom: 10px;
+}
+
+.itemsCont {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-left: 5%;
+  max-height: 860px;
+  overflow: auto;
+}
+
+.itemsCont::-webkit-scrollbar {
+  width: 10px;
+}
+
+.orderItem {
+  display: flex;
+  border: 1px solid black;
+  margin-bottom: 15px;
+  height: 150px;
+}
+
+.orderItem img {
+  height: 130px;
+  width: 160px;
+  padding-top: 10px;
+}
+
+.orderItem span {
+  font-size: 22px;
+  width: 45%;
+  padding-top: 10px;
+}
+
+.orderItem div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.orderItem div span{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.orderItem a{
+  font-size: 22px;
+  width: 45%;
+  padding: 10px;
+  text-decoration: none;
+  color: $secondary-color-blue;
+}
+
+.orderItem a:hover{
+  color: crimson;
+}
+
+.orderItem div span:first-child {
+  font-size: 16px;
+  color: rgb(0, 0, 0, .7);
+}
+
+.orderItem div span:last-child {
+  font-size: 18px;
+}

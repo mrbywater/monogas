@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Components/Context/ShoppingCartContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/Order.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Components/Content/Order.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/NotFoundPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/NotFoundPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/OurProjects.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/OurProjects.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Shop.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/ShopItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShopItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ShopItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShopItem.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Context/ShoppingCartContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Context/ShoppingCartContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Header/Header.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +31,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="SCSS File" />
         <option value="JavaScript File" />
+        <option value="SCSS File" />
       </list>
     </option>
   </component>
@@ -41,23 +51,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Telegram D/feature_-_checkboxes_+_filtering.patch&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Telegram D/feature_-_checkboxes_+_filtering.patch",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "ts.external.directory.path": "D:\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Николай\Documents\GitHub\monogas\src\Components\Images" />
@@ -119,7 +130,9 @@
       <workItem from="1683448416132" duration="9651000" />
       <workItem from="1683461665631" duration="23000" />
       <workItem from="1683461727407" duration="98000" />
-      <workItem from="1683479471175" duration="10024000" />
+      <workItem from="1683479471175" duration="10138000" />
+      <workItem from="1683502193625" duration="297000" />
+      <workItem from="1683551897903" duration="23063000" />
     </task>
     <servers />
   </component>

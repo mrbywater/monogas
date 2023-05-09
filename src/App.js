@@ -14,8 +14,11 @@ import {SelectedProject} from "./Components/Content/SelectedProject"
 import {Shop} from "./Components/Content/Shop"
 import {ShopItem} from "./Components/Content/ShopItem"
 import {ShoppingCartProvider} from "./Components/Context/ShoppingCartContext"
+import {Order} from "./Components/Content/Order";
 
 function App() {
+
+
 
   return (
     <ShoppingCartProvider>
@@ -29,6 +32,7 @@ function App() {
             <Route path="/services/:path" element={<SpecificService />}/>
             <Route path="/works/:url" element={<SelectedProject />}/>
             <Route path="/shop/:item" element={<ShopItem />}/>
+            <Route path="/order" element={<Order />}/>
             <Route path="*" element={<NotFoundPage />}/>
         </Routes>
         <Footer/>

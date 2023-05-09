@@ -1,7 +1,14 @@
 import "./Content.scss"
 import "./Shop.scss"
 import {BelowHeaderImage} from "./BelowHeaderImage";
-import {faMagnifyingGlass, faAngleUp, faCartShopping, faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons";
+import {
+	faMagnifyingGlass,
+	faAngleUp,
+	faCartShopping,
+	faAngleLeft,
+	faAngleRight,
+	faCheck
+} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {shopFilter, shopItems} from "./InfoList"
 import {MultiRangeSlider} from "./MultiRangeSlider";
@@ -31,7 +38,7 @@ let minPrice = Math.min(...price)
 
 const Shop = () => {
 
-	const { addItemToCart } = useContext(ShoppingCartContext)
+	const { shopCart, addItemToCart } = useContext(ShoppingCartContext)
 
 	const [mainSearchInput, setMainSearchInput] = useState('');
 	const [brandSearchInput, setBrandSearchInput] = useState('');
@@ -138,6 +145,8 @@ const Shop = () => {
 		setSelectedValue(event.target.value)
 		setCurrentPage(1)
 	}
+
+	console.log()
 
 	// every element that return to us for render from fx. `.map` method
 	// needs to have key for the root tag of it
@@ -249,11 +258,28 @@ const Shop = () => {
 												{!elm.amount && <span className="itemAmount">Немає в наявності</span>}
 												<div className="itemPriceCont">
 													<span>{elm.price}₴</span>
-													<FontAwesomeIcon
-														onClick={addItemToCart(elm)}
-														icon={faCartShopping}
-														style={!elm.amount ? {pointerEvents: "none"} : ""}
-													/>
+														{shopCart.map(({headline}) => headline).includes(elm.headline) ?
+															(
+																<div className="alreadyInCart">
+																	<FontAwesomeIcon
+																		icon={faCartShopping}
+																	/>
+																	<div className="checkedCart">
+																		<FontAwesomeIcon
+																			icon={faCheck}
+																		/>
+																	</div>
+																</div>
+															): (
+																<div id="defaultCart">
+																	<FontAwesomeIcon
+																		onClick={addItemToCart(elm)}
+																		icon={faCartShopping}
+																		style={!elm.amount ? {pointerEvents: "none"} : ""}
+																	/>
+																</div>
+															)
+														}
 												</div>
 											</div>
 										</div>

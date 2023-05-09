@@ -1,6 +1,6 @@
 import "./Header.scss"
 import Logo from "../Images/logo.jpg"
-import {Link} from 'react-router-dom'
+import {Link, useLocation} from 'react-router-dom'
 import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
 import {faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,6 +9,8 @@ import { slide as Menu } from 'react-burger-menu'
 import {ShoppingCart} from "../Content/ShoppingCart";
 
 const Header = () =>{
+
+    const ref = useLocation()
 
     let darkMode = localStorage.getItem('darkMode');
 
@@ -56,7 +58,7 @@ const Header = () =>{
     })
 
     return (
-        <div className="headerCont">
+        <div className={ref.pathname === "/order" ? "onOrderPage" : "headerCont"}>
             <Menu
                 isOpen = {menuOpen}
                 onStateChange ={(state) => handleStateChange(state)}

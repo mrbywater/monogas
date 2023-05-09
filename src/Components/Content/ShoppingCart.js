@@ -4,116 +4,56 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import "./ShoppingCart.scss"
 import {ShoppingCartContext} from "../Context/ShoppingCartContext"
 import React, {useContext, useEffect, useState} from "react";
+import {Link, useLocation} from "react-router-dom";
 
 const ShoppingCart = () => {
 
+    const cart = useLocation()
+
     const {
-        shopItems,
+        shopCart,
+        isOpen,
+        setIsOpen,
+        priceArray,
         removeItemFromCart,
         increaseItemQuantity,
         decreaseItemQuantity
     } = useContext(ShoppingCartContext)
 
-    const [isOpen, setIsOpen] = useState(false)
-
     const close = () => {
         setIsOpen(false)
     }
 
-    console.log(shopItems)
-
-    // const saveValue = (id, price) => (e) => {
-    //
-    //     setItemInnerPrices(items.map(item => {
-    //         if (id === item.headline) {
-    //             return {
-    //                 headline: item.headline,
-    //                 price:e.target.value * price
-    //             }
-    //         } else {
-    //            return {
-    //                headline: item.headline,
-    //                price:+item.price
-    //            }
-    //         }
-    //     }))
-    //
-    //     localStorage.setItem(id, e.target.value)
-    //     localStorage.setItem(`${id}_price`, e.target.value * price)
-    //
-    //     document.getElementById(id).innerHTML=`${e.target.value * price}₴`
-    //
-    // }
-
-     // const handleKeyPress=(amount) => (e) =>{
-     //     if (e.target.value >= amount) {
-     //         e.preventDefault();
-     //     }
-     // }
-
-    //  const deleteItemFromCart = (headline, price) => (e) =>{
-    //
-    //      setItemInnerPrices(itemInnerPrices.filter(elem => elem.headline !== headline))
-    //      setItems(items.filter(elem => elem.headline !== headline))
-    //      setNewPrices(newPrices.filter(elem => elem !== headline))
-    //
-    //      localStorage.setItem('itemInnerPrices', JSON.stringify(itemInnerPrices.filter(elem => elem.headline !== headline)))
-    //      localStorage.setItem('shoppingCart', JSON.stringify(items.filter(elem => elem.headline !== headline)))
-    //      localStorage.setItem(headline, 1)
-    //      localStorage.setItem(`${headline}_price`, price)
-    //  }
-    //
-    // useEffect(()=>{
-    //
-    //     setNewPrices(itemInnerPrices.map(item => item.headline))
-    //     setPricesSumArray(itemInnerPrices.map(item => item.price))
-    //
-    // },[itemInnerPrices])
-    //
-    //
-    // useEffect(()=>{
-    //
-    //    let newItems = items.filter(item => {
-    //         if (!newPrices.includes(item.headline)) {
-    //             return  item
-    //         }
-    //    })
-    //
-    //     setItemInnerPrices([...itemInnerPrices, ...newItems])
-    //
-    // },[items.length])
-    //
-    // useEffect(() => {
-    //
-    //     if (JSON.parse(localStorage.getItem("itemInnerPrices")) !== null){
-    //         setItemInnerPrices(JSON.parse(localStorage.getItem("itemInnerPrices")))
-    //     }
-    // }, [])
-    //
-    // useEffect(() => {
-    //
-    //     setItems(JSON.parse(localStorage.getItem("shoppingCart")))
-    //
-    // }, [localStorage.getItem("shoppingCart")])
-
     return (
-        <>
-            <div className="shoppingCartIconCont" onClick={()=>setIsOpen(true)}>
-                <FontAwesomeIcon icon={faCartShopping} style={{transition:"none"}} className="shoppingCartIcon"/>
-            </div>
+        <div className="shoppingCartIconContHeader">
+            {cart.pathname === "/order" ? (
+                <div id="shoppingCart" onClick={()=>setIsOpen(true)}>
+                    Редагувати
+                </div>
+            ): (
+                <div className="shoppingCartIconCont" onClick={()=>setIsOpen(true)}>
+                    <FontAwesomeIcon
+                        icon={faCartShopping}
+                        className="shoppingCartIcon"
+                    />
+                    {!!shopCart.length && (
+                        <div>{shopCart.length}</div>
+                    )}
+                </div>
+            )}
             {isOpen &&
                 <>
                     <div className="overlay" onClick={close}/>
                     <div className="cartDiv">
                         <FontAwesomeIcon icon={faXmark} onClick={close} className="closeButton"/>
                         <div className="itemsInCartCont">
-                            {shopItems.map(item => (
+                            {shopCart.map(item => (
                                 <div className="itemsInCart">
                                     <img src={item.img[0]}/>
                                     <span>{item.headline}</span>
                                     <FontAwesomeIcon
                                         icon={faMinus}
-                                        className="minusButton"
+                                        className={item.quantity !== 1 ? "minusButton" : "minusButton disabled"}
                                         onClick={decreaseItemQuantity(item)}
                                     />
                                     <input
@@ -124,14 +64,14 @@ const ShoppingCart = () => {
                                     />
                                     <FontAwesomeIcon
                                         icon={faPlus}
-                                        className="plusButton"
+                                        className={item.amount !== item.quantity ? "plusButton" : "plusButton disabled"}
                                         onClick={increaseItemQuantity(item)}
                                     />
                                     <div
                                         id={item.headline}
                                         key={`${item.headline}_price`}
                                     >
-                                        {localStorage.getItem(`${item.headline}_price`) !== null ? localStorage.getItem(`${item.headline}_price`) : item.price}₴
+                                        {item.price * item.quantity}₴
                                     </div>
                                     <FontAwesomeIcon
                                         icon={faXmark}
@@ -140,14 +80,14 @@ const ShoppingCart = () => {
                                     />
                                 </div>
                             ))}
-                            {!!shopItems.length ?
+                            {!!shopCart.length ?
                                 (<div className="totalCont">
                                     <div className="totalPrice">
-                                        {/*{pricesSumArray.reduce((elem, acc) => elem + acc, 0)}₴*/}
+                                        {priceArray.reduce((elem, acc) => elem + acc, 0)}₴
                                     </div>
-                                    <div className="acceptButton">
+                                    <Link to="/order" className="acceptButton" onClick={close}>
                                         Оформити замовлення
-                                    </div>
+                                    </Link>
                                 </div>) : (
                                     <span className="emptyCart">Кошик порожній...</span>
                                 )
@@ -156,7 +96,7 @@ const ShoppingCart = () => {
                     </div>
                 </>
             }
-        </>
+        </div>
    )
 }
 

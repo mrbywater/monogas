@@ -1,7 +1,7 @@
 @import "../../App";
 
 .headlineCont {
-  flex-direction: row;
+  flex-direction: row !important;
   user-select: none;
 }
 

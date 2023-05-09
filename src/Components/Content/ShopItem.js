@@ -12,7 +12,7 @@ import {
     faStore,
     faWallet,
     faShieldHeart,
-    faMagnifyingGlass
+    faMagnifyingGlass, faCheck
 } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React, {useContext, useEffect, useState} from "react";
@@ -20,7 +20,7 @@ import {ShoppingCartContext} from "../Context/ShoppingCartContext";
 
 const ShopItem = () => {
 
-    const { addItemToCart } = useContext(ShoppingCartContext)
+    const { shopCart, addItemToCart } = useContext(ShoppingCartContext)
 
     const [shoppingCartItems, setShoppingCartItems] = useState(JSON.parse(localStorage.getItem('shoppingCart')))
 
@@ -95,13 +95,31 @@ const ShopItem = () => {
                                                     <span style={{color: "red"}}>Нема в наявності</span>
                                                 }
                                             </div>
-                                            <div className="shoppingButtonCont" onClick={addItemToCart(elem)}>
-                                                <FontAwesomeIcon
-                                                    icon={faCartShopping}
-                                                    style={!elem.amount ? {pointerEvents: "none", transition:"none"} : {transition:"none"}}
-                                                />
-                                                <span>Купити</span>
-                                            </div>
+                                                {shopCart.map(({headline}) => headline).includes(elem.headline) ?
+                                                    (
+                                                        <div className="shoppingButtonContInCart" onClick={addItemToCart(elem)}>
+                                                            <div className="alreadyCheckedInCart">
+                                                                <FontAwesomeIcon
+                                                                    icon={faCartShopping}
+                                                                />
+                                                                <div className="alreadyChecked">
+                                                                    <FontAwesomeIcon
+                                                                        icon={faCheck}
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <span>У кошику</span>
+                                                        </div>
+                                                    ): (
+                                                        <div className={!elem.amount ? "shoppingButtonCont noItemAmount" : "shoppingButtonCont"} onClick={addItemToCart(elem)} >
+                                                            <FontAwesomeIcon
+                                                                icon={faCartShopping}
+                                                                style={!elem.amount ? {pointerEvents: "none", transition:"none"} : {transition:"none"}}
+                                                            />
+                                                            <span>Купити</span>
+                                                        </div>
+                                                    )
+                                                }
                                         </div>
                                         <div className="deliveryCont">
                                             <div className="deliveryHeadline">Доставка:</div>

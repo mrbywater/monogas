@@ -1,10 +1,13 @@
 import "./Footer.scss"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFacebook, faInstagram} from "@fortawesome/free-brands-svg-icons";
+import {useLocation} from "react-router-dom";
 const Footer = () =>{
 
+    const ref = useLocation()
+
     return (
-        <>
+        <div className={ref.pathname === "/order" ? "onOrderPage" : ""}>
             <div className="footerCont" id="contacts">
                 <div className="info">
                     <h1>Адреса</h1>
@@ -52,7 +55,7 @@ const Footer = () =>{
             <div className="lowerCont">
                 © 2023 ГБО Monogas
             </div>
-        </>
+        </div>
     )
 
 }

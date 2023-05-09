@@ -1,5 +1,11 @@
 @import '../../App';
 
+.shoppingCartIconContHeader{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
 .shoppingCartIconCont{
   display: flex;
   align-items: center;
@@ -12,6 +18,10 @@
   width: 32px;
   height: 32px;
   cursor: pointer;
+}
+
+.shoppingCartIcon:active {
+  opacity: .8;
 }
 
 .backgroundEclipse {
@@ -153,6 +163,7 @@
   height: 50px;
   background-color: #00a046;
   border-radius: 5px;
+  text-decoration: none;
 }
 
 .emptyCart {
@@ -181,3 +192,28 @@
   color: black;
   transition: color 0.2s;
 }
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.shoppingCartIconCont div {
+  background-color: red;
+  position: absolute;
+  color: white;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 15px;
+  max-width: 20px;
+  min-height: 15px;
+  max-height: 20px;
+  border-radius: 30px;
+  top: 19px;
+  padding: 1px;
+  right: -7px;
+}
+
+
