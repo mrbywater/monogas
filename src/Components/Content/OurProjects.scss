@@ -68,7 +68,7 @@
 }
 
 .linkBlocks {
-  width: 30em;
+  width: 33em;
   height: 25em;
   margin-top: 2em;
   object-fit: cover;
@@ -98,7 +98,7 @@
 }
 
 .placementOfBlock {
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 80%;
   display: flex;
   flex-wrap: wrap;

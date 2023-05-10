@@ -4,7 +4,7 @@ export const ShoppingCartContext = createContext();
 
 export const ShoppingCartProvider = ({ children }) => {
 
-    const [shopCart, setShopCart] = useState(localStorage.getItem('shoppingCart').length !== 0 ? JSON.parse(localStorage.getItem('shoppingCart')) : []);
+    const [shopCart, setShopCart] = useState((localStorage.getItem('shoppingCart').length !== 0 || localStorage.getItem('shoppingCart') === null) ? JSON.parse(localStorage.getItem('shoppingCart')) : []);
     const [priceArray, setPriceArray] = useState(0)
     const [isOpen, setIsOpen] = useState(false)
 

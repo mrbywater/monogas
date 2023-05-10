@@ -9,6 +9,13 @@
   flex-direction: column;
 }
 
+.widthBlockCont {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-left: 15%;
+}
+
 .orderLogoCont {
   padding-bottom: 20px;
   border-bottom: 1px solid rgb(177, 176, 176, .8);
@@ -27,8 +34,10 @@
 .blockCont {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid rgb(0, 0, 0, 0.1);
   margin-bottom: 50px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .blockHeadline {
@@ -54,7 +63,7 @@
 
 #shoppingCart {
   position: absolute;
-  right: 35%;
+  right: 5%;
   top: 25px;
   cursor: pointer;
   font-size: 16px;
@@ -83,6 +92,7 @@
   height: 40px;
   border-radius: 5px;
   font-size: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.8);
 }
 
 .infoContactsCont span {
@@ -92,7 +102,7 @@
 .itemsCont {
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 90%;
   margin-left: 5%;
   max-height: 860px;
   overflow: auto;
@@ -104,14 +114,16 @@
 
 .orderItem {
   display: flex;
-  border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  border-radius: 5px;
   margin-bottom: 15px;
   height: 150px;
 }
 
 .orderItem img {
   height: 130px;
-  width: 160px;
+  min-width: 160px;
+  max-width: 160px;
   padding-top: 10px;
 }
 
@@ -137,9 +149,12 @@
 .orderItem a{
   font-size: 22px;
   width: 45%;
-  padding: 10px;
   text-decoration: none;
   color: $secondary-color-blue;
+}
+
+.orderItem > span{
+  padding: 10px;
 }
 
 .orderItem a:hover{
@@ -154,3 +169,42 @@
 .orderItem div span:last-child {
   font-size: 18px;
 }
+
+.blockContAccept {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  background: rgb(0, 0, 0, 0.03);
+  margin-bottom: 50px;
+  border-radius: 10px;
+  width: 80%;
+  margin-left: 10%;
+  padding: 10px;
+}
+
+.blockContAccept div {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px 30px 10px ;
+  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+  padding-bottom: 20px;
+  font-size: 18px;
+}
+
+.blockContAccept div:first-child {
+  margin: 20px 10px 30px 10px ;
+}
+
+.blockContAccept div:last-child {
+  height: 50px;
+  border-radius: 10px;
+  margin: 0 10px 20px 10px ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  background: #00a046;
+  color: white;
+  padding-bottom: 0
+}
+
