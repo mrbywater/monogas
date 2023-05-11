@@ -5,11 +5,118 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/db/conn.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/loadEnvironment.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/record.mjs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/server.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/Order.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/Order.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Content/OurProjects.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Content/OurProjects.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Context/ShoppingCartContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Context/ShoppingCartContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/client/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/client/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/AboutUs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/AboutUs.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/AboutUs.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ArrowUp.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ArrowUp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ArrowUp.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ArrowUp.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/BelowHeaderImage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/BelowHeaderImage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Content.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Content.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Home.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ImageSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ImageSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ImageSlider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ImageSlider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoBlock.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/InfoBlock.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoBlock.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/InfoBlock.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/InfoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/InfoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/MultiRangeSlider.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/MultiRangeSlider.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/MultiRangeSlider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/MultiRangeSlider.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/NotFoundPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/NotFoundPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Order.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Order.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Order.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/OurProjects.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/OurProjects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/OurProjects.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/OurProjects.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Pagination.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Pagination.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/RequestButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/RequestButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/RequestButton.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/RequestButton.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/SelectedProject.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/SelectedProject.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/SelectedProject.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/SelectedProject.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Services.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Services.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Services.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Shop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/Shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Shop.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ShopItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ShopItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ShopItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ShopItem.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ShoppingCart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/ShoppingCart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ShoppingCart.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/SpecificService.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/SpecificService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Content/SpecificService.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/SpecificService.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Context/ShoppingCartContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Context/ShoppingCartContext.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Footer/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Footer/Footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Footer/Footer.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Header/Header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Header/Header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/datchik_davleniya_zenit/1.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_davleniya_zenit/1.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/datchik_davleniya_zenit/2.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_davleniya_zenit/2.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/datchik_davleniya_zenit/3.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_davleniya_zenit/3.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/datchik_davleniya_zenit/4.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_davleniya_zenit/4.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/datchik_stag/1.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_stag/1.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/datchik_stag/2.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_stag/2.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/datchik_stag/3.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_stag/3.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/datchik_stag/4.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_stag/4.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/datchik_stag/5.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_stag/5.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/forsunka_hana/1.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/forsunka_hana/1.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/reductor_tomas/1.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/reductor_tomas/1.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/remcomplect_tomas/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/remcomplect_tomas/1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/remcomplect_tomas/2.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/remcomplect_tomas/2.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/remcomplect_tomas/3.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/remcomplect_tomas/3.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/remcomplect_tomas/4.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/remcomplect_tomas/4.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/ShopItemImages/zaslonka_master/1.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/zaslonka_master/1.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/about_us.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/about_us.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/audi_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/audi_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/audi_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/audi_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/audi_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/audi_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/audi_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/audi_4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/background_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/background_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/background_2_sized.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/background_2_sized.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/bmw_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/bmw_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/bmw_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/bmw_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/bmw_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/bmw_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/bmw_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/bmw_4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/car.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/car.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/car_with_hood_up.avif" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/car_with_hood_up.avif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/citroen_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/citroen_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/citroen_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/citroen_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/citroen_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/citroen_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/citroen_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/citroen_4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/cool_black_car_with_monogas.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/cool_black_car_with_monogas.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/diesel_page.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/diesel_page.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/disel.png" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/disel.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/electro_car.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/electro_car.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/electro_page.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/electro_page.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/fourth_generation_page.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/fourth_generation_page.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/fouth_generation.webp" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/fouth_generation.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/fsi_page.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/fsi_page.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/man_working_under_the_hood_of_a_car.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/man_working_under_the_hood_of_a_car.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/second_generation.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/second_generation.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/second_generation_page.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/second_generation_page.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/tsi_fsi_tfsi.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/tsi_fsi_tfsi.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/volt_1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/volt_1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/volt_2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/volt_2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/volt_3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/volt_3.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Images/volt_4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Images/volt_4.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ScrollToTop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/ScrollToTop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/reportWebVitals.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +148,12 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Telegram D/feature_-_checkboxes_+_filtering.patch&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/monogas&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -62,8 +170,20 @@
       <recent name="C:\Users\Николай\Documents\GitHub\monogas\src\Components\Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\monogas\server" />
+      <recent name="D:\monogas\server\db" />
       <recent name="C:\Users\Николай\Documents\GitHub\monogas\src\Components\Images" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="conn.mjs" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/db/conn.mjs" working-dir="$PROJECT_DIR$/server/db">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.conn.mjs" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -122,11 +242,27 @@
       <workItem from="1683502193625" duration="297000" />
       <workItem from="1683551897903" duration="23063000" />
       <workItem from="1683642993662" duration="11519000" />
-      <workItem from="1683732022619" duration="5144000" />
+      <workItem from="1683732022619" duration="6469000" />
+      <workItem from="1683741371864" duration="61000" />
+      <workItem from="1683744052063" duration="1065000" />
+      <workItem from="1683747005727" duration="22000" />
+      <workItem from="1683748460315" duration="11000" />
+      <workItem from="1683757114493" duration="13000" />
+      <workItem from="1683757169896" duration="9000" />
+      <workItem from="1683757190375" duration="24000" />
+      <workItem from="1683815113856" duration="1568000" />
+      <workItem from="1683816864039" duration="2812000" />
+      <workItem from="1683820243322" duration="2390000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
