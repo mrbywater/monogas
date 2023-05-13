@@ -18,8 +18,6 @@ import {Order} from "./Components/Content/Order";
 
 function App() {
 
-
-
   return (
     <ShoppingCartProvider>
         <Header/>

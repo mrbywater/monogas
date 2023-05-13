@@ -9,7 +9,7 @@ import {urlCreation} from "./OurProjects"
 
 const Order = () => {
 
-    const { shopCart, priceArray } = useContext(ShoppingCartContext)
+    const { shopCart, totalPrice } = useContext(ShoppingCartContext)
 
     // const apiKey = "db724e44715117789cd062d65b5a3de0";
     // const url = "https://api.novaposhta.ua/v2.0/json/";
@@ -114,7 +114,7 @@ const Order = () => {
                         </div>
                         <div>
                             <span>До сплати</span>
-                            <span>{priceArray.reduce((elem, acc) => elem + acc, 0)}₴</span>
+                            <span>{totalPrice}₴</span>
                         </div>
                         <div>Замовлення підтверджую</div>
                     </div>

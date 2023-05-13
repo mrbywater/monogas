@@ -3,7 +3,7 @@ import {faCartShopping, faMinus, faPlus, faXmark} from "@fortawesome/free-solid-
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import "./ShoppingCart.scss"
 import {ShoppingCartContext} from "../Context/ShoppingCartContext"
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext} from "react";
 import {Link, useLocation} from "react-router-dom";
 
 const ShoppingCart = () => {
@@ -14,7 +14,7 @@ const ShoppingCart = () => {
         shopCart,
         isOpen,
         setIsOpen,
-        priceArray,
+        totalPrice,
         removeItemFromCart,
         increaseItemQuantity,
         decreaseItemQuantity
@@ -53,7 +53,7 @@ const ShoppingCart = () => {
                                     <span>{item.headline}</span>
                                     <FontAwesomeIcon
                                         icon={faMinus}
-                                        className={item.quantity !== 1 ? "minusButton" : "minusButton disabled"}
+                                        className={item.quantity !== 1 ? "minusButton" : "minusButton disabledBtn"}
                                         onClick={decreaseItemQuantity(item)}
                                     />
                                     <input
@@ -64,7 +64,7 @@ const ShoppingCart = () => {
                                     />
                                     <FontAwesomeIcon
                                         icon={faPlus}
-                                        className={item.amount !== item.quantity ? "plusButton" : "plusButton disabled"}
+                                        className={item.amount !== item.quantity ? "plusButton" : "plusButton disabledBtn"}
                                         onClick={increaseItemQuantity(item)}
                                     />
                                     <div
@@ -83,7 +83,7 @@ const ShoppingCart = () => {
                             {!!shopCart.length ?
                                 (<div className="totalCont">
                                     <div className="totalPrice">
-                                        {priceArray.reduce((elem, acc) => elem + acc, 0)}₴
+                                        {totalPrice}₴
                                     </div>
                                     <Link to="/order" className="acceptButton" onClick={close}>
                                         Оформити замовлення

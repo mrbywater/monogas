@@ -9,8 +9,9 @@
 
 .itemNameCont {
   font-size: 30px;
-  border-bottom:3px solid #b1b0b0;
+  border-bottom:3px solid $separate-color;
   padding-bottom: 40px;
+  color: $text-color-body;
 }
 
 .itemDescription {
@@ -39,12 +40,14 @@
   display: flex;
   text-align: left;
   align-items: center;
-  border: 1px solid rgb(0,0,0,0.2);
+  border: 1px solid $separate-color;
   border-radius: 5px;
   height: 100px;
   font-size: 24px;
   justify-content: space-between;
   padding: 0 10px;
+  background: $shop-item-color;
+  color: $text-color-body;
 }
 
 .priceCont  {
@@ -163,13 +166,15 @@
 
 .deliveryCont {
   display: flex;
-  border: 1px solid rgb(0,0,0,0.2);
+  border: 1px solid $separate-color;
+  background: $shop-item-color;
   border-radius: 5px;
   flex-direction: column;
+  color: $text-color-body;
 }
 
 .deliveryHeadline {
-  border-bottom: 1px solid rgb(0,0,0,0.2);
+  border-bottom: 1px solid $separate-color;
   padding-left: 10px;
   font-size: 20px;
   height: 40px;
@@ -197,9 +202,11 @@
 
 .payingCont {
   display: flex;
-  border: 1px solid rgb(0,0,0,0.2);
+  border: 1px solid $separate-color;
   border-radius: 5px;
   flex-direction: column;
+  color: $text-color-body;
+  background: $shop-item-color;
 }
 
 .payingItemCont{
@@ -216,16 +223,18 @@
 }
 
 .payingItemCont:first-child {
-  border-bottom: 1px solid rgb(0,0,0,0.2);
+  border-bottom: 1px solid $separate-color;
 }
 
 .descriptionHeadline {
   font-size: 30px;
   margin-bottom: 20px;
+  color: $text-color-body;
 }
 
 .descriptionText {
   padding: 15px 0 0 10px;
   font-size: 20px;
   line-height: 25px;
+  color: $text-color-body;
 }

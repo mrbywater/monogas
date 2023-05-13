@@ -1,8 +1,6 @@
 @import '../../App';
 
 .orderCont {
-  //border: 1px solid black;
-  height: 1800px;
   width: 90%;
   margin: 0 0 0 5%;
   display: flex;
@@ -29,12 +27,15 @@
 .headerSpan {
   margin: 70px 0;
   font-size: 50px;
+  color: $text-color-body;
 }
 
 .blockCont {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(0, 0, 0, 0.1);
+  border: 1px solid $separate-color;
+  background: $shop-item-color;
+  color: $text-color-body;
   margin-bottom: 50px;
   padding: 10px;
   border-radius: 10px;
@@ -92,7 +93,13 @@
   height: 40px;
   border-radius: 5px;
   font-size: 24px;
-  border: 1px solid rgba(0, 0, 0, 0.8);
+  border: 1px solid $text-color-body;
+  background: $shop-item-color;
+  color: $text-color-body;
+}
+
+.infoContactsCont input:focus-visible {
+  outline: 1px solid $text-color-body;
 }
 
 .infoContactsCont span {
@@ -114,7 +121,7 @@
 
 .orderItem {
   display: flex;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid $separate-color;
   border-radius: 5px;
   margin-bottom: 15px;
   height: 150px;
@@ -124,7 +131,8 @@
   height: 130px;
   min-width: 160px;
   max-width: 160px;
-  padding-top: 10px;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 .orderItem span {
@@ -138,6 +146,8 @@
   flex-direction: column;
   justify-content: center;
   flex: 1;
+  margin-right: 5px;
+  align-items: center;
 }
 
 .orderItem div span{
@@ -163,7 +173,7 @@
 
 .orderItem div span:first-child {
   font-size: 16px;
-  color: rgb(0, 0, 0, .7);
+  color: $text-color-body;
 }
 
 .orderItem div span:last-child {
@@ -173,8 +183,9 @@
 .blockContAccept {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(0, 0, 0, 0.1);
+  border: 1px solid $separate-color;
   background: rgb(0, 0, 0, 0.03);
+  color: $text-color-body;
   margin-bottom: 50px;
   border-radius: 10px;
   width: 80%;
@@ -186,7 +197,7 @@
   display: flex;
   justify-content: space-between;
   margin: 0 10px 30px 10px ;
-  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+  border-bottom: 1px solid $separate-color;
   padding-bottom: 20px;
   font-size: 18px;
 }

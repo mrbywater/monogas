@@ -4,6 +4,7 @@ import {BelowHeaderImage} from "./BelowHeaderImage";
 import {
 	faMagnifyingGlass,
 	faAngleUp,
+	faAngleDown,
 	faCartShopping,
 	faAngleLeft,
 	faAngleRight,
@@ -29,14 +30,14 @@ const checkedInitial = createBrands.reduce((acc,title) => {
 	}
 },{});
 
-const ArrowUp = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z"/></svg>'
-const ArrowDown = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>'
 const price = shopItems.map(elm => elm.price)
 
 let maxPrice = Math.max(...price)
 let minPrice = Math.min(...price)
 
 const Shop = () => {
+
+
 
 	const { shopCart, addItemToCart } = useContext(ShoppingCartContext)
 
@@ -50,21 +51,20 @@ const Shop = () => {
 	const [currentPage, setCurrentPage] = useState(1)
 	const [itemsPerPage] = useState(2)
 	const [selectedValue, setSelectedValue] = useState("relevance")
+	const [arrowReverse, setArrowReverse] =useState([])
 
-	 const  onSubmit = async () => {
-
+	const db = async () => {
 		await fetch("http://localhost:5050/record")
 			.then((response) => {
 				return response.json();
 			})
 			.then((data) => {
-				console.log(data[0].shopFilter);
-			});
+				setArrowReverse(data[0].shopFilter)
+			})
 	}
-
-	useEffect(() => {
-		onSubmit()
-	})
+	useEffect(()=> {
+		db()
+	},[])
 
 	useEffect(()=>{
 		setBrandCheckedTrue(Object.entries(brandsChecked).map(item => {
@@ -90,15 +90,13 @@ const Shop = () => {
 		}
 	},[mainSearchInput])
 
-	const dropDownShow = (id, index) => () => {
-		shopFilter.map(item => {
-			let elm = document.getElementById(index)
+	const dropDownShow = (head) => () => {
 
-			if (item.headline === id) {
-				document.getElementById(id).classList.toggle("onClickDropDownContent");
-			}
-			elm.innerHTML = document.getElementById(id).classList.length === 1 ? ArrowUp : ArrowDown;
-		})
+		setArrowReverse(arrowReverse.map(item => (
+			item.headline === head
+				? { ...item, arrow: !item.arrow }
+				: item
+		)))
 	}
 
 	const handleChangeCondition = () => {
@@ -169,7 +167,7 @@ const Shop = () => {
 	return (
 		<div className="homeCont">
 			<BelowHeaderImage
-				headline = "Магазин"
+				headline="Магазин"
 			/>
 			<div className="shopCont">
 				<div className="searchCont">
@@ -199,14 +197,14 @@ const Shop = () => {
 							setPrice={setPriceFiltered}
 							setCurrentPage={setCurrentPage}
 						/>
-						{shopFilter.map((elem, i) => {
+						{arrowReverse.map((elem, i) => {
 							return (
 								<div className="dropdown" key={elem.headline}>
-									<button className="dropbtn" onClick={dropDownShow(elem.headline, i)}>
+									<button className="dropbtn" onClick={dropDownShow(elem.headline)}>
 										{elem.headline}
-										<FontAwesomeIcon icon={faAngleUp} className="dropDownArrow" id={i}/>
+										<FontAwesomeIcon icon={elem.arrow ? faAngleUp : faAngleDown} className="dropDownArrow"/>
 									</button>
-									<div className="dropdownContent" id={elem.headline}>
+									<div className={elem.arrow ? "dropdownContent" : "dropdownContent onClickDropDownContent"} id={elem.headline}>
 										{
 											elem.headline === "Бренд" ?
 												<input

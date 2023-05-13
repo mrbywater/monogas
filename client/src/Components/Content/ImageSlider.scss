@@ -23,6 +23,11 @@
   color: $text-color-body !important;
 }
 
+.slick-list {
+  border-radius: 20px;
+  outline: 2px solid $separate-color;
+}
+
 @media only screen and (max-width: 768px) {
 
   .slick-slide {

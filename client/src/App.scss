@@ -10,6 +10,8 @@
   --dots-color:#2d2f34;
   --shop-item-color:#FFFFFF;
   --shop-item-color-borderbox: #000000;
+  --page-color-border: rgb(0, 0, 0, .8);
+  --separate-color: rgb(0,0,0,0.3);
 }
 
 .darkmode {
@@ -24,6 +26,8 @@
   --dots-color:#a8afb9;
   --shop-item-color: #444449;
   --shop-item-color-borderbox: #242426;
+  --page-color-border: #64646b;
+  --separate-color: #64646b;
 }
 
 $primary-color: var(--primary-color);
@@ -37,6 +41,8 @@ $hover-color-before: var(--hover-color-before);
 $dots-color : var(--dots-color);
 $shop-item-color : var(--shop-item-color);
 $shop-item-color-borderbox : var(--shop-item-color-borderbox);
+$page-color-border : var(--page-color-border);
+$separate-color : var(--separate-color);
 
 $maxWidth: 1280;
 

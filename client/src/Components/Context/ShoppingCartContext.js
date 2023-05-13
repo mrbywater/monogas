@@ -5,8 +5,13 @@ export const ShoppingCartContext = createContext();
 export const ShoppingCartProvider = ({ children }) => {
 
     const [shopCart, setShopCart] = useState((localStorage.getItem('shoppingCart').length !== 0 || localStorage.getItem('shoppingCart') === null) ? JSON.parse(localStorage.getItem('shoppingCart')) : []);
-    const [priceArray, setPriceArray] = useState(0)
+    const [priceArray, setPriceArray] = useState([])
     const [isOpen, setIsOpen] = useState(false)
+    const [totalPrice, setTotalPrice] = useState(0)
+
+    useEffect(() => {
+        setTotalPrice(priceArray.reduce((elem, acc) => elem + acc, 0))
+    })
 
     useEffect(()=>{
 
@@ -76,7 +81,7 @@ export const ShoppingCartProvider = ({ children }) => {
         <ShoppingCartContext.Provider
             value={{
                 shopCart,
-                priceArray,
+                totalPrice,
                 isOpen,
                 setIsOpen,
                 addItemToCart,

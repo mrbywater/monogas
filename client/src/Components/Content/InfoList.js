@@ -574,9 +574,11 @@ export const tableText = [
 export const shopFilter = [
     {
         headline : "Бренд",
+        arrow : true
     },
     {
         headline : "Новий - б/в ",
+        arrow : true,
         items : [
             "Новий",
             "Б/в"
@@ -584,6 +586,7 @@ export const shopFilter = [
     },
     {
         headline : "Статус товару",
+        arrow : true,
         items : [
             "Є в наявності",
             "Нема в наявності"

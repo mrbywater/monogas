@@ -61,10 +61,19 @@
 .inputCont input {
   width: 100%;
   height: 100%;
-  border: 2px solid $primary-color;
+  border: 1px solid $page-color-border;
+  background: $shop-item-color;
   font-size: 25px;
   padding-left: 10px;
-  color: $primary-color;
+  color: $text-color-body;
+}
+
+.inputCont svg {
+  color: $text-color-body;
+}
+
+.inputCont input:focus-visible {
+  outline: 1px solid $page-color-border;
 }
 
 .brandSearch {
@@ -72,8 +81,14 @@
   margin: 0 0 10px 5px;
   height: 30px;
   font-size: 16px;
-  border: 2px solid $primary-color;
+  border: 2px solid $page-color-border;
+  background: $shop-item-color;
+  color: $text-color-body;
   border-radius: 7px;
+}
+
+.brandSearch:focus-visible {
+  outline: 1px solid $page-color-border;
 }
 
 .belowSearchCont {
@@ -85,9 +100,11 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  border: 1px solid black;
+  border: 1px solid $page-color-border;
   border-radius: 7px;
   max-height: 1000px;
+  color: $text-color-body;
+  background: $shop-item-color;
 }
 
 .sliderCont {
@@ -102,15 +119,18 @@
 }
 
 .sortCont {
-  border: 2px solid $primary-color;
+  border: 2px solid $page-color-border;
   display: flex;
   height: 30px;
   min-width: 15%;
   font-size: 15px;
+  background: $shop-item-color;
+  color: $text-color-body;
 }
 
 .sortCont:focus-visible {
   border-radius: 4px;
+  outline: 1px solid $page-color-border;
 }
 
 .specificItemCont {
@@ -171,6 +191,10 @@
   transition: none;
 }
 
+.itemPriceCont svg:active {
+  opacity: .8;
+}
+
 .itemPriceCont span {
   flex: 5;
 }
@@ -182,7 +206,8 @@
 }
 
 .dropbtn {
-  background-color: #FFFFFF;
+  background-color: $shop-item-color;
+  color: $text-color-body !important;
   font-size: 22px;
   width: 100%;
   height: 60px;
@@ -195,7 +220,7 @@
   display: flex;
   width: 100%;
   flex-direction: column;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid $page-color-border;
 }
 
 .dropdownContent {
@@ -211,7 +236,6 @@
 }
 
 .dropdownContent span {
-  color: black;
   padding-left: 8px;
   font-size: 17px;
 }
@@ -237,7 +261,7 @@
 }
 
 .pagesNavigationCont {
-  border-top: 1px solid rgb(0,0,0,0.3);
+  border-top: 1px solid $separate-color;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -249,10 +273,10 @@
 .pagesNavigationCont svg{
   width: 60px;
   height: 40px;
-  outline: 2px solid $primary-color;
+  outline: 2px solid $page-color-border;
   border-radius: 5px;
   background-color: rgb(0,0,0,0.05);
-  color: rgb(0,0,0,0.8);
+  color: $text-color-body;
   cursor: pointer;
 }
 
@@ -272,22 +296,22 @@
   width: 45px;
   height: 40px;
   margin: 0 10px;
-  border: 1px solid rgb(0,0,0,0.2);
+  border: 1px solid $page-color-border;
   border-radius: 5px;
   background-color: rgb(0,0,0,0.05);
-  color: rgb(0,0,0,0.8);
+  color: $text-color-body;
   cursor: pointer;
   user-select: none;
 }
 
 .page:hover {
   color: $secondary-color-blue;
-  outline: 2px solid rgb(0,0,0,1);
+  outline: 2px solid $page-color-border;
   transition: none !important;
 }
 
 .activeButton {
-  outline: 2px solid rgb(0,0,0,1);
+  outline: 2px solid $page-color-border;
 }
 
 .disabled {
@@ -301,29 +325,6 @@
 
 .itemPriceCont svg {
   cursor: pointer;
-}
-
-.cart-div.show {
-  opacity: 1;
-}
-
-.close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  font-size: 24px;
-  color: #aaa;
-  transition: color 0.2s;
-}
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 9998;
 }
 
 @keyframes append-animate {

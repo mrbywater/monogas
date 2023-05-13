@@ -22,8 +22,6 @@ const ShopItem = () => {
 
     const { shopCart, addItemToCart } = useContext(ShoppingCartContext)
 
-    const [shoppingCartItems, setShoppingCartItems] = useState(JSON.parse(localStorage.getItem('shoppingCart')))
-
     useEffect(()=> {
         localStorage.setItem('search', '')
     },[])
@@ -46,18 +44,6 @@ const ShopItem = () => {
             window.location.href='/shop/#mainSearch'
         }
     }
-
-    const addShoppingCartItem = (item) => (e) =>{
-
-        if (shoppingCartItems.every(elem => elem.headline !== item.headline)) {
-            setShoppingCartItems([...shoppingCartItems, item])
-        }
-
-    }
-
-    useEffect(() => {
-        localStorage.setItem('shoppingCart', JSON.stringify(shoppingCartItems))
-    }, [shoppingCartItems])
 
     if (include.length) {
         return (
