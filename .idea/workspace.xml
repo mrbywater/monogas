@@ -5,24 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Content/IsLoading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Content/IsLoading.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/routes/apiNP.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/ImageSlider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ImageSlider.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/InfoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/InfoList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/MultiRangeSlider.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/MultiRangeSlider.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Content/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/Order.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Order.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/Services.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Services.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Content/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Shop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/Shop.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Shop.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/ShopItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ShopItem.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/ShopItem.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ShopItem.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/ShoppingCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ShoppingCart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/ShoppingCart.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/ShoppingCart.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Context/ShoppingCartContext.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Context/ShoppingCartContext.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/ScrollToTop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/ScrollToTop.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/record.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/record.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/db/conn.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/server/db/conn.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/node_modules/cors/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/cors/lib/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.mjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,7 +162,8 @@
       <workItem from="1683935420279" duration="2473000" />
       <workItem from="1683940911758" duration="5000" />
       <workItem from="1683941129920" duration="642000" />
-      <workItem from="1683974277828" duration="5960000" />
+      <workItem from="1683974277828" duration="21698000" />
+      <workItem from="1684074174710" duration="10992000" />
     </task>
     <servers />
   </component>

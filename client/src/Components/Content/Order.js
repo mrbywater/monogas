@@ -11,33 +11,6 @@ const Order = () => {
 
     const { shopCart, totalPrice } = useContext(ShoppingCartContext)
 
-    // const apiKey = "db724e44715117789cd062d65b5a3de0";
-    // const url = "https://api.novaposhta.ua/v2.0/json/";
-    //
-    // const test = (url) => {
-    //     const headers = {
-    //         // "apiKey": apiKey,
-    //         // 'Accept': 'application/json',
-    //         // 'Content-Type': 'application/json',
-    //     }
-    //
-    //     return fetch(url, {
-    //         type: 'POST',
-    //         dataType: 'json',
-    //         url: 'https://api.novaposhta.ua/v2.0/json/',
-    //         data: JSON.stringify({
-    //             modelName: 'Address',
-    //             calledMethod: 'searchSettlements',
-    //             apiKey: 'db724e44715117789cd062d65b5a3de0'
-    //         }),
-    //         headers : headers
-    //     })
-    // }
-    //
-    // test( url)
-    //     .then(data => console.log(data))
-    //     .catch(err =>  console.log(err))
-
     return (
         <div className="homeCont">
             <div className="orderCont">

@@ -4,7 +4,6 @@ import {RequestButton} from "./RequestButton";
 import {InfoBlock} from "./InfoBlock";
 import {BelowHeaderImage} from "./BelowHeaderImage";
 import {ArrowUp} from "./ArrowUp";
-import {useRef, useEffect} from "react";
 import {servicesInfoInstallation, tableText} from "./InfoList"
 
 const Services = () =>{

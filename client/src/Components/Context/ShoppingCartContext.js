@@ -1,13 +1,31 @@
 import {useState, createContext, useEffect} from "react";
 
 export const ShoppingCartContext = createContext();
-
 export const ShoppingCartProvider = ({ children }) => {
 
     const [shopCart, setShopCart] = useState((localStorage.getItem('shoppingCart').length !== 0 || localStorage.getItem('shoppingCart') === null) ? JSON.parse(localStorage.getItem('shoppingCart')) : []);
     const [priceArray, setPriceArray] = useState([])
     const [isOpen, setIsOpen] = useState(false)
     const [totalPrice, setTotalPrice] = useState(0)
+    const [dataBase, setDataBase] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
+
+    const fetchData = async () => {
+        setIsLoading(true)
+        try{
+            setDataBase (await fetch("http://localhost:5050/record")
+                .then(response => {
+                    setIsLoading(false)
+                    return response.json()
+                }));
+        } catch (err){
+            console.error(err)
+        }
+    }
+
+    useEffect(() => {
+        fetchData()
+    } ,[])
 
     useEffect(() => {
         setTotalPrice(priceArray.reduce((elem, acc) => elem + acc, 0))
@@ -80,6 +98,9 @@ export const ShoppingCartProvider = ({ children }) => {
     return (
         <ShoppingCartContext.Provider
             value={{
+                fetchData,
+                dataBase,
+                isLoading,
                 shopCart,
                 totalPrice,
                 isOpen,
