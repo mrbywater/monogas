@@ -1,5 +1,6 @@
 .loader {
   margin-top: 100px;
+  overflow: hidden;
 }
 
 .wheel {
@@ -22,7 +23,6 @@
 }
 
 .road {
-  position: absolute;
   margin-top: -4px;
   width: 100%;
   height: 10px;

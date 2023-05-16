@@ -17,19 +17,33 @@ import {
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import React, {useContext, useEffect, useState} from "react";
 import {ShoppingCartContext} from "../Context/ShoppingCartContext";
+import {IsLoading} from "./IsLoading";
 
 const ShopItem = () => {
 
-    const { shopCart, addItemToCart } = useContext(ShoppingCartContext)
+    const {
+        shopCart,
+        addItemToCart,
+        dataBase,
+        isLoading
+    } = useContext(ShoppingCartContext)
+
+    const [db, setDb] =useState(shopItems)
 
     useEffect(()=> {
         localStorage.setItem('search', '')
     },[])
 
+    useEffect(()=> {
+        if (!isLoading) {
+            setDb(dataBase[1].shopItems)
+        }
+    }, [dataBase])
+
     const params = useParams()
     const item = params.item
 
-    const include = shopItems.filter(elem =>  urlCreation(elem.headline) === item)
+    const include = db.filter(elem =>  urlCreation(elem.headline) === item)
 
     const toMainSearch = () =>{
         window.location.href='/shop/#mainSearch'
@@ -47,7 +61,7 @@ const ShopItem = () => {
 
     if (include.length) {
         return (
-            shopItems.map(elem => {
+            !isLoading ? db.map(elem => {
                 if (item === urlCreation(elem.headline)) {
                     return (
                         <div className="homeCont">
@@ -70,7 +84,11 @@ const ShopItem = () => {
                                 </div>
                                 <div className="itemDescription">
                                     <div className="sliderCont">
-                                        <ImageSlider slides={elem.img}/>
+                                        {shopItems.map(sub => {
+                                            if (sub.headline === elem.headline) {
+                                                return <ImageSlider slides={sub.img}/>
+                                            }
+                                        })}
                                     </div>
                                     <div className="descriptionCont">
                                         <div className="firstDescription">
@@ -147,7 +165,7 @@ const ShopItem = () => {
                         </div>
                     )
                 }
-            })
+            }) : <div className="homeCont"><IsLoading/></div>
         )
     } else {
         return (

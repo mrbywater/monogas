@@ -96,6 +96,7 @@
   border: 1px solid $text-color-body;
   background: $shop-item-color;
   color: $text-color-body;
+  padding-left: 5px;
 }
 
 .infoContactsCont input:focus-visible {
@@ -216,6 +217,33 @@
   font-size: 20px;
   background: #00a046;
   color: white;
-  padding-bottom: 0
+  padding-bottom: 0;
+  cursor: pointer;
+  user-select: none;
 }
+
+#acceptButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#acceptButton span {
+  color: $text-color-body;
+  font-size: 24px;
+  margin: 5px 0;
+}
+#acceptButton span:last-child {
+  margin-top: 35px
+}
+
+#incorrectValues {
+  color: red;
+  font-size: 15px;
+  position: absolute;
+  top: 35px;
+  left: 47px;
+}
+
 

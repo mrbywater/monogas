@@ -5,6 +5,7 @@ import "./ShoppingCart.scss"
 import {ShoppingCartContext} from "../Context/ShoppingCartContext"
 import React, {useContext} from "react";
 import {Link, useLocation} from "react-router-dom";
+import {shopItems} from "./InfoList";
 
 const ShoppingCart = () => {
 
@@ -49,7 +50,11 @@ const ShoppingCart = () => {
                         <div className="itemsInCartCont">
                             {shopCart.map(item => (
                                 <div className="itemsInCart">
-                                    <img src={item.img[0]}/>
+                                    {shopItems.map(sub => {
+                                        if (sub.headline === item.headline) {
+                                            return <img src={sub.img[0]}/>
+                                        }
+                                    })}
                                     <span>{item.headline}</span>
                                     <FontAwesomeIcon
                                         icon={faMinus}

@@ -1,18 +1,83 @@
 import "./Order.scss"
 import Logo from "../Images/logo.jpg";
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {ShoppingCartContext} from "../Context/ShoppingCartContext";
 import {ShoppingCart} from "./ShoppingCart";
 import {urlCreation} from "./OurProjects"
-
-
+import {shopItems} from "./InfoList";
+import PhoneInput from 'react-phone-number-input/input';
+import {faXmark} from "@fortawesome/free-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {operators} from "./InfoList";
+import axios from "axios";
 
 const Order = () => {
 
-    const { shopCart, totalPrice } = useContext(ShoppingCartContext)
+    const {
+        shopCart,
+        totalPrice,
+        setShopCart
+    } = useContext(ShoppingCartContext)
+
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [emailInput, setEmailInput] = useState("")
+    const [tagInputFN, setTagInputFN] = useState("");
+    const [tagInputSN, setTagInputSN] = useState("");
+    const [accepted, setAccepted] = useState(false)
+    const [incorrectValues, setIncorrectValues] = useState(false)
+
+    useEffect(()=>{
+        if (shopCart.length === 0){
+            window.location.href = '/shop'
+        }
+    }, [shopCart])
+
+    const acceptOrder = () => {
+        if ((operators.some(code => code === phoneNumber.slice(4, 6)) && phoneNumber.length === 13) && emailInput.length !== 0 && tagInputFN !== 0 && tagInputSN !== 0) {
+
+            setAccepted(true)
+            setIncorrectValues(false)
+
+            axios.post('http://localhost:5050/send-email', {
+                phoneNumber,
+                emailInput,
+                tagInputFN,
+                tagInputSN,
+                totalPrice,
+                shopCart
+                // Добавьте остальные поля input и их значения
+            })
+                .then((response) => {
+                    console.log(response.data);
+                    alert('Значения успешно отправлены на почту.');
+                })
+                .catch((error) => {
+                    console.error(error);
+                    alert('Произошла ошибка при отправке значений на почту.');
+                });
+        } else {
+            setIncorrectValues(true)
+            window.scroll(0, 80)
+        }
+    }
+
+    const closeButton = () => {
+       setShopCart([])
+    }
 
     return (
         <div className="homeCont">
+            {accepted && (
+                <>
+                    <div className="overlay" onClick={closeButton}/>
+                    <div className="cartDiv" id="acceptButton">
+                        <FontAwesomeIcon icon={faXmark} onClick={closeButton} className="closeButton"/>
+                        <span>Ваше замовлення прийнято для подальшої обробки</span>
+                        <span>Оператор зв'яжеться з вами протягом 10-15 хвилин</span>
+                        <span>Слава Україні!</span>
+                    </div>
+                </>
+            )}
             <div className="orderCont">
                 <div className="orderLogoCont">
                     <img src={Logo} className="orderLogo" alt=""/>
@@ -23,23 +88,55 @@ const Order = () => {
                         <div className="blockHeadline">
                             <div className="">1</div>
                             <span>Ваші контактні дані</span>
+                            {incorrectValues && (
+                                <span id="incorrectValues">Перевірте ваші данні*</span>
+                            )}
                         </div>
                         <div className="infoContactsCont">
                             <div>
-                                <span>Прізвище</span>
-                                <input/>
+                                <span>Прізвище*</span>
+                                <input
+                                    placeholder="Каплан"
+                                    maxLength={20}
+                                    value={tagInputSN}
+                                    onChange={(e) => {
+                                        setTagInputSN(e.target.value.replace(/[^A-Za-zА-Яа-яЁёіІїЇєЄҐґ]/, ''))
+                                    }}
+                                />
                             </div>
                             <div>
-                                <span>Ім'я</span>
-                                <input/>
+                                <span>Ім'я*</span>
+                                <input
+                                    placeholder="Юрій"
+                                    maxLength={20}
+                                    value={tagInputFN}
+                                    onChange={(e) => {
+                                        setTagInputFN(e.target.value.replace(/[^A-Za-zА-Яа-яЁёіІїЇєЄҐґ]/, ''))
+                                    }}
+                                />
                             </div>
                             <div>
-                                <span>Мобільний телефон</span>
-                                <input/>
+                                <span>Мобільний телефон*</span>
+                                <PhoneInput
+                                    country="UA"
+                                    international
+                                    withCountryCallingCode
+                                    maxLength={16}
+                                    value={phoneNumber}
+                                    onChange={setPhoneNumber}
+                                />
                             </div>
                             <div>
-                                <span>Електронна пошта</span>
-                                <input/>
+                                <span>Електронна пошта*</span>
+                                <input
+                                    placeholder="example@xxx.xxx"
+                                    type="email"
+                                    id="email"
+                                    value={emailInput}
+                                    onChange={(e) => {
+                                        setEmailInput(e.target.value)
+                                    }}
+                                />
                             </div>
                         </div>
                     </div>
@@ -53,7 +150,11 @@ const Order = () => {
                             {shopCart.map(item => {
                                 return (
                                     <div className="orderItem">
-                                        <img src={item.img[0]}/>
+                                        {shopItems.map(sub => {
+                                            if (sub.headline === item.headline) {
+                                                return <img src={sub.img[0]}/>
+                                            }
+                                        })}
                                         <span>
                                             <a target="_blank" href={"/shop/"+urlCreation(item.headline)}>{item.headline}</a>
                                         </span>
@@ -89,7 +190,7 @@ const Order = () => {
                             <span>До сплати</span>
                             <span>{totalPrice}₴</span>
                         </div>
-                        <div>Замовлення підтверджую</div>
+                        <div onClick={acceptOrder}>Замовлення підтверджую</div>
                     </div>
                 </div>
             </div>

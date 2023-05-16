@@ -105,6 +105,7 @@ export const ShoppingCartProvider = ({ children }) => {
                 totalPrice,
                 isOpen,
                 setIsOpen,
+                setShopCart,
                 addItemToCart,
                 removeItemFromCart,
                 increaseItemQuantity,

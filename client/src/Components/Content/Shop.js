@@ -81,26 +81,19 @@ const Shop = () => {
 	const [selectedValue, setSelectedValue] = useState("relevance")
 	const [arrowReverse, setArrowReverse] = useState(shopFilter)
 
-	useEffect(()=>{
-		setBrandCheckedTrue(Object.entries(brandsChecked).map(item => {
-			if (item[1] === true) {
-				return item[0]
-			}
-		}))
-
-	}, [])
-
 	useEffect(()=> {
 		if (!isLoading) {
 			setPriceFiltered(dataBase[1].shopItems)
 		}
 	}, [dataBase])
 
-	// const brandsCheckedTrue = useMemo(() => (Object.entries(brandsChecked).map(item => {
-	// 	if (item[1] === true) {
-	// 		return item[0]
-	// 	}
-	// }),[brandsChecked]))
+	useMemo(() => {
+		setBrandCheckedTrue(Object.entries(brandsChecked).map(item => {
+			if (item[1] === true) {
+				return item[0]
+			}
+		}))
+	},[brandsChecked])
 
 	useEffect(()=> {
 

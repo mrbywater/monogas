@@ -594,6 +594,24 @@ export const shopFilter = [
     }
 ]
 
+export const operators = [
+    "93",
+    "97",
+    "98",
+    "63",
+    "39",
+    "50",
+    "66",
+    "67",
+    "68",
+    "91",
+    "92",
+    "94",
+    "95",
+    "96",
+    "99",
+]
+
 export const shopItems = [
     {
         img : [
