@@ -31,7 +31,6 @@ const Order = () => {
             window.location.href = '/shop'
         }
     }, [shopCart])
-    console.log(phoneNumber.split())
     const acceptOrder = () => {
         if ((operators.some(code => code === phoneNumber.slice(3, 5)) && phoneNumber.length === 12) && emailInput.length !== 0 && tagInputFN !== 0 && tagInputSN !== 0) {
 

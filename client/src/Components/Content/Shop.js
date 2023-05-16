@@ -33,7 +33,7 @@ const useSubItemShop = () => {
 
 	useEffect(()=> {
 		if (!isLoading) {
-			setInnerShopItemBase(dataBase[1].shopItems)
+			setInnerShopItemBase(dataBase[0].shopItems)
 		}
 	}, [dataBase])
 
@@ -77,13 +77,13 @@ const Shop = () => {
 	const [amountChecked, setAmountChecked] = useState([]);
 	const [brandsChecked, setBrandsChecked] = useState(checkedInitial);
 	const [currentPage, setCurrentPage] = useState(1)
-	const [itemsPerPage] = useState(2)
+	const [itemsPerPage] = useState(6)
 	const [selectedValue, setSelectedValue] = useState("relevance")
 	const [arrowReverse, setArrowReverse] = useState(shopFilter)
 
 	useEffect(()=> {
 		if (!isLoading) {
-			setPriceFiltered(dataBase[1].shopItems)
+			setPriceFiltered(dataBase[0].shopItems)
 		}
 	}, [dataBase])
 
@@ -102,6 +102,7 @@ const Shop = () => {
 		} else {
 			setMainSearchInput(localStorage.getItem('search'))
 		}
+		console.log(shopItems.length)
 	},[])
 
 	useEffect(()=> {

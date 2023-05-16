@@ -36,7 +36,7 @@ const ShopItem = () => {
 
     useEffect(()=> {
         if (!isLoading) {
-            setDb(dataBase[1].shopItems)
+            setDb(dataBase[0].shopItems)
         }
     }, [dataBase])
 

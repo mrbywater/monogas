@@ -5,12 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b10a2bf5-4f1f-4727-b3a5-b93f1b367513" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/adapter_tomasetto/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/adapter_tomasetto/2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/adapter_tomasetto/3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_AEB/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_AEB/2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_PS-02_Plus/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_PS-02_Plus/2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_PS-02_Plus/3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_PS-02_Plus/4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/datchik_PS-02_Plus/5.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/electronika_stag/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/electronika_stag/2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/forsunki_aeb/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/forsunki_aeb/2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/forsunki_aeb/3.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/forsunki_aeb/4.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/peremukach_stag/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/peremukach_stag/2.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/Components/Images/ShopItemImages/variator_green_gas/1.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Content/Order.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Order.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/Components/Content/Order.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Order.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/server.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.mjs" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/InfoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/InfoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/Components/Content/Shop.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/Components/Content/Shop.js" afterDir="false" />
+>>>>>>> Stashed changes
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,12 +95,16 @@
       <recent name="C:\Users\Николай\Documents\GitHub\monogas\src\Components\Images" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.InfoList.js">
+    <configuration name="InfoList.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/client/src/Components/Content/InfoList.js" working-dir="$PROJECT_DIR$/client/src/Components/Content">
+      <method v="2" />
+    </configuration>
     <configuration name="conn.mjs" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server/db/conn.mjs" working-dir="$PROJECT_DIR$/server/db">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.InfoList.js" />
         <item itemvalue="Node.js.conn.mjs" />
       </list>
     </recent_temporary>
@@ -161,8 +191,12 @@
       <workItem from="1684074174710" duration="11268000" />
       <workItem from="1684094517679" duration="587000" />
       <workItem from="1684158964052" duration="23192000" />
+<<<<<<< Updated upstream
       <workItem from="1684251919206" duration="1504000" />
       <workItem from="1684264855319" duration="3321000" />
+=======
+      <workItem from="1684251984876" duration="2929000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
