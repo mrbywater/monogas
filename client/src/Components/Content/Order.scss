@@ -30,6 +30,10 @@
   color: $text-color-body;
 }
 
+.inputClass {
+  display: none;
+}
+
 .blockCont {
   display: flex;
   flex-direction: column;
@@ -81,12 +85,16 @@
   justify-content: space-around;
 }
 
-.infoContactsCont div {
+#inputStyles {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 40%;
   height: 100px;
+}
+
+#inputStyles div {
+  display: contents;
 }
 
 .infoContactsCont input {

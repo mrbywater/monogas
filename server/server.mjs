@@ -58,7 +58,7 @@ app.post('/send-email', (req, res) => {
         html: `
             <div style="font-size: 16px; margin-bottom: 5px">Ім'я: ${tagInputFN}</div> 
             <div style="font-size: 16px; margin-bottom: 5px">Прізвище: ${tagInputSN}</div> 
-            <div style="font-size: 16px; margin-bottom: 5px">Телефон: ${phoneNumber}</div> 
+            <div style="font-size: 16px; margin-bottom: 5px">Телефон: +${phoneNumber}</div> 
             <div style="font-size: 16px; margin-bottom: 5px">Електронна пошта: ${emailInput}</div> 
             <div style="font-size: 16px; margin-bottom: 5px">Товари:
                 <div style='

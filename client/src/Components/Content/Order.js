@@ -5,7 +5,7 @@ import {ShoppingCartContext} from "../Context/ShoppingCartContext";
 import {ShoppingCart} from "./ShoppingCart";
 import {urlCreation} from "./OurProjects"
 import {shopItems} from "./InfoList";
-import PhoneInput from 'react-phone-number-input/input';
+import PhoneInput from 'react-phone-input-2'
 import {faXmark} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {operators} from "./InfoList";
@@ -31,9 +31,9 @@ const Order = () => {
             window.location.href = '/shop'
         }
     }, [shopCart])
-
+    console.log(phoneNumber.split())
     const acceptOrder = () => {
-        if ((operators.some(code => code === phoneNumber.slice(4, 6)) && phoneNumber.length === 13) && emailInput.length !== 0 && tagInputFN !== 0 && tagInputSN !== 0) {
+        if ((operators.some(code => code === phoneNumber.slice(3, 5)) && phoneNumber.length === 12) && emailInput.length !== 0 && tagInputFN !== 0 && tagInputSN !== 0) {
 
             setAccepted(true)
             setIncorrectValues(false)
@@ -93,7 +93,7 @@ const Order = () => {
                             )}
                         </div>
                         <div className="infoContactsCont">
-                            <div>
+                            <div id="inputStyles">
                                 <span>Прізвище*</span>
                                 <input
                                     placeholder="Каплан"
@@ -104,7 +104,7 @@ const Order = () => {
                                     }}
                                 />
                             </div>
-                            <div>
+                            <div id="inputStyles">
                                 <span>Ім'я*</span>
                                 <input
                                     placeholder="Юрій"
@@ -115,18 +115,20 @@ const Order = () => {
                                     }}
                                 />
                             </div>
-                            <div>
+                            <div id="inputStyles">
                                 <span>Мобільний телефон*</span>
                                 <PhoneInput
-                                    country="UA"
-                                    international
-                                    withCountryCallingCode
+                                    country={"ua"}
+                                    countryCodeEditable={false}
                                     maxLength={16}
                                     value={phoneNumber}
                                     onChange={setPhoneNumber}
+                                    specialLabel={""}
+                                    disableDropdown={true}
+                                    disableSearchIcon={true}
                                 />
                             </div>
-                            <div>
+                            <div id="inputStyles">
                                 <span>Електронна пошта*</span>
                                 <input
                                     placeholder="example@xxx.xxx"
