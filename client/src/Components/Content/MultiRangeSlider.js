@@ -7,19 +7,16 @@ const MultiRangeSlider = ({ min, max, setPrice, setCurrentPage, shopItems}) => {
     const [minVal, setMinVal] = useState();
     const [maxVal, setMaxVal] = useState();
 
-    useEffect(()=> {
-        setMinVal(min)
-        setMaxVal(max)
-    }, [min, max])
-
-    const minValRef = useRef(min);
-    const maxValRef = useRef(max);
-    const range = useRef(null);
+    let minValRef = useRef();
+    let maxValRef = useRef();
+    let range = useRef(null);
 
     const buttonOk = () => {
         setPrice(shopItems.filter(elm => {
+            console.log(elm.price)
             return elm.price >= Number(minVal) && elm.price <= Number(maxVal)
         }))
+        console.log(minVal,maxVal)
         setCurrentPage(1)
     }
 
@@ -50,6 +47,13 @@ const MultiRangeSlider = ({ min, max, setPrice, setCurrentPage, shopItems}) => {
             range.current.style.width = `${maxPercent - minPercent}%`;
         }
     }, [maxVal, getPercent]);
+
+    useEffect(()=> {
+        setMinVal(min)
+        setMaxVal(max)
+        minValRef.current = min
+        maxValRef.current = max
+    }, [min, max])
 
     return (
         <div className="container">

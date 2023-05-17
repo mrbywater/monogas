@@ -8,9 +8,17 @@ const Pagination = ({itemsPerPage, totalItems, paginate, currentPage}) => {
 
     return (
         pageNumbers.map(number => (
-            <div key={number} onClick={() => paginate(number)} className={`page ${currentPage === number ? 'activeButton' : ''}`}>
+            <a
+                key={number}
+                href="#pagination"
+                onClick={() => {
+                    paginate(number)
+                }}
+                className={`page ${currentPage === number ? 'activeButton' : ''}`}
+                style={{textDecoration:"none"}}
+            >
                 {number}
-            </div>
+            </a>
         ))
     )
 }

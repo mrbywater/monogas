@@ -8,7 +8,7 @@
 }
 
 .itemNameCont {
-  font-size: 30px;
+  @include adaptiv-font(30,25);
   border-bottom:3px solid $separate-color;
   padding-bottom: 40px;
   color: $text-color-body;
@@ -43,7 +43,7 @@
   border: 1px solid $separate-color;
   border-radius: 5px;
   height: 100px;
-  font-size: 24px;
+  @include adaptiv-font(24,24);
   justify-content: space-between;
   padding: 0 10px;
   background: $shop-item-color;
@@ -176,14 +176,14 @@
 .deliveryHeadline {
   border-bottom: 1px solid $separate-color;
   padding-left: 10px;
-  font-size: 20px;
+  @include adaptiv-font(20,16);
   height: 40px;
   display: flex;
   align-items: center;
 }
 
 .deliveryPostCont {
-  font-size: 18px;
+  @include adaptiv-font(18,14);
   display: flex;
   justify-content: space-between;
   height: 60px;
@@ -213,7 +213,7 @@
   display: flex;
   height: 60px;
   padding: 0 10px;
-  font-size: 18px;
+  @include adaptiv-font(18,14);
   align-items: center;
 }
 
@@ -237,4 +237,38 @@
   font-size: 20px;
   line-height: 25px;
   color: $text-color-body;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .itemDescription {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .sliderCont {
+    width: 85%;
+    margin-bottom: 35px;
+  }
+
+  .descriptionCont {
+    padding-left: 0;
+  }
+
+  .inputCont {
+    width: 95%;
+  }
+
+  .deliveryCont {
+    margin-top: 10px;
+  }
+
+  .payingCont {
+    margin-top: 10px;
+  }
+
+  .itemCont {
+    margin-top: 60px;
+  }
 }

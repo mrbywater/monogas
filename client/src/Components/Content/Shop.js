@@ -38,6 +38,7 @@ const Shop = () => {
 	const [checkedInitial, setCheckedInitial] = useState([])
 	const [mainSearchInput, setMainSearchInput] = useState('');
 	const [brandSearchInput, setBrandSearchInput] = useState('');
+	const [initialItems, setInitialItems] = useState([])
 	const [priceFiltered, setPriceFiltered] = useState([]);
 	const [brandCheckedTrue, setBrandCheckedTrue] = useState([]);
 	const [conditionChecked, setConditionChecked] = useState([]);
@@ -52,6 +53,7 @@ const Shop = () => {
 		if (!isLoading) {
 			setArrowReverse(dataBase[0].shopFilter)
 			setPriceFiltered(dataBase[0].shopItems)
+			setInitialItems(dataBase[0].shopItems)
 			setCreateBrandsDB(dataBase[0].shopItems.map(item => item.brand))
 			setPrice(dataBase[0].shopItems.map(elm => elm.price))
 		}
@@ -65,7 +67,7 @@ const Shop = () => {
 				[title]: false
 			}
 		}, {}))
-	}, [createBrandsDB, checkedInitial])
+	}, [createBrandsDB])
 
 	useEffect(()=>{
 		setBrandsChecked(checkedInitial)
@@ -171,12 +173,13 @@ const Shop = () => {
 	// every element that return to us for render from fx. `.map` method
 	// needs to have key for the root tag of it
 	// https://ru.legacy.reactjs.org/docs/lists-and-keys.html
+	if (!isLoading) {
 	return (
 		<div className="homeCont">
 			<BelowHeaderImage
 				headline="Магазин"
 			/>
-			{!isLoading ? (<div className="shopCont">
+			<div className="shopCont">
 				<div className="searchCont">
 					<div className="inputCont">
 						<input
@@ -203,7 +206,7 @@ const Shop = () => {
 							max={maxPrice}
 							setPrice={setPriceFiltered}
 							setCurrentPage={setCurrentPage}
-							shopItems={priceFiltered}
+							shopItems={initialItems}
 						/>
 						{arrowReverse.map((elem, i) => {
 							return (
@@ -333,9 +336,9 @@ const Shop = () => {
 						</div>
 					</div>
 				</div>
-			</div>) : <IsLoading/>}
+			</div>
 		</div>
-	)
+	)} else return  <div className="homeCont"><IsLoading/></div>
 }
 
 export {Shop}
