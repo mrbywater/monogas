@@ -151,11 +151,7 @@ const Order = () => {
                             {shopCart.map(item => {
                                 return (
                                     <div className="orderItem">
-                                        {shopItems.map(sub => {
-                                            if (sub.headline === item.headline) {
-                                                return <img src={sub.img[0]}/>
-                                            }
-                                        })}
+                                        <img src={item.img[0]}/>
                                         <span>
                                             <a target="_blank" href={"/shop/"+urlCreation(item.headline)}>{item.headline}</a>
                                         </span>

@@ -1,12 +1,16 @@
 import "./MultiRangeSlider.scss"
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
-import {shopItems} from "./InfoList";
 
-const MultiRangeSlider = ({ min, max, setPrice, setCurrentPage}) => {
+const MultiRangeSlider = ({ min, max, setPrice, setCurrentPage, shopItems}) => {
 
-    const [minVal, setMinVal] = useState(min);
-    const [maxVal, setMaxVal] = useState(max);
+    const [minVal, setMinVal] = useState();
+    const [maxVal, setMaxVal] = useState();
+
+    useEffect(()=> {
+        setMinVal(min)
+        setMaxVal(max)
+    }, [min, max])
 
     const minValRef = useRef(min);
     const maxValRef = useRef(max);

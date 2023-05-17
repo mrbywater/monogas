@@ -11,7 +11,6 @@ import {
 	faCheck
 } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {shopFilter, shopItems} from "./InfoList"
 import {MultiRangeSlider} from "./MultiRangeSlider";
 import React, {useState, useEffect, useContext, useMemo} from "react";
 import {Link} from "react-router-dom";
@@ -22,42 +21,6 @@ import {IsLoading} from './IsLoading'
 
 // all of the constants that not recalculated on next render has to be moved out of component
 // + it's better to move it to separate `helper.js` file
-const useSubItemShop = () => {
-
-	const {
-		dataBase,
-		isLoading
-	} = useContext(ShoppingCartContext)
-
-	const [innerShopItemBase, setInnerShopItemBase] = useState(shopItems)
-
-	useEffect(()=> {
-		if (!isLoading) {
-			setInnerShopItemBase(dataBase[0].shopItems)
-		}
-	}, [dataBase])
-
-	const price = innerShopItemBase.map(elm => elm.price)
-
-	const maxPrice = Math.max(...price)
-	const minPrice = Math.min(...price)
-
-	const createBrands = innerShopItemBase.map(item => item.brand)
-
-	const checkedInitial = createBrands.reduce((acc,title) => {
-		return {
-			...acc,
-			[title]: false
-		}
-	},{});
-
-	return {
-		maxPrice,
-		minPrice,
-		checkedInitial
-	}
-
-}
 
 const Shop = () => {
 
@@ -68,24 +31,50 @@ const Shop = () => {
 		addItemToCart
 	} = useContext(ShoppingCartContext)
 
-	const { maxPrice, minPrice, checkedInitial} = useSubItemShop();
+	const [price, setPrice] = useState([])
+	const [maxPrice, setMaxPrice] = useState()
+	const [minPrice, setMinPrice] = useState()
+	const [createBrandsDB, setCreateBrandsDB] = useState([])
+	const [checkedInitial, setCheckedInitial] = useState([])
 	const [mainSearchInput, setMainSearchInput] = useState('');
 	const [brandSearchInput, setBrandSearchInput] = useState('');
-	const [priceFiltered, setPriceFiltered] = useState(shopItems);
+	const [priceFiltered, setPriceFiltered] = useState([]);
 	const [brandCheckedTrue, setBrandCheckedTrue] = useState([]);
 	const [conditionChecked, setConditionChecked] = useState([]);
 	const [amountChecked, setAmountChecked] = useState([]);
-	const [brandsChecked, setBrandsChecked] = useState(checkedInitial);
+	const [brandsChecked, setBrandsChecked] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1)
 	const [itemsPerPage] = useState(6)
 	const [selectedValue, setSelectedValue] = useState("relevance")
-	const [arrowReverse, setArrowReverse] = useState(shopFilter)
+	const [arrowReverse, setArrowReverse] = useState([])
 
 	useEffect(()=> {
 		if (!isLoading) {
+			setArrowReverse(dataBase[0].shopFilter)
 			setPriceFiltered(dataBase[0].shopItems)
+			setCreateBrandsDB(dataBase[0].shopItems.map(item => item.brand))
+			setPrice(dataBase[0].shopItems.map(elm => elm.price))
 		}
+
 	}, [dataBase])
+
+	useEffect(()=>{
+		setCheckedInitial(createBrandsDB.reduce((acc, title) => {
+			return {
+				...acc,
+				[title]: false
+			}
+		}, {}))
+	}, [createBrandsDB, checkedInitial])
+
+	useEffect(()=>{
+		setBrandsChecked(checkedInitial)
+	}, [checkedInitial])
+
+	useEffect(()=>{
+		setMaxPrice(Math.max(...price))
+		setMinPrice(Math.min(...price))
+	}, [price])
 
 	useMemo(() => {
 		setBrandCheckedTrue(Object.entries(brandsChecked).map(item => {
@@ -102,7 +91,6 @@ const Shop = () => {
 		} else {
 			setMainSearchInput(localStorage.getItem('search'))
 		}
-		console.log(shopItems.length)
 	},[])
 
 	useEffect(()=> {
@@ -215,6 +203,7 @@ const Shop = () => {
 							max={maxPrice}
 							setPrice={setPriceFiltered}
 							setCurrentPage={setCurrentPage}
+							shopItems={priceFiltered}
 						/>
 						{arrowReverse.map((elem, i) => {
 							return (
@@ -284,11 +273,7 @@ const Shop = () => {
 										<div className="specificItem">
 											<div className="widthCont" style={!elm.amount ? {opacity : 0.4} : null}>
 												<Link to={"/shop/" + urlCreation(elm.headline)}>
-													{shopItems.map(sub => {
-														if (sub.headline === elm.headline) {
-															return <img src={sub.img[0]}/>
-														}
-													})}
+													<img src={elm.img[0]}/>
 													<span className="itemHeadline">{elm.headline}</span>
 												</Link>
 												{!elm.amount && <span className="itemAmount">Немає в наявності</span>}

@@ -1,7 +1,6 @@
 import "./ShopItem.scss"
 import "./Content.scss"
 import {useParams} from "react-router";
-import {shopItems} from "./InfoList";
 import {urlCreation} from "./OurProjects";
 import {NotFoundPage} from "./NotFoundPage";
 import {BelowHeaderImage} from "./BelowHeaderImage";
@@ -28,7 +27,7 @@ const ShopItem = () => {
         isLoading
     } = useContext(ShoppingCartContext)
 
-    const [db, setDb] =useState(shopItems)
+    const [db, setDb] =useState([])
 
     useEffect(()=> {
         localStorage.setItem('search', '')
@@ -84,11 +83,7 @@ const ShopItem = () => {
                                 </div>
                                 <div className="itemDescription">
                                     <div className="sliderCont">
-                                        {shopItems.map(sub => {
-                                            if (sub.headline === elem.headline) {
-                                                return <ImageSlider slides={sub.img}/>
-                                            }
-                                        })}
+                                        <ImageSlider slides={elem.img}/>
                                     </div>
                                     <div className="descriptionCont">
                                         <div className="firstDescription">
@@ -169,7 +164,7 @@ const ShopItem = () => {
         )
     } else {
         return (
-            <NotFoundPage/>
+            !isLoading ? <NotFoundPage/> : <div className="homeCont"><IsLoading/></div>
         )
     }
 }
