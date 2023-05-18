@@ -49,29 +49,33 @@ const ShoppingCart = () => {
                         <div className="itemsInCartCont">
                             {shopCart.map(item => (
                                 <div className="itemsInCart">
-                                    <img src={item.img[0]}/>
-                                    <span>{item.headline}</span>
-                                    <FontAwesomeIcon
-                                        icon={faMinus}
-                                        className={item.quantity !== 1 ? "minusButton" : "minusButton disabledBtn"}
-                                        onClick={decreaseItemQuantity(item)}
-                                    />
-                                    <input
-                                        id={item.headline}
-                                        value={item.quantity}
-                                        min={1}
-                                        max={item.amount}
-                                    />
-                                    <FontAwesomeIcon
-                                        icon={faPlus}
-                                        className={item.amount !== item.quantity ? "plusButton" : "plusButton disabledBtn"}
-                                        onClick={increaseItemQuantity(item)}
-                                    />
-                                    <div
-                                        id={item.headline}
-                                        key={`${item.headline}_price`}
-                                    >
-                                        {item.price * item.quantity}₴
+                                    <div className="imgAndTextCont">
+                                        <img src={item.img[0]}/>
+                                        <span>{item.headline}</span>
+                                    </div>
+                                    <div className="inputAndPriceCont">
+                                        <FontAwesomeIcon
+                                            icon={faMinus}
+                                            className={item.quantity !== 1 ? "minusButton" : "minusButton disabledBtn"}
+                                            onClick={decreaseItemQuantity(item)}
+                                        />
+                                        <input
+                                            id={item.headline}
+                                            value={item.quantity}
+                                            min={1}
+                                            max={item.amount}
+                                        />
+                                        <FontAwesomeIcon
+                                            icon={faPlus}
+                                            className={item.amount !== item.quantity ? "plusButton" : "plusButton disabledBtn"}
+                                            onClick={increaseItemQuantity(item)}
+                                        />
+                                        <div
+                                            id={item.headline}
+                                            key={`${item.headline}_price`}
+                                        >
+                                            {item.price * item.quantity}₴
+                                        </div>
                                     </div>
                                     <FontAwesomeIcon
                                         icon={faXmark}

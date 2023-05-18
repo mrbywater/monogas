@@ -151,21 +151,25 @@ const Order = () => {
                             {shopCart.map(item => {
                                 return (
                                     <div className="orderItem">
-                                        <img src={item.img[0]}/>
-                                        <span>
-                                            <a target="_blank" href={"/shop/"+urlCreation(item.headline)}>{item.headline}</a>
-                                        </span>
-                                        <div>
-                                            <span>Ціна</span>
-                                            <span>{item.price}₴</span>
+                                        <div className="imgAndSpanCont">
+                                            <img src={item.img[0]}/>
+                                            <span>
+                                                <a target="_blank" href={"/shop/"+urlCreation(item.headline)}>{item.headline}</a>
+                                            </span>
                                         </div>
-                                        <div>
-                                            <span>Кількість</span>
-                                            <span>{item.quantity}</span>
-                                        </div>
-                                        <div>
-                                            <span>Сума</span>
-                                            <span>{item.price * item.quantity}₴</span>
+                                        <div className="itemInfoCont">
+                                            <div>
+                                                <span>Ціна</span>
+                                                <span>{item.price}₴</span>
+                                            </div>
+                                            <div>
+                                                <span>Кількість</span>
+                                                <span>{item.quantity}</span>
+                                            </div>
+                                            <div>
+                                                <span>Сума</span>
+                                                <span>{item.price * item.quantity}₴</span>
+                                            </div>
                                         </div>
                                     </div>
                                 )

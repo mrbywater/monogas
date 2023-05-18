@@ -96,13 +96,14 @@
   color: $text-color-body;
   height: 200px;
   display: flex;
-  position: relative;
   border-radius: 3px;
+  flex-direction: column;
+  position: relative;
 }
 
 .itemsInCart img {
   max-width: 25%;
-  height: 190px;
+  height: 150px;
   margin: 5px;
   display: flex;
   flex: 1;
@@ -112,35 +113,68 @@
 .itemsInCart span {
   font-size: 20px;
   margin-top: 20px;
-  max-width: 60%;
+  padding-right: 25px;
   display: flex;
   flex: 1;
-}
-
-.itemsInCart input {
-  position: absolute;
-  width: 40px;
-  font-size: 20px;
-  border-radius: 3px;
-  height: 20px;
-  bottom: 50px;
-  right: 30px;
-  border: 1px solid $page-color-border;
-  background: $shop-item-color;
-  color: $text-color-body;
 }
 
 .itemsInCart input:focus-visible {
   outline: 1px solid $page-color-border;
 }
 
-.itemsInCart div {
+.imgAndTextCont {
+  display: flex;
+  height: 80%;
+}
+
+.inputAndPriceCont {
+  display: flex;
+  height: 20%;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.inputAndPriceCont input {
+  position: absolute;
+  width: 40px;
+  font-size: 20px;
+  border-radius: 3px;
+  height: 20px;
+  bottom: 5px;
+  left: 40px;
+  border: 1px solid $page-color-border;
+  background: $shop-item-color;
+  color: $text-color-body;
+  text-align: center;
+}
+
+.minusButton {
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
+  cursor: pointer;
+  font-size: 18px;
+  color: $text-color-body;
+  transition: color 0.2s;
+}
+
+.plusButton {
+  position: absolute;
+  bottom: 8px;
+  left: 90px;
+  cursor: pointer;
+  font-size: 18px;
+  color: $text-color-body;
+  transition: color 0.2s;
+}
+
+.inputAndPriceCont div {
   position: absolute;
   font-size: 20px;
   border-radius: 3px;
   height: 20px;
   bottom: 10px;
-  right: 10px;
+  right: 20px;
 }
 
 .totalCont {
@@ -152,12 +186,12 @@
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .totalPrice {
   display: flex;
-  width: 40%;
+  width: 10%;
   justify-content: center;
   align-items: center;
   font-size: 20px;
@@ -170,8 +204,8 @@
   justify-content: center;
   align-items: center;
   color: white;
-  width: 45%;
-  height: 50px;
+  width: 65%;
+  height: 60px;
   background-color: #00a046;
   border-radius: 5px;
   text-decoration: none;
@@ -182,26 +216,6 @@
   font-size: 40px;
   text-align: center;
   color: $separate-color;
-}
-
-.minusButton {
-  position: absolute;
-  bottom: 54px;
-  right: 85px;
-  cursor: pointer;
-  font-size: 18px;
-  color: $text-color-body;
-  transition: color 0.2s;
-}
-
-.plusButton {
-  position: absolute;
-  bottom: 54px;
-  right: 9px;
-  cursor: pointer;
-  font-size: 18px;
-  color: $text-color-body;
-  transition: color 0.2s;
 }
 
 .disabledBtn {
@@ -227,4 +241,35 @@
   right: -7px;
 }
 
+@media only screen and (max-width: 768px) {
 
+  .imgAndTextCont {
+    height: 70%;
+  }
+
+  .imgAndTextCont img {
+    height: 130px;
+  }
+
+  .inputAndPriceCont {
+    height: 30%;
+    margin-bottom: 5px;
+  }
+
+  .inputAndPriceCont input {
+    height: 30px;
+  }
+
+  .minusButton {
+    font-size: 24px;
+    bottom: 10px;
+    left: 12px;
+  }
+
+  .plusButton {
+    font-size: 24px;
+    bottom: 10px;
+    left: 93px;
+  }
+
+}

@@ -26,7 +26,7 @@
 
 .headerSpan {
   margin: 70px 0;
-  font-size: 50px;
+  @include adaptiv-font(50,25);
   color: $text-color-body;
 }
 
@@ -136,7 +136,12 @@
   height: 150px;
 }
 
-.orderItem img {
+.imgAndSpanCont {
+  display: flex;
+  flex: 2;
+}
+
+.imgAndSpanCont img {
   height: 130px;
   min-width: 160px;
   max-width: 160px;
@@ -144,49 +149,53 @@
   border-radius: 5px;
 }
 
-.orderItem span {
-  font-size: 22px;
-  width: 45%;
-  padding-top: 10px;
-}
-
-.orderItem div {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex: 1;
-  margin-right: 5px;
-  align-items: center;
-}
-
-.orderItem div span{
+.imgAndSpanCont div span{
   display: flex;
   justify-content: center;
   padding: 10px 0;
 }
 
-.orderItem a{
-  font-size: 22px;
+.imgAndSpanCont a {
+  @include adaptiv-font(22,18);
   width: 45%;
   text-decoration: none;
   color: $secondary-color-blue;
 }
 
-.orderItem > span{
+.imgAndSpanCont > span{
   padding: 10px;
 }
 
-.orderItem a:hover{
+.imgAndSpanCont a:hover{
   color: crimson;
 }
 
-.orderItem div span:first-child {
+.imgAndSpanCont div span:first-child {
   font-size: 16px;
   color: $text-color-body;
 }
 
-.orderItem div span:last-child {
+.imgAndSpanCont div span:last-child {
   font-size: 18px;
+}
+
+.itemInfoCont {
+  display: flex;
+  justify-content: center;
+  margin-right: 5px;
+  flex: 1;
+  align-items: center;
+}
+
+.itemInfoCont div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.itemInfoCont div span {
+  padding: 5px 0;
 }
 
 .blockContAccept {
@@ -199,26 +208,25 @@
   border-radius: 10px;
   width: 80%;
   margin-left: 10%;
-  padding: 10px;
 }
 
 .blockContAccept div {
   display: flex;
   justify-content: space-between;
-  margin: 0 10px 30px 10px ;
+  margin: 0 20px 30px 20px ;
   border-bottom: 1px solid $separate-color;
   padding-bottom: 20px;
   font-size: 18px;
 }
 
 .blockContAccept div:first-child {
-  margin: 20px 10px 30px 10px ;
+  margin: 20px 20px 30px 20px ;
 }
 
 .blockContAccept div:last-child {
   height: 50px;
   border-radius: 10px;
-  margin: 0 10px 20px 10px ;
+  margin: 0 20px 20px 20px ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -230,6 +238,10 @@
   user-select: none;
 }
 
+.blockContAccept div span:last-child {
+  text-align: right;
+}
+
 #acceptButton {
   display: flex;
   flex-direction: column;
@@ -239,8 +251,9 @@
 
 #acceptButton span {
   color: $text-color-body;
-  font-size: 24px;
+  @include adaptiv-font(24,20);
   margin: 5px 0;
+  text-align: center;
 }
 #acceptButton span:last-child {
   margin-top: 35px
@@ -254,4 +267,52 @@
   left: 47px;
 }
 
+@media only screen and (max-width: 820px) {
+
+  .cartDiv {
+    width: 85%;
+  }
+
+  .widthBlockCont {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #inputStyles {
+    width: 80%;
+  }
+
+  .blockHeadline {
+    margin-bottom: 20px;
+  }
+
+  .orderItem img {
+    min-width: 50px;
+    max-width: 50px;
+    height: 60px;
+  }
+
+  .itemInfoCont {
+    flex-wrap: wrap;
+  }
+
+  .orderItem {
+    flex-direction: column;
+    height: 200px;
+  }
+
+  .imgAndSpanCont {
+    flex: 1;
+  }
+
+  .blockContAccept {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .blockContAccept div span:last-child {
+    margin-left: 10px;
+  }
+
+}
 
