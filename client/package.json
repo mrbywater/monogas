@@ -19,6 +19,7 @@
     "libphonenumber-js": "^1.10.30",
     "nodemailer": "^6.9.2",
     "react-burger-menu": "^3.0.9",
+    "react-minimal-side-navigation": "^1.9.2",
     "react-phone-input-2": "^2.15.1",
     "react-router-dom": "^6.10.0",
     "react-router-hash-link": "^2.4.3",

@@ -15,6 +15,10 @@
   align-items: flex-end;
 }
 
+.mobileFilter {
+  display: none;
+}
+
 .searchIcon {
   position: absolute;
   right: 10px;
@@ -128,6 +132,10 @@
   color: $text-color-body;
 }
 
+.filterAndSortCont {
+  display: flex;
+}
+
 .sortCont:focus-visible {
   border-radius: 4px;
   outline: 1px solid $page-color-border;
@@ -136,7 +144,7 @@
 .specificItemCont {
   box-shadow: 0.5px 0.5px 0.5px $shop-item-color-borderbox, 0 0 0.4em $shop-item-color-borderbox, 0 0 0.4em $shop-item-color-borderbox;
   width: 26%;
-  height: 450px;
+  min-height: 450px;
   margin-bottom: 50px;
   background: $shop-item-color;
 }
@@ -151,6 +159,10 @@
   width: 90%;
   margin: 5%;
   position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .widthCont img {
@@ -167,15 +179,17 @@
 
 .itemHeadline {
   font-size: 20px;
-  height: 100px;
+  min-height: 100px;
   display: block;
   color: $text-color-body;
 }
 
 .itemAmount {
   position: absolute;
-  bottom : 40px;
+  bottom : 0;
   color: red;
+  @include adaptiv-font(18,5);
+  width: 100%;
 }
 
 .itemPriceCont {
@@ -183,6 +197,8 @@
   font-size: 25px;
   color: $text-color-body;
   transition: none;
+  width: 100%;
+  margin-bottom: 30px;
 }
 
 .itemPriceCont svg {
@@ -328,6 +344,10 @@
   cursor: pointer;
 }
 
+.pagesCont span {
+  display: none;
+}
+
 @keyframes append-animate {
   from {
     transform: translateY(-40px);
@@ -341,5 +361,115 @@
 
 @media only screen and (max-width: 768px) {
 
+  @keyframes filter-animation {
+    from {
+      transform: translateX(-300px);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  .filterContMobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: filter-animation .6s ease;
+    width: 300px;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    border: 1px solid $page-color-border;
+    color: $text-color-body;
+    background: $shop-item-color;
+  }
+
+  .applyButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .applyButton div {
+    width: 200px;
+    height: 30px;
+    border: 1px solid $text-color-body;
+    background-color: $secondary-color-blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    font-size: 20px;
+    color: $shop-item-color-borderbox;
+  }
+
+  .itemAmount {
+    font-size: 15px;
+    bottom: 5px;
+  }
+
+  .itemPriceCont {
+    margin-bottom: 15px;
+  }
+
+  .specificItemCont {
+    width: 45%;
+    min-height: 380px;
+  }
+
+  .widthCont {
+    min-height: 380px;
+  }
+
+  .widthCont img {
+    height: 180px;
+  }
+
+  .searchCont {
+    flex-wrap: wrap;
+  }
+
+  .filterAndSortCont {
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  .page {
+    display: none;
+  }
+
+  .pagesCont span {
+    display: block;
+    color: $text-color-body;
+  }
+
+  .filterCont {
+    display: none;
+  }
+
+  .sortCont {
+    margin-left: 10%;
+  }
+
+  .mobileFilter {
+    display: flex;
+    width: 150px;
+    border: 2px solid $page-color-border;
+    justify-content: space-evenly;
+    align-items: center;
+    background: $shop-item-color;
+    color: $text-color-body;
+  }
+
+}
+
+@media (min-width: 768px) and (max-width: 1280px) {
+
+  .specificItemCont {
+    width: 40%;
+  }
 
 }

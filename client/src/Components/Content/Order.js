@@ -181,6 +181,22 @@ const Order = () => {
                             <div className="">3</div>
                             <span>Доставка</span>
                         </div>
+                        <div className="inputRadioCont">
+                            <div>
+                                <label>
+                                    <input type="radio" name="delivery"/>
+                                    <span>Самовивіз</span>
+                                    <span>безкоштовно</span>
+                                </label>
+                            </div>
+                            <div>
+                                <label>
+                                    <input type="radio" name="delivery"/>
+                                    <span>Самовивіз Нова Пошта</span>
+                                    <span>за тарифами перевізника</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                     <div className="blockContAccept">
                         <div>

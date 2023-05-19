@@ -70,6 +70,7 @@
   font-size: 24px;
   color: #aaa;
   transition: color 0.2s;
+  z-index: 10000;
 }
 
 .itemsInCartCont {
@@ -199,7 +200,7 @@
 }
 
 .acceptButton {
-  font-size: 16px;
+  @include adaptiv-font(16,12);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -2,7 +2,7 @@ import "./MultiRangeSlider.scss"
 import React, { useCallback, useEffect, useState, useRef } from "react";
 import PropTypes from "prop-types";
 
-const MultiRangeSlider = ({ min, max, setPrice, setCurrentPage, shopItems}) => {
+const MultiRangeSlider = ({ min, max, setPrice, setCurrentPage, shopItems, setFilterShowButton}) => {
 
     const [minVal, setMinVal] = useState();
     const [maxVal, setMaxVal] = useState();
@@ -13,10 +13,9 @@ const MultiRangeSlider = ({ min, max, setPrice, setCurrentPage, shopItems}) => {
 
     const buttonOk = () => {
         setPrice(shopItems.filter(elm => {
-            console.log(elm.price)
             return elm.price >= Number(minVal) && elm.price <= Number(maxVal)
         }))
-        console.log(minVal,maxVal)
+        setFilterShowButton(false)
         setCurrentPage(1)
     }
 

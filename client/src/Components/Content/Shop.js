@@ -8,7 +8,8 @@ import {
 	faCartShopping,
 	faAngleLeft,
 	faAngleRight,
-	faCheck
+	faCheck,
+	faFilter, faXmark
 } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {MultiRangeSlider} from "./MultiRangeSlider";
@@ -48,6 +49,7 @@ const Shop = () => {
 	const [itemsPerPage] = useState(6)
 	const [selectedValue, setSelectedValue] = useState("relevance")
 	const [arrowReverse, setArrowReverse] = useState([])
+	const [filterShowButton, setFilterShowButton] = useState(false)
 
 	useEffect(()=> {
 		if (!isLoading) {
@@ -170,6 +172,14 @@ const Shop = () => {
 		setCurrentPage(1)
 	}
 
+	const filterShow = () => {
+		setFilterShowButton(true)
+	}
+
+	const closeButton = () => {
+		setFilterShowButton(false)
+	}
+
 	// every element that return to us for render from fx. `.map` method
 	// needs to have key for the root tag of it
 	// https://ru.legacy.reactjs.org/docs/lists-and-keys.html
@@ -193,11 +203,17 @@ const Shop = () => {
 						/>
 						<FontAwesomeIcon icon={faMagnifyingGlass} className="searchIcon"/>
 					</div>
-					<select className="sortCont" value={selectedValue} onChange={slectedMinMax}>
-						<option value="relevance" selected>За релевантністю</option>
-						<option value="minToMax" >Від дешевих до дорогих</option>
-						<option value="maxToMin" >Від дорогих до дешевих</option>
-					</select >
+					<div className="filterAndSortCont">
+						<div className="mobileFilter" onClick={()=>filterShow()}>
+							<FontAwesomeIcon icon={faFilter}/>
+							<span>Фільтр</span>
+						</div>
+						<select className="sortCont" value={selectedValue} onChange={slectedMinMax}>
+							<option value="relevance" selected>За релевантністю</option>
+							<option value="minToMax" >Від дешевих до дорогих</option>
+							<option value="maxToMin" >Від дорогих до дешевих</option>
+						</select >
+					</div>
 				</div>
 				<div className="belowSearchCont">
 					<div className="filterCont" >
@@ -268,6 +284,80 @@ const Shop = () => {
 							)
 						})}
 					</div>
+					<div className={filterShowButton ? "overlay" : "onClickDropDownContent"} onClick={closeButton}/>
+					<div className={filterShowButton ? "filterContMobile" : "onClickDropDownContent"}>
+						<MultiRangeSlider
+							min={minPrice}
+							max={maxPrice}
+							setPrice={setPriceFiltered}
+							setCurrentPage={setCurrentPage}
+							shopItems={initialItems}
+							setFilterShowButton={setFilterShowButton}
+						/>
+						{arrowReverse.map((elem, i) => {
+							return (
+								<div className="dropdown" key={elem.headline}>
+									<button className="dropbtn" onClick={dropDownShow(elem.headline)}>
+										{elem.headline}
+										<FontAwesomeIcon icon={elem.arrow ? faAngleUp : faAngleDown} className="dropDownArrow"/>
+									</button>
+									<div className={elem.arrow ? "dropdownContent" : "dropdownContent onClickDropDownContent"} id={elem.headline}>
+										{
+											elem.headline === "Бренд" ?
+												<input
+													placeholder ="Пошук..." className="brandSearch"
+													value={brandSearchInput}
+													onChange={(event) => {
+														setBrandSearchInput(event.target.value)
+													}}
+												/> : null
+										}
+										<div className="allBrands">
+											{!elem.items &&
+												(Object.keys(brandsChecked).sort().map(text => {
+													const isChecked = brandsChecked[text];
+													const shouldRender = text.toLowerCase().includes(brandSearchInput.toLowerCase());
+													return shouldRender && (
+														<div key={text+'_brands_checkboxes'}>
+															<input
+																type="checkbox"
+																checked={isChecked}
+																value={text}
+																name="brand"
+																onChange={onChangeChecked(text)}
+															/>
+															<span>{text}</span>
+														</div>
+													);
+												}))
+											}
+										</div>
+										<div className="allBrands">
+											{elem.items &&
+												(elem.items.map(text => {
+													return (
+														<div key={text+'_some_items'}>
+															<input
+																type="checkbox"
+																value={text}
+																name={text}
+																onChange={handleChangeCondition}
+															/>
+															<span>{text}</span>
+														</div>
+													)
+												}))
+											}
+										</div>
+									</div>
+								</div>
+
+							)
+						})}
+						<div className="applyButton">
+							<div onClick={closeButton}>Показати</div>
+						</div>
+					</div>
 					<div className="itemsAndNavigationCont">
 						<div className="shopItemsCont">
 							{!!currentItem.length ?
@@ -327,6 +417,7 @@ const Shop = () => {
 									paginate = {paginate}
 									currentPage = {currentPage}
 								/>
+								<span>Сторінка {currentPage} з {Math.ceil(sortMainSearchFiltered.length / itemsPerPage)}</span>
 							</div>
 							<FontAwesomeIcon
 								icon={faAngleRight}

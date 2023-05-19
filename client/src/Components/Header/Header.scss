@@ -22,7 +22,7 @@
   text-decoration: none;
   color: $text-color-header;
   margin-right: 20px;
-  font-size: 22px;
+  @include adaptiv-font(22,15);
   position: relative;
 }
 
@@ -78,7 +78,7 @@
   text-decoration: none;
   color: $text-color-header;
   margin-right: 20px;
-  font-size: 22px;
+  @include adaptiv-font(22,15);
   position: relative;
   border: 1px solid $text-color-header;
   width: 85px;
@@ -121,11 +121,10 @@
   display: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1125px) {
+
   .contextMenu {
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
+   display: none;
   }
 
   .themeToggle {
@@ -208,5 +207,4 @@
     background: rgba(0, 0, 0, 0.3);
   }
 }
-
 
