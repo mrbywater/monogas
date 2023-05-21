@@ -4,11 +4,10 @@ import React, {useContext, useEffect, useState} from "react";
 import {ShoppingCartContext} from "../Context/ShoppingCartContext";
 import {ShoppingCart} from "./ShoppingCart";
 import {urlCreation} from "./OurProjects"
-import {shopItems} from "./InfoList";
 import PhoneInput from 'react-phone-input-2'
-import {faXmark} from "@fortawesome/free-solid-svg-icons";
+import {faAngleDown, faAngleUp, faXmark} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {operators} from "./InfoList";
+import {novaPoshtaAddresses, novaPoshtaBox, operators} from "./InfoList";
 import axios from "axios";
 
 const Order = () => {
@@ -21,10 +20,18 @@ const Order = () => {
 
     const [phoneNumber, setPhoneNumber] = useState('')
     const [emailInput, setEmailInput] = useState("")
-    const [tagInputFN, setTagInputFN] = useState("");
-    const [tagInputSN, setTagInputSN] = useState("");
+    const [tagInputFN, setTagInputFN] = useState("")
+    const [tagInputSN, setTagInputSN] = useState("")
     const [accepted, setAccepted] = useState(false)
+    const [pickup, setPickup] = useState(false)
+    const [novaPoshta, setNovaPoshta] = useState(true)
+    const [novaPoshtaDepartment, setNovaPoshtaDepartment] = useState(false)
+    const [novaPoshtaPostBox, setNovaPoshtaPostBox] = useState(false)
+    const [deliveryLocationSearch, setDeliveryLocationSearch] = useState('')
+    const [arrowDirection, setArrowDirection] = useState(false)
     const [incorrectValues, setIncorrectValues] = useState(false)
+    const [targetAddress, setTargetAddress] = useState('Оберіть необхідне відділення')
+    const [incorrectAddress, setIncorrectAddress] = useState(false)
 
     useEffect(()=>{
         if (shopCart.length === 0){
@@ -32,28 +39,38 @@ const Order = () => {
         }
     }, [shopCart])
     const acceptOrder = () => {
-        if ((operators.some(code => code === phoneNumber.slice(3, 5)) && phoneNumber.length === 12) && emailInput.length !== 0 && tagInputFN !== 0 && tagInputSN !== 0) {
 
-            setAccepted(true)
+        if ((operators.some(code => code === phoneNumber.slice(3, 5)) && phoneNumber.length === 12) && emailInput.length !== 0 && tagInputFN.length !== 0 && tagInputSN.length !== 0) {
             setIncorrectValues(false)
 
-            axios.post('http://localhost:5050/send-email', {
-                phoneNumber,
-                emailInput,
-                tagInputFN,
-                tagInputSN,
-                totalPrice,
-                shopCart
-                // Добавьте остальные поля input и их значения
-            })
-                .then((response) => {
-                    console.log(response.data);
-                    alert('Значения успешно отправлены на почту.');
-                })
-                .catch((error) => {
-                    console.error(error);
-                    alert('Произошла ошибка при отправке значений на почту.');
-                });
+                if (pickup || targetAddress !== 'Оберіть необхідне відділення'){
+                    setIncorrectAddress(false)
+                    setAccepted(true)
+                    const address = pickup ? 'Самовивіз' : `Нова Пошта ${targetAddress}`
+
+                        axios.post('http://localhost:5050/send-email', {
+                            phoneNumber,
+                            emailInput,
+                            tagInputFN,
+                            tagInputSN,
+                            totalPrice,
+                            shopCart,
+                            address
+                            // Добавьте остальные поля input и их значения
+                        })
+                            .then((response) => {
+                                console.log(response.data);
+                                alert('Значения успешно отправлены на почту.');
+                            })
+                            .catch((error) => {
+                                console.error(error);
+                                alert('Произошла ошибка при отправке значений на почту.');
+                            });
+                } else {
+                    setIncorrectAddress(true)
+                    window.scrollTo({ left: 0, top: document.body.scrollHeight});
+                }
+
         } else {
             setIncorrectValues(true)
             window.scroll(0, 80)
@@ -62,6 +79,15 @@ const Order = () => {
 
     const closeButton = () => {
        setShopCart([])
+    }
+
+    const selectAddress = (address) => {
+        setTargetAddress(address)
+        setArrowDirection(false)
+    }
+
+    const addressFilter = (arr) => {
+        return arr.filter(item => item.toLowerCase().includes(deliveryLocationSearch.toLowerCase()))
     }
 
     return (
@@ -180,21 +206,125 @@ const Order = () => {
                         <div className="blockHeadline">
                             <div className="">3</div>
                             <span>Доставка</span>
+                            {incorrectAddress && (
+                                <span id="incorrectValues">Оберіть адресу*</span>
+                            )}
                         </div>
                         <div className="inputRadioCont">
                             <div>
                                 <label>
-                                    <input type="radio" name="delivery"/>
-                                    <span>Самовивіз</span>
-                                    <span>безкоштовно</span>
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            name="delivery"
+                                            onClick={()=> {
+                                                setPickup(true)
+                                                setNovaPoshta(false)
+                                            }}
+                                            id='inputRadioSpan'
+                                        />
+                                        <span>Самовивіз</span>
+                                    </div>
+                                    <div>безкоштовно</div>
                                 </label>
+                                <div className={pickup ? 'deliverySubInfo deliveryInfoShow' : 'deliverySubInfo'}>
+                                    <span>Товар можливо отримати за адрессою Миколаївська, 10 вл1 с. Крижанівка, Одеський район, Одеська область, 67562</span>
+                                    <span>Додаткову інформацію уточнюйте у оператора*</span>
+                                </div>
                             </div>
                             <div>
                                 <label>
-                                    <input type="radio" name="delivery"/>
-                                    <span>Самовивіз Нова Пошта</span>
-                                    <span>за тарифами перевізника</span>
+                                    <div>
+                                        <input
+                                            type="radio"
+                                            name="delivery"
+                                            id="NP"
+                                            onClick={()=> {
+                                                setPickup(false)
+                                                setNovaPoshta(true)
+                                            }}
+                                            id='inputRadioSpan'
+                                        />
+                                        <span>Самовивіз Нова Пошта</span>
+                                    </div>
+                                    <div>за тарифами перевізника</div>
                                 </label>
+                                <div className={novaPoshta ? 'deliverySubInfo deliveryInfoShow' : 'deliverySubInfo'}>
+                                   <div className="inputRadioContNP">
+                                       <label
+                                           onClick={()=> {
+                                               setNovaPoshtaDepartment(true)
+                                               setNovaPoshtaPostBox(false)
+                                               setArrowDirection(false)
+                                           }}
+                                       >
+                                           <input type="radio"  name="NP"/>
+                                           <span>Відділення</span>
+                                       </label>
+                                       <label
+                                           onClick={()=> {
+                                               setNovaPoshtaDepartment(false)
+                                               setNovaPoshtaPostBox(true)
+                                               setArrowDirection(false)
+                                           }}
+                                       >
+                                           <input type="radio"  name="NP"/>
+                                           <span>Поштомат</span>
+                                       </label>
+                                   </div>
+                                    <div className={novaPoshtaDepartment ? 'novaPoshtaDepartment deliveryInfoShow' : 'novaPoshtaDepartment'}>
+                                        <div className="dropDownDelivery">
+                                            <button className="dropButtonDelivery" onClick={()=> setArrowDirection(!arrowDirection)}>
+                                                {targetAddress}
+                                                <FontAwesomeIcon icon={arrowDirection ? faAngleUp : faAngleDown}/>
+                                            </button>
+                                            <div className={arrowDirection ? 'deliveryLocation deliveryInfoShow' : 'deliveryLocation'}>
+                                                <input
+                                                    placeholder ="Пошук..." className="deliveryLocationSearch"
+                                                    value={deliveryLocationSearch}
+                                                    onChange={(event) => {
+                                                        setDeliveryLocationSearch(event.target.value)
+                                                    }}
+                                                />
+                                                <div className='allAddresses'>
+                                                    {addressFilter(novaPoshtaAddresses).map(address => (
+                                                        <div
+                                                            onClick={()=>selectAddress(address)}
+                                                        >
+                                                            {address}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className={novaPoshtaPostBox ? 'novaPoshtaPostBox deliveryInfoShow' : 'novaPoshtaPostBox'}>
+                                        <div className="dropDownDelivery">
+                                            <button className="dropButtonDelivery" onClick={()=> setArrowDirection(!arrowDirection)}>
+                                                {targetAddress}
+                                                <FontAwesomeIcon icon={arrowDirection ? faAngleUp : faAngleDown}/>
+                                            </button>
+                                            <div className={arrowDirection ? 'deliveryLocation deliveryInfoShow' : 'deliveryLocation'}>
+                                                <input
+                                                    placeholder ="Пошук..." className="deliveryLocationSearch"
+                                                    value={deliveryLocationSearch}
+                                                    onChange={(event) => {
+                                                        setDeliveryLocationSearch(event.target.value)
+                                                    }}
+                                                />
+                                                <div className='allAddresses'>
+                                                    {addressFilter(novaPoshtaBox).map(address => (
+                                                        <div
+                                                            onClick={()=>selectAddress(address)}
+                                                        >
+                                                            {address}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

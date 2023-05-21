@@ -24,22 +24,9 @@ app.post('/send-email', (req, res) => {
         tagInputFN,
         tagInputSN,
         totalPrice,
-        shopCart
+        shopCart,
+        address
     }  = req.body;
-
-    const elementCont = {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '20px',
-        flexWrap: 'wrap'
-    }
-
-    const title = {
-        display: 'flex',
-        width: '50%',
-        color: 'red'
-    }
 
     if (!transporter) {
          transporter = nodemailer.createTransport({
@@ -56,10 +43,11 @@ app.post('/send-email', (req, res) => {
         to: 'monogasauto@gmail.com',
         subject: 'Замовлення',
         html: `
-            <div style="font-size: 16px; margin-bottom: 5px">Ім'я: ${tagInputFN}</div> 
             <div style="font-size: 16px; margin-bottom: 5px">Прізвище: ${tagInputSN}</div> 
+            <div style="font-size: 16px; margin-bottom: 5px">Ім'я: ${tagInputFN}</div> 
             <div style="font-size: 16px; margin-bottom: 5px">Телефон: +${phoneNumber}</div> 
-            <div style="font-size: 16px; margin-bottom: 5px">Електронна пошта: ${emailInput}</div> 
+            <div style="font-size: 16px; margin-bottom: 5px">Електронна пошта: ${emailInput}</div>
+            <div style="font-size: 16px; margin-bottom: 5px">Адреса доставки: ${address}</div>  
             <div style="font-size: 16px; margin-bottom: 5px">Товари:
                 <div style='
                         display: flex;

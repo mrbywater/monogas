@@ -22,7 +22,6 @@ import {IsLoading} from './IsLoading'
 
 // all of the constants that not recalculated on next render has to be moved out of component
 // + it's better to move it to separate `helper.js` file
-
 const Shop = () => {
 
 	const {
@@ -154,8 +153,14 @@ const Shop = () => {
 	const firstItemIndex = lastItemIndex - itemsPerPage
 	const currentItem = sortMainSearchFiltered.slice(firstItemIndex,lastItemIndex)
 
-	const nextPage = () => setCurrentPage(prev => prev + 1)
-	const prevPage = () => setCurrentPage(prev => prev - 1)
+	const nextPage = () => {
+		window.scroll(0, 100)
+		setCurrentPage(prev => prev + 1)
+	}
+	const prevPage = () => {
+		window.scroll(0, 100)
+		setCurrentPage(prev => prev - 1)
+	}
 
 	const paginate = pageNumber => setCurrentPage(pageNumber)
 
