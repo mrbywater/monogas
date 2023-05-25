@@ -11,11 +11,17 @@ const MultiRangeSlider = ({ min, max, setPrice, setCurrentPage, shopItems, setFi
     let maxValRef = useRef();
     let range = useRef(null);
 
+    let screenWidth = window. innerWidth
+
     const buttonOk = () => {
         setPrice(shopItems.filter(elm => {
             return elm.price >= Number(minVal) && elm.price <= Number(maxVal)
         }))
-        setFilterShowButton(false)
+
+        if (screenWidth < 768) {
+            setFilterShowButton(false)
+        }
+
         setCurrentPage(1)
     }
 
