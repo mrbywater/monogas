@@ -15,6 +15,7 @@ import {Shop} from "./Components/Content/Shop"
 import {ShopItem} from "./Components/Content/ShopItem"
 import {ShoppingCartProvider} from "./Components/Context/ShoppingCartContext"
 import {Order} from "./Components/Content/Order";
+import {AdminPanel} from "./Components/Content/AdminPanel";
 
 function App() {
 
@@ -31,6 +32,7 @@ function App() {
             <Route path="/works/:url" element={<SelectedProject />}/>
             <Route path="/shop/:item" element={<ShopItem />}/>
             <Route path="/order" element={<Order />}/>
+            <Route path="/admin-panel" element={<AdminPanel />}/>
             <Route path="*" element={<NotFoundPage />}/>
         </Routes>
         <Footer/>

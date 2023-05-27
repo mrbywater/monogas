@@ -4,6 +4,8 @@ import "./loadEnvironment.mjs";
 import records from "./routes/record.mjs";
 import api from "./routes/apiNP.mjs";
 import * as nodemailer from 'nodemailer'
+import db from "./db/conn.mjs";
+import {ObjectId} from "mongodb";
 
 const PORT = process.env.PORT || 5050;
 const app = express();
@@ -16,6 +18,99 @@ app.use("/record", records);
 app.use("/apiNP", api);
 
 let transporter
+
+app.post('/new-item', (req) => {
+
+    const {
+        name,
+        cost,
+        brand,
+        status,
+        amount,
+        img,
+        description
+    } = req.body
+
+    const collection = db.collection('infoList');
+
+    const filter = { _id: new ObjectId('6463e9bde6e4e16676e59513') };
+    const update = {
+                $addToSet: {
+                    shopItems: {
+                        img : img.split('\n\n'),
+                        headline : name,
+                        price : cost,
+                        brand : brand,
+                        condition : status,
+                        amount : amount,
+                        description : description.split('\n\n')
+                    }
+                }
+            };
+
+    collection.findOneAndUpdate(filter, update);
+})
+
+app.post('/change-item', (req) => {
+
+    const {
+        headline,
+        name,
+        cost,
+        brand,
+        status,
+        amount,
+        img,
+        description
+    } = req.body
+
+    const collection = db.collection('infoList');
+
+    const query = {
+        _id: new ObjectId('6463e9bde6e4e16676e59513'),
+        shopItems: {
+            $elemMatch: { headline: headline }
+        }
+    };
+
+    const update = {
+        $set: {
+            'shopItems.$': {
+                img : img.split('\n\n').filter(item => item.length !== 0),
+                headline : name,
+                price : cost,
+                brand : brand,
+                condition : status,
+                amount : amount,
+                description : description.split('\n\n').filter(item => item.length !== 0)
+            }
+        }
+    };
+
+    collection.updateOne(query, update)
+})
+
+app.post('/delete-item', (req) => {
+
+    const { headline } = req.body
+
+    const collection = db.collection('infoList');
+
+    const query = {
+        _id: new ObjectId('6463e9bde6e4e16676e59513')
+    };
+
+    const update = {
+        $pull: {
+            shopItems: {
+                headline : headline,
+            }
+        }
+    };
+
+    collection.updateOne(query, update)
+})
+
 app.post('/send-email', (req, res) => {
 
     const {

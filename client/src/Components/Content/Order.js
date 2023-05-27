@@ -60,11 +60,9 @@ const Order = () => {
                         })
                             .then((response) => {
                                 console.log(response.data);
-                                alert('Значения успешно отправлены на почту.');
                             })
                             .catch((error) => {
                                 console.error(error);
-                                alert('Произошла ошибка при отправке значений на почту.');
                             });
                 } else {
                     setIncorrectAddress(true)

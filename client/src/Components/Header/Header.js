@@ -58,7 +58,7 @@ const Header = () =>{
     })
 
     return (
-        <div className={ref.pathname === "/order" ? "onOrderPage" : "headerCont"}>
+        <div className={ref.pathname === "/order" || ref.pathname === "/admin-panel" ? "onOrderPage" : "headerCont"}>
             <Menu
                 isOpen = {menuOpen}
                 onStateChange ={(state) => handleStateChange(state)}

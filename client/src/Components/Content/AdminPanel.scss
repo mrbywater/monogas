@@ -1,0 +1,186 @@
+@import '../../App';
+
+.centerAuth {
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0,0,0, .05);
+}
+
+.authorizationCont {
+  width: 300px;
+  height: 300px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $shop-item-color;
+  color: $text-color-body;
+  border-radius: 5px;
+  position: relative;
+}
+
+.authInputCont {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 15px 0 0 15%;
+}
+
+.authInputCont span {
+  margin-bottom: 5px;
+}
+
+.authInputCont input {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 3px;
+}
+
+#incorrect {
+  position: absolute;
+  color: crimson;
+  font-size: 12px;
+  top: 30px;
+  left: 43px;
+}
+
+.authButton {
+  width: 70%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15%;
+  margin-top: 50px;
+  border: 1px solid green;
+  border-radius: 5px;
+  background: #00a046;
+  color: white;
+  user-select: none;
+  cursor: pointer;
+}
+
+.notActive {
+  display: none;
+}
+
+.adminButtonCont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.shopItemChangeButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  width: 50%;
+  height: 120px;
+  border: 1px solid black;
+  margin: 20px 0;
+  background: $shop-item-color;
+  color: $text-color-body;
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.shopItemAdd {
+  width: 60%;
+  max-height: 90vh;
+  background: white;
+  z-index: 10000;
+  position: absolute;
+  overflow: auto;
+  padding-top: 20px;
+}
+
+.shopItemAdd > div{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 10px 0 0 15%;
+}
+
+.shopItemAdd > div input {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 4.5px;
+  font-size: 18px;
+}
+
+.shopItemAdd > div select {
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 3px;
+  font-size: 18px;
+}
+
+.shopItemAdd > div textarea {
+ resize: none;
+  border-radius: 5px;
+}
+
+.shopItemAdd button:last-child {
+  width: 30%;
+  margin: 20px 0 20px 35%;
+  height: 30px;
+}
+
+.isEmpty {
+  position: absolute;
+  color: crimson;
+  font-size: 12px;
+  top: -5px;
+}
+
+#allItems {
+  width: 40%;
+  margin-left: 15%;
+}
+
+.dropButtonItem {
+  width: 100%;
+  background-color: $shop-item-color;
+  color: $text-color-body !important;
+  @include adaptiv-font(18,14);
+  min-height: 30px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid $separate-color;
+  border-radius: 5px;
+}
+
+.deliveryLocationItem {
+  display: none;
+  border: 1px solid $separate-color;
+  border-radius: 5px;
+  margin: 10px 0 0 0;
+  flex-direction: column;
+  animation: np-delivery .7s ease;
+  position: absolute;
+  width: 70%;
+  background: white;
+}
+
+#deleteShopItemCont {
+  min-height: 15vh;
+  max-height: 45vh;
+}
+
+#deleteShopItemButton {
+  margin-bottom: 20px;
+}
+
+#deliveryLocationItemDelete {
+  position: inherit;
+  width: 100%;
+}
+

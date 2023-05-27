@@ -7,7 +7,7 @@ const Footer = () =>{
     const ref = useLocation()
 
     return (
-        <div className={ref.pathname === "/order" ? "onOrderPage" : ""}>
+        <div className={ref.pathname === "/order" || ref.pathname === "/admin-panel" ? "onOrderPage" : ""}>
             <div className="footerCont" id="contacts">
                 <div className="info">
                     <h1>Адреса</h1>
