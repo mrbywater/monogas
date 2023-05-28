@@ -24,7 +24,7 @@ const Order = () => {
     const [tagInputSN, setTagInputSN] = useState("")
     const [accepted, setAccepted] = useState(false)
     const [pickup, setPickup] = useState(false)
-    const [novaPoshta, setNovaPoshta] = useState(true)
+    const [novaPoshta, setNovaPoshta] = useState(false)
     const [novaPoshtaDepartment, setNovaPoshtaDepartment] = useState(false)
     const [novaPoshtaPostBox, setNovaPoshtaPostBox] = useState(false)
     const [deliveryLocationSearch, setDeliveryLocationSearch] = useState('')
@@ -218,6 +218,7 @@ const Order = () => {
                                             onClick={()=> {
                                                 setPickup(true)
                                                 setNovaPoshta(false)
+                                                setTargetAddress('Оберіть необхідне відділення')
                                             }}
                                             id='inputRadioSpan'
                                         />
@@ -243,7 +244,7 @@ const Order = () => {
                                             }}
                                             id='inputRadioSpan'
                                         />
-                                        <span>Самовивіз Нова Пошта</span>
+                                        <span>Самовивіз Нова Пошта(Одеса)</span>
                                     </div>
                                     <div>за тарифами перевізника</div>
                                 </label>
