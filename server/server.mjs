@@ -149,7 +149,6 @@ app.post('/send-email', (req, res) => {
                         height: 50px;
                         flex-wrap: wrap;
                         border: 1px solid black;
-                        margin-bottom: 15px;
                 '>
                         <div style='
                             display: flex;
@@ -188,6 +187,7 @@ app.post('/send-email', (req, res) => {
                             height: 40px;
                             flex-wrap: wrap;
                             border: 1px solid black;
+                            border-top: 0px;
                         '>
                             <div style='
                                 display: flex;
@@ -218,7 +218,7 @@ app.post('/send-email', (req, res) => {
                             </div>
                         </div>
                     `                       
-                ))}
+                )).join('')}
             </div>
             <div style="font-size: 16px; margin-top: 5px; font-weight: bold">Сума замовлення: ${totalPrice}₴</div> 
         `
