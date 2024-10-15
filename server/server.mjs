@@ -51,6 +51,34 @@ app.post('/new-item', (req) => {
     collection.findOneAndUpdate(filter, update);
 })
 
+app.post('/new-user', (req) => {
+
+    const {
+        name,
+        email,
+        phone,
+        carModel,
+        carYear
+    } = req.body
+
+    const collection = db.collection('usersData');
+
+    const filter = { _id: new ObjectId('670e3c57b82c3bd82ee4ef79') };
+    const update = {
+        $addToSet: {
+            users: {
+                name : name,
+                email : email,
+                phone : phone,
+                carModel : carModel,
+                carYear : carYear,
+            }
+        }
+    };
+
+    collection.findOneAndUpdate(filter, update);
+})
+
 app.post('/change-item', (req) => {
 
     const {

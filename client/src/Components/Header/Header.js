@@ -2,11 +2,12 @@ import "./Header.scss"
 import Logo from "../Images/logo.jpg"
 import {Link, useLocation} from 'react-router-dom'
 import {faFacebook, faInstagram} from '@fortawesome/free-brands-svg-icons'
-import {faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import {faMoon, faPenToSquare, faSun} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, {useEffect, useState} from "react"
 import { slide as Menu } from 'react-burger-menu'
 import {ShoppingCart} from "../Content/ShoppingCart";
+import {UserForm} from "../Content/UserForm";
 
 const Header = () =>{
 
@@ -16,6 +17,7 @@ const Header = () =>{
 
     const [changeTheme, setChangeTheme] = useState(faMoon)
     const [menuOpen,setMenuOpen] = useState(false)
+    const [isUserFormOpen, setIsUserFormOpen] = useState(false)
 
     const  handleStateChange = (state) => {
         setMenuOpen(state.isOpen)
@@ -94,9 +96,11 @@ const Header = () =>{
                 <a href="https://forms.gle/YQdJPVQ7meeYaxRC6" className="requestButtonInHeader">Заявка</a>
             </div>
             <ShoppingCart />
+            <FontAwesomeIcon icon={faPenToSquare} className="themeIcon" onClick={()=>setIsUserFormOpen(true)}/>
             <div id="dark-mode-toggle" className="themeToggle">
                 <FontAwesomeIcon icon={changeTheme} className="themeIcon" onClick={changePageTheme}/>
             </div>
+            {isUserFormOpen && <UserForm setIsOpen={setIsUserFormOpen}/>}
         </div>
     )
 }
