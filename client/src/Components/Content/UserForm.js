@@ -38,6 +38,7 @@ const UserForm = (props) => {
                     .catch((error) => {
                     console.error(error);
                 });
+            localStorage.setItem("userInfo", JSON.stringify(formRef.current));
             setIsOpen(false)
             }
         }

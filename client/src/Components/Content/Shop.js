@@ -19,6 +19,7 @@ import {urlCreation} from "./OurProjects.js"
 import {Pagination} from "./Pagination";
 import {ShoppingCartContext} from "../Context/ShoppingCartContext";
 import {IsLoading} from './IsLoading'
+import {shopFilter} from "./InfoList";
 
 // all of the constants that not recalculated on next render has to be moved out of component
 // + it's better to move it to separate `helper.js` file
@@ -52,7 +53,7 @@ const Shop = () => {
 
 	useEffect(()=> {
 		if (!isLoading) {
-			setArrowReverse(dataBase[0].shopFilter)
+			setArrowReverse(shopFilter)
 			setPriceFiltered(dataBase[0].shopItems)
 			setInitialItems(dataBase[0].shopItems)
 			setCreateBrandsDB(dataBase[0].shopItems.map(item => item.brand))
@@ -152,7 +153,7 @@ const Shop = () => {
 	const lastItemIndex = currentPage * itemsPerPage
 	const firstItemIndex = lastItemIndex - itemsPerPage
 	const currentItem = sortMainSearchFiltered.slice(firstItemIndex,lastItemIndex)
-
+	let myArray = JSON.parse(localStorage.getItem('myArray')) || [];
 	const nextPage = () => {
 		window.scroll(0, 100)
 		setCurrentPage(prev => prev + 1)
@@ -183,6 +184,29 @@ const Shop = () => {
 
 	const closeButton = () => {
 		setFilterShowButton(false)
+	}
+
+	const addObjectToArray = (array, newObject) => () =>{
+		const maxLength = 2;
+
+		const isDuplicate = array.some(item => item.headline === newObject.headline);
+
+		if (isDuplicate) {
+			return array; // Если объект уже есть, ничего не меняем
+		}
+
+		// Проверка, если длина массива превышает допустимую
+		if (array.length >= maxLength) {
+			array.shift(); // Удаление первого элемента
+		}
+
+		// Добавление нового объекта в конец массива
+		array.push(newObject);
+
+		// Сохранение обновленного массива в localStorage
+		localStorage.setItem('myArray', JSON.stringify(array));
+
+		return array;
 	}
 
 	// every element that return to us for render from fx. `.map` method
@@ -220,6 +244,22 @@ const Shop = () => {
 						</select >
 					</div>
 				</div>
+				{myArray.length > 0 && (<div className="recommendedShopItemsCont">
+					<span>Рекомендовані товари</span>
+					<div>
+						{myArray.map(elm => (
+							<Link to={"/shop/" + urlCreation(elm.headline)}>
+								<div className="specificRecommendedShopItemsCont">
+									<img src={elm.img[0]} className="recommendedShopItemImg"/>
+									<div className="descriptionRec">
+										<span className="">{elm.headline}</span>
+										<span>{elm.price}₴</span>
+									</div>
+								</div>
+							</Link>
+						))}
+					</div>
+				</div>)}
 				<div className="belowSearchCont">
 					<div className="filterCont" >
 						<MultiRangeSlider
@@ -370,7 +410,7 @@ const Shop = () => {
 									<div key={elm.headline+'_shop_items'} className="specificItemCont">
 										<div className="specificItem">
 											<div className="widthCont" style={!elm.amount ? {opacity : 0.4} : null}>
-												<Link to={"/shop/" + urlCreation(elm.headline)}>
+												<Link to={"/shop/" + urlCreation(elm.headline)} onClick={addObjectToArray(myArray,elm)}>
 													<img src={elm.img[0]}/>
 													<span className="itemHeadline">{elm.headline}</span>
 												</Link>
