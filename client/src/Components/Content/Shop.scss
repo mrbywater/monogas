@@ -477,16 +477,19 @@
   flex-direction: column;
   gap: 15px;
 
-  > div {
-    gap: 30px;
-    display: flex;
+  .recommendedCarousel {
+    box-sizing: border-box;
+    padding: 10px 0;
 
-    > a {
-      text-decoration: none;
-      color: $text-color-body;
-      font-size: 19px;
+    .slide {
+      margin: 0px 10px;
+
+      > a {
+        text-decoration: none;
+        color: $text-color-body;
+        font-size: 19px;
+      }
     }
-
   }
 
   > span {
@@ -513,6 +516,7 @@
     max-width: 250px;
   }
 }
+
 
 @media (min-width: 768px) and (max-width: 1280px) {
 

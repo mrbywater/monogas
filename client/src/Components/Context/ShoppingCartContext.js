@@ -3,7 +3,7 @@ import {useState, createContext, useEffect} from "react";
 export const ShoppingCartContext = createContext();
 export const ShoppingCartProvider = ({ children }) => {
 
-    const [shopCart, setShopCart] = useState((localStorage.getItem('shoppingCart').length !== 0 || localStorage.getItem('shoppingCart') === null) ? JSON.parse(localStorage.getItem('shoppingCart')) : []);
+    const [shopCart, setShopCart] = useState((localStorage.getItem('shoppingCart').length !== 0 || !localStorage.getItem('shoppingCart') === null) ? JSON.parse(localStorage.getItem('shoppingCart')) : []);
     const [priceArray, setPriceArray] = useState([])
     const [isOpen, setIsOpen] = useState(false)
     const [totalPrice, setTotalPrice] = useState(0)

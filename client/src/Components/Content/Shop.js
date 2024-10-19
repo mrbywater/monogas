@@ -9,7 +9,7 @@ import {
 	faAngleLeft,
 	faAngleRight,
 	faCheck,
-	faFilter, faXmark
+	faFilter,
 } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {MultiRangeSlider} from "./MultiRangeSlider";
@@ -20,9 +20,30 @@ import {Pagination} from "./Pagination";
 import {ShoppingCartContext} from "../Context/ShoppingCartContext";
 import {IsLoading} from './IsLoading'
 import {shopFilter} from "./InfoList";
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import {model} from "@tensorflow/tfjs";
 // all of the constants that not recalculated on next render has to be moved out of component
 // + it's better to move it to separate `helper.js` file
+
+const responsiveCarousel = {
+	desktop: {
+		breakpoint: { max: 3000, min: 1024 },
+		items: 3,
+		slidesToSlide:2,
+	},
+	tablet: {
+		breakpoint: { max: 1024, min: 464 },
+		items: 2,
+		slidesToSlide: 2
+	},
+	mobile: {
+		breakpoint: { max: 700, min: 0 },
+		items: 1,
+		slidesToSlide: 1
+	}
+};
+
 const Shop = () => {
 
 	const {
@@ -53,12 +74,15 @@ const Shop = () => {
 
 	useEffect(()=> {
 		if (!isLoading) {
+			console.log(dataBase[0].shopItems)
+
 			setArrowReverse(shopFilter)
 			setPriceFiltered(dataBase[0].shopItems)
 			setInitialItems(dataBase[0].shopItems)
 			setCreateBrandsDB(dataBase[0].shopItems.map(item => item.brand))
 			setPrice(dataBase[0].shopItems.map(elm => elm.price))
 		}
+
 
 	}, [dataBase])
 
@@ -187,7 +211,7 @@ const Shop = () => {
 	}
 
 	const addObjectToArray = (array, newObject) => () =>{
-		const maxLength = 2;
+		const maxLength = 10;
 
 		const isDuplicate = array.some(item => item.headline === newObject.headline);
 
@@ -246,8 +270,17 @@ const Shop = () => {
 				</div>
 				{myArray.length > 0 && (<div className="recommendedShopItemsCont">
 					<span>Рекомендовані товари</span>
-					<div>
-						{myArray.map(elm => (
+					<Carousel
+					showDots={false}
+					infinite
+					responsive={responsiveCarousel}
+					containerClass='recommendedCarousel'
+					itemClass="slide"
+					autoPlay
+					draggable={false}
+					autoPlaySpeed={7000}
+					>
+						{myArray.map((elm, index) => (
 							<Link to={"/shop/" + urlCreation(elm.headline)}>
 								<div className="specificRecommendedShopItemsCont">
 									<img src={elm.img[0]} className="recommendedShopItemImg"/>
@@ -258,7 +291,7 @@ const Shop = () => {
 								</div>
 							</Link>
 						))}
-					</div>
+					</Carousel >
 				</div>)}
 				<div className="belowSearchCont">
 					<div className="filterCont" >
