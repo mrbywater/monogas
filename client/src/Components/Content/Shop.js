@@ -22,9 +22,7 @@ import {IsLoading} from './IsLoading'
 import {shopFilter} from "./InfoList";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {model} from "@tensorflow/tfjs";
-// all of the constants that not recalculated on next render has to be moved out of component
-// + it's better to move it to separate `helper.js` file
+import {mainFilter, useTensorFlow} from "../../recommendationAI";
 
 const responsiveCarousel = {
 	desktop: {
@@ -71,6 +69,10 @@ const Shop = () => {
 	const [selectedValue, setSelectedValue] = useState("relevance")
 	const [arrowReverse, setArrowReverse] = useState([])
 	const [filterShowButton, setFilterShowButton] = useState(false)
+
+	let myArray = JSON.parse(localStorage.getItem('myArray')) || [];
+
+	const {shopRecommendations} = useTensorFlow(myArray)
 
 	useEffect(()=> {
 		if (!isLoading) {
@@ -177,7 +179,6 @@ const Shop = () => {
 	const lastItemIndex = currentPage * itemsPerPage
 	const firstItemIndex = lastItemIndex - itemsPerPage
 	const currentItem = sortMainSearchFiltered.slice(firstItemIndex,lastItemIndex)
-	let myArray = JSON.parse(localStorage.getItem('myArray')) || [];
 	const nextPage = () => {
 		window.scroll(0, 100)
 		setCurrentPage(prev => prev + 1)
@@ -268,7 +269,7 @@ const Shop = () => {
 						</select >
 					</div>
 				</div>
-				{myArray.length > 0 && (<div className="recommendedShopItemsCont">
+				{shopRecommendations.length > 0 && (<div className="recommendedShopItemsCont">
 					<span>Рекомендовані товари</span>
 					<Carousel
 					showDots={false}
@@ -280,7 +281,7 @@ const Shop = () => {
 					draggable={false}
 					autoPlaySpeed={7000}
 					>
-						{myArray.map((elm, index) => (
+						{shopRecommendations.map((elm, index) => (
 							<Link to={"/shop/" + urlCreation(elm.headline)}>
 								<div className="specificRecommendedShopItemsCont">
 									<img src={elm.img[0]} className="recommendedShopItemImg"/>
