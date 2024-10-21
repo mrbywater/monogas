@@ -22,7 +22,8 @@ import {IsLoading} from './IsLoading'
 import {shopFilter} from "./InfoList";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import {mainFilter, useTensorFlow} from "../../recommendationAI";
+import {useTensorFlow} from "../../recommendationAI";
+import {Loader} from "@mantine/core";
 
 const responsiveCarousel = {
 	desktop: {
@@ -72,7 +73,8 @@ const Shop = () => {
 
 	let myArray = JSON.parse(localStorage.getItem('myArray')) || [];
 
-	const {shopRecommendations} = useTensorFlow(myArray)
+	const {shopRecommendations, isLoadingRecommendation} = useTensorFlow(myArray)
+	console.log(isLoadingRecommendation)
 
 	useEffect(()=> {
 		if (!isLoading) {
@@ -87,6 +89,14 @@ const Shop = () => {
 
 
 	}, [dataBase])
+
+	useEffect(()=> {
+		if (shopRecommendations.length > 0) {
+
+		}
+
+
+	}, [shopRecommendations])
 
 	useEffect(()=>{
 		setCheckedInitial(createBrandsDB.reduce((acc, title) => {
@@ -269,7 +279,7 @@ const Shop = () => {
 						</select >
 					</div>
 				</div>
-				{shopRecommendations.length > 0 && (<div className="recommendedShopItemsCont">
+				{!isLoadingRecommendation ? (<div className="recommendedShopItemsCont">
 					<span>Рекомендовані товари</span>
 					<Carousel
 					showDots={false}
@@ -293,7 +303,11 @@ const Shop = () => {
 							</Link>
 						))}
 					</Carousel >
-				</div>)}
+				</div>):(
+					<div className="recommendedShopItemsCont">
+						<Loader color="grey" className="loaderRec"/>
+					</div>
+				)}
 				<div className="belowSearchCont">
 					<div className="filterCont" >
 						<MultiRangeSlider

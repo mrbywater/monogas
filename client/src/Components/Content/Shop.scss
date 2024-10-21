@@ -352,6 +352,10 @@
   display: none;
 }
 
+.loaderRec {
+  align-self: center;
+}
+
 @keyframes append-animate {
   from {
     transform: translateY(-40px);
