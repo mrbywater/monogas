@@ -2,7 +2,6 @@
 
 .userFormContainer {
   width: 500px;
-  height: 500px;
   background-color: $text-color-header;
   position: absolute;
   margin-left: auto;
@@ -26,6 +25,13 @@
   text-align: start;
   flex: 1;
   flex-direction: column;
+  gap: 10px;
+
+  > div:last-child {
+
+    margin-top: 10px;
+
+  }
 }
 
 .closeButton {

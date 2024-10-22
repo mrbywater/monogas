@@ -1,6 +1,6 @@
 import "./UserForm.scss"
 import "./ShoppingCart.scss"
-import { TextInput, Button, CloseButton  } from '@mantine/core';
+import {TextInput, Button, CloseButton, Checkbox} from '@mantine/core';
 import {useRef} from "react";
 import axios from "axios";
 const UserForm = (props) => {
@@ -17,11 +17,14 @@ const UserForm = (props) => {
         phone: "",
         carModel: "",
         carYear: "",
+        distribution: "checked"
     });
 
     const isFormValid = () => {
         return Object.values(formRef.current).every(value => value.trim().length > 0);
     };
+
+    console.log(Object.values(formRef.current))
 
     const addUserToDB = () => {
         if (isFormValid()) {
@@ -31,6 +34,8 @@ const UserForm = (props) => {
                 phone: formRef.current.phone,
                 carModel: formRef.current.carModel,
                 carYear: formRef.current.carYear,
+                distribution: formRef.current.distribution,
+                userLanguage: navigator.language
                 })
                     .then((response) => {
                     console.log(response.data);
@@ -76,6 +81,12 @@ const UserForm = (props) => {
                         label="Рік випуску"
                         placeholder="Рік випуску"
                         onChange={(e) => (formRef.current.carYear = e.target.value)}
+                    />
+                    <Checkbox
+                        defaultChecked
+                        label="Погоджуюсь на розсилку по email"
+                        color="teal"
+                        onChange={(e) => (formRef.current.distribution = e.target.checked ? "checked":"unchecked")}
                     />
                 </div>
                 <Button variant="filled" color="teal" onClick={addUserToDB}>Надати дані</Button>

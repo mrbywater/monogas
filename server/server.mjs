@@ -6,6 +6,7 @@ import api from "./routes/apiNP.mjs";
 import * as nodemailer from 'nodemailer'
 import db from "./db/conn.mjs";
 import {ObjectId} from "mongodb";
+import axios from "axios";
 
 const PORT = process.env.PORT || 5050;
 const app = express();
@@ -51,14 +52,33 @@ app.post('/new-item', (req) => {
     collection.findOneAndUpdate(filter, update);
 })
 
-app.post('/new-user', (req) => {
+app.post('/new-user', async (req) => {
+
+    const userIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+
+    // Используем сторонний API для определения страны по IP
+    const geoResponse = await axios.get(`https://ipinfo.io/45.149.25.81/json?token=5da42df45490d7`);
+    const { ip, country, city, region } = geoResponse.data;
+
+    // Теперь у тебя есть данные о пользователе и его IP
+    const userData = {
+        ...req.body, // Данные из формы
+        ip,          // IP-адрес
+        country,     // Страна, определенная по IP
+        city,
+        region,
+    };
+
+    console.log(userData, userIP)
 
     const {
         name,
         email,
         phone,
         carModel,
-        carYear
+        carYear,
+        distribution,
+        userLanguage
     } = req.body
 
     const collection = db.collection('usersData');
@@ -72,11 +92,15 @@ app.post('/new-user', (req) => {
                 phone : phone,
                 carModel : carModel,
                 carYear : carYear,
+                distribution: distribution,
+                userLanguage: userLanguage,
+                userCountry: userData.country,
+                userCity: userData.city
             }
         }
     };
 
-    collection.findOneAndUpdate(filter, update);
+    await collection.findOneAndUpdate(filter, update);
 })
 
 app.post('/change-item', (req) => {
@@ -89,7 +113,7 @@ app.post('/change-item', (req) => {
         status,
         amount,
         img,
-        description
+        description,
     } = req.body
 
     const collection = db.collection('infoList');
