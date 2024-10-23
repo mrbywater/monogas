@@ -6,6 +6,7 @@ export const useTensorFlow = (newFilteredProducts) => {
     const [shopRecommendations, setShopRecommendations] = useState([]);
     const [prevFilteredProducts, setPrevFilteredProducts] = useState(null);
     const [isLoadingRecommendation, setIsLoadingRecommendation] = useState(false); // Добавляем переменную isLoadingRecommendation
+    const [price, setPrice] = useState(0);
 
     useEffect(() => {
         // Проверяем, изменились ли новые фильтрованные продукты
@@ -25,9 +26,10 @@ export const useTensorFlow = (newFilteredProducts) => {
                 const cars = [...new Map(
                     products.flatMap(product => product.car.map(car => [`${car.carModel} - ${car.carYear}`, car]))
                 ).values()];
+                const priceArr = products.map(elm => elm.price)
 
-                const minPrice = 0;
-                const maxPrice = 3000;
+                const minPrice = Math.min(...priceArr);
+                const maxPrice = Math.max(...priceArr);
 
                 function encodeType(type) {
                     const encoding = new Array(types.length).fill(0);

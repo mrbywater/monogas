@@ -74,7 +74,6 @@ const Shop = () => {
 	let myArray = JSON.parse(localStorage.getItem('myArray')) || [];
 
 	const {shopRecommendations, isLoadingRecommendation} = useTensorFlow(myArray)
-	console.log(isLoadingRecommendation)
 
 	useEffect(()=> {
 		if (!isLoading) {
@@ -279,31 +278,33 @@ const Shop = () => {
 						</select >
 					</div>
 				</div>
-				{!isLoadingRecommendation ? (<div className="recommendedShopItemsCont">
-					<span>Рекомендовані товари</span>
-					<Carousel
-					showDots={false}
-					infinite
-					responsive={responsiveCarousel}
-					containerClass='recommendedCarousel'
-					itemClass="slide"
-					autoPlay
-					draggable={false}
-					autoPlaySpeed={7000}
-					>
-						{shopRecommendations.map((elm, index) => (
-							<Link to={"/shop/" + urlCreation(elm.headline)}>
-								<div className="specificRecommendedShopItemsCont">
-									<img src={elm.img[0]} className="recommendedShopItemImg"/>
-									<div className="descriptionRec">
-										<span className="">{elm.headline}</span>
-										<span>{elm.price}₴</span>
+				{!isLoadingRecommendation ? !!shopRecommendations.length && (
+					<div className="recommendedShopItemsCont">
+						<span>Рекомендовані товари</span>
+						<Carousel
+							showDots={false}
+							infinite
+							responsive={responsiveCarousel}
+							containerClass='recommendedCarousel'
+							itemClass="slide"
+							autoPlay
+							draggable={false}
+							autoPlaySpeed={7000}
+						>
+							{shopRecommendations.map((elm, index) => (
+								<Link to={"/shop/" + urlCreation(elm.headline)}>
+									<div className="specificRecommendedShopItemsCont">
+										<img src={elm.img[0]} className="recommendedShopItemImg"/>
+										<div className="descriptionRec">
+											<span className="">{elm.headline}</span>
+											<span>{elm.price}₴</span>
+										</div>
 									</div>
-								</div>
-							</Link>
-						))}
-					</Carousel >
-				</div>):(
+								</Link>
+							))}
+						</Carousel >
+					</div>
+				):(
 					<div className="recommendedShopItemsCont">
 						<Loader color="grey" className="loaderRec"/>
 					</div>

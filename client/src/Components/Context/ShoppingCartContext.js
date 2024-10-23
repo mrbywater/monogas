@@ -1,4 +1,5 @@
 import {useState, createContext, useEffect} from "react";
+import {useTensorFlow} from "../../recommendationAI";
 
 export const ShoppingCartContext = createContext();
 export const ShoppingCartProvider = ({ children }) => {
