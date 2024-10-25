@@ -9,6 +9,7 @@ export const ShoppingCartProvider = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false)
     const [totalPrice, setTotalPrice] = useState(0)
     const [dataBase, setDataBase] = useState([])
+    const [usersDataBase, setUsersDataBase] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
     const fetchData = async () => {
@@ -24,8 +25,22 @@ export const ShoppingCartProvider = ({ children }) => {
         }
     }
 
+    const fetchUsersData = async () => {
+        setIsLoading(true)
+        try{
+            setUsersDataBase (await fetch("http://localhost:5050/record/users")
+                .then(response => {
+                    setIsLoading(false)
+                    return response.json()
+                }));
+        } catch (err){
+            console.error(err)
+        }
+    }
+
     useEffect(() => {
         fetchData()
+        fetchUsersData()
     } ,[])
 
     useEffect(() => {
@@ -100,7 +115,9 @@ export const ShoppingCartProvider = ({ children }) => {
         <ShoppingCartContext.Provider
             value={{
                 fetchData,
+                fetchUsersData,
                 dataBase,
+                usersDataBase,
                 isLoading,
                 shopCart,
                 totalPrice,

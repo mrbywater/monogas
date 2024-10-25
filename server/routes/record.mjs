@@ -11,6 +11,12 @@ router.get("/", async (req, res) => {
     res.send(results).status(200);
 });
 
+router.get("/users", async (req, res) => {
+    let collection = await db.collection("usersData");
+    let results = await collection.find({}).toArray();
+    res.send(results).status(200);
+});
+
 // This section will help you get a single record by id
 router.get("/:id", async (req, res) => {
     let collection = await db.collection("infoList");

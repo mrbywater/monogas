@@ -34,7 +34,7 @@ app.post('/new-item', (req) => {
 
     const collection = db.collection('infoList');
 
-    const filter = { _id: new ObjectId('671153326e0405af153296e2') };
+    const filter = { _id: new ObjectId('671a935c61449b5e375f62e0') };
     const update = {
                 $addToSet: {
                     shopItems: {
@@ -119,7 +119,7 @@ app.post('/change-item', (req) => {
     const collection = db.collection('infoList');
 
     const query = {
-        _id: new ObjectId('671153326e0405af153296e2'),
+        _id: new ObjectId('671a935c61449b5e375f62e0'),
         shopItems: {
             $elemMatch: { headline: headline }
         }
@@ -149,7 +149,7 @@ app.post('/delete-item', (req) => {
     const collection = db.collection('infoList');
 
     const query = {
-        _id: new ObjectId('671153326e0405af153296e2')
+        _id: new ObjectId('671a935c61449b5e375f62e0')
     };
 
     const update = {
@@ -274,6 +274,39 @@ app.post('/send-email', (req, res) => {
             </div>
             <div style="font-size: 16px; margin-top: 5px; font-weight: bold">Сума замовлення: ${totalPrice}₴</div> 
         `
+    }
+
+    transporter.sendMail(mailOption, err => console.log('err', err))
+
+});
+
+app.post('/distribution-predict-products', (req, res) => {
+
+    const {
+        user,
+        products
+    }  = req.body;
+
+    if (!transporter) {
+            transporter = nodemailer.createTransport({
+                service: 'gmail',
+                auth: {
+                    user: process.env.EMAIL,
+                    pass: process.env.PASS
+                }
+        })}
+
+
+    const mailOption = {
+        from: 'acaramelb228@gmail.com',
+        to: 'acaramelb228@gmail.com',
+        subject: 'Замовлення',
+        html: `
+           <div>
+           ${products[0].headline}
+            </div>
+        `,
+
     }
 
     transporter.sendMail(mailOption, err => console.log('err', err))
