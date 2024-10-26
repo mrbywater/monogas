@@ -94,14 +94,14 @@ async function predictRec(model, encodeType, encodeCar, cities, products, usersF
         });
 
         if (recommendedProducts.length > 0) {
-            accumulatedRecommendations.push({products: [...recommendedProducts],user: users});
+            accumulatedRecommendations.push({products: [...recommendedProducts].slice(0, 5),user: users});
         }
     }
 
+
     if (accumulatedRecommendations.length > 0) {
         await axios.post('http://localhost:5050/distribution-predict-products', {
-            user: accumulatedRecommendations[0].user,
-            products: accumulatedRecommendations[0].products,
+            data: accumulatedRecommendations
         })
             .then((response) => {
                 console.log(response.data);

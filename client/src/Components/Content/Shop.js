@@ -296,7 +296,7 @@ const Shop = () => {
 									<div className="specificRecommendedShopItemsCont">
 										<img src={elm.img[0]} className="recommendedShopItemImg"/>
 										<div className="descriptionRec">
-											<span className="">{elm.headline}</span>
+											<span>{elm.headline}</span>
 											<span>{elm.price}₴</span>
 										</div>
 									</div>

@@ -283,8 +283,7 @@ app.post('/send-email', (req, res) => {
 app.post('/distribution-predict-products', (req, res) => {
 
     const {
-        user,
-        products
+        data
     }  = req.body;
 
     if (!transporter) {
@@ -296,20 +295,39 @@ app.post('/distribution-predict-products', (req, res) => {
                 }
         })}
 
+    data.forEach(({ user, products }) => {
+        const renderedProduct = products.map((product) => (
+            `<a href="http://localhost:3000/shop/${product.headline.replace(/ /g, "_").toLowerCase()}" style="display: inline-block; vertical-align: top; box-sizing: border-box; border: 1px solid #1F2023; border-radius: 10px; padding: 10px; margin-right: 15px; text-decoration: none">
+              
+                <div style="display: inline-block; vertical-align: top; padding-right: 10px;">
+                    <img src="${product.img[0]}" style="height: 125px; border-radius: 8px; display: block;margin-right: 15px"/>
+                </div>
+                <div style="display: inline-block; vertical-align: top;">
+                    <span style="font-size: 18px; font-weight: bold; display: block; margin-bottom: 5px;">${product.headline}</span>
+                    <span style="font-size: 22px; color: #333;">${product.price}₴</span>
+                </div>
+           
+            </a>`
+        )).join('');
 
-    const mailOption = {
-        from: 'acaramelb228@gmail.com',
-        to: 'acaramelb228@gmail.com',
-        subject: 'Замовлення',
-        html: `
-           <div>
-           ${products[0].headline}
-            </div>
-        `,
+        const mailOption = {
+            from: 'nick.kabachenko@gmail.com',
+            to: user.email,
+            subject: 'Замовлення',
+            html: `<div style="white-space: nowrap; margin-bottom: 30px;">
+                <span style="font-size: 18px; font-weight: bold; display: block; margin-bottom: 10px;">Рекомендовані товари:</span>
+                ${renderedProduct}
+            </div>`,
+        };
 
-    }
-
-    transporter.sendMail(mailOption, err => console.log('err', err))
+        transporter.sendMail(mailOption, (err) => {
+            if (err) {
+                console.log('Error sending email to:', user.email, err);
+            } else {
+                console.log('Email sent to:', user.email);
+            }
+        });
+    });
 
 });
 
