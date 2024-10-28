@@ -221,7 +221,7 @@ const Shop = () => {
 	}
 
 	const addObjectToArray = (array, newObject) => () =>{
-		const maxLength = 10;
+		const maxLength = 2;
 
 		const isDuplicate = array.some(item => item.headline === newObject.headline);
 
