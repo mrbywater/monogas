@@ -106,7 +106,7 @@
 
                 const recommendedProducts = products.filter(product => {
                     const isTypeMatch = encodeType(product.type).toString() === encodeType(predictedType).toString();
-                    const isPriceMatch = Math.abs(normalizePrice(product.price) - newProductVector.price) <= 200;
+                    const isPriceMatch = Math.abs(normalizePrice(product.price) - newProductVector.price) <= newProductVector.price;
                     const isCarMatch = product.car.some(car =>
                         newProduct.car.some(newCar =>
                             car.carModel === newCar.carModel && car.carYear === newCar.carYear
