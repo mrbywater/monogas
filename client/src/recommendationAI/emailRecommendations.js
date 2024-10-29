@@ -1,5 +1,6 @@
 const tf = require('@tensorflow/tfjs');
 const axios = require("axios");
+const {xportToExcel} = require("./exportToExcel");
 
 // Подключение к базе данных MongoDB
 async function fetchProducts() {
@@ -67,6 +68,9 @@ async function mainFilter() {
 
     const xs = tf.tensor2d(productVectors.map(p => [...p.cities, ...p.cars]));
     const ys = tf.tensor2d(products.map(product => encodeType(product.cities)));
+
+    const history = await modelUsers.fit(xs, ys, { epochs: 100 })
+    console.log(history)
 
     await modelUsers.fit(xs, ys, { epochs: 100 });
 
