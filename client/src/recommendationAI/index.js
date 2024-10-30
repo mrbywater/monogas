@@ -1,5 +1,5 @@
     import { useState, useEffect } from "react";
-    import {exportToExcel, xportToExcel} from "./exportToExcel";
+    import {exportToExcel} from "./exportToExcel";
 
     const tf = require('@tensorflow/tfjs');
 
@@ -66,18 +66,22 @@
                     model.add(tf.layers.dense({ units: 64, activation: 'relu', inputShape: [inputSize] }));
                     model.add(tf.layers.dense({ units: 32, activation: 'relu' }));
                     model.add(tf.layers.dense({ units: outputSize, activation: 'sigmoid' }));
-                    model.compile({ optimizer:  tf.train.adadelta(0.01), loss: 'binaryCrossentropy' });
+                    model.compile({ optimizer: tf.train.rmsprop(0.001), loss: 'binaryCrossentropy' });
 
                     const xs = tf.tensor2d(productVectors.map(p => [...p.type, p.price, ...p.cars]));
                     const ys = tf.tensor2d(products.map(product => encodeType(product.type)));
+                    const startTime = performance.now();
 
                     await model.fit(xs, ys, { epochs: 100 });
 
                     const history = await model.fit(xs, ys, { epochs: 100 })
 
                     console.log(history)
+                    const endTime = performance.now();
 
-                    await exportToExcel('adadelta',[{ epoch: history.epoch, loss: history.history.loss}], 'contextAds')
+                    const trainingTime = ((endTime - startTime) / 1000).toFixed(2);
+
+                    await exportToExcel('adam',[{ epoch: history.epoch, loss: history.history.loss}], trainingTime, 'contextAds')
 
                     await predictRec(model, encodeType, normalizePrice, encodeCar, types, products, newFilteredProducts, setShopRecommendations);
                 } finally {

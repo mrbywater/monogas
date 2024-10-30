@@ -1,6 +1,31 @@
+const XLSX = require("xlsx");
 const tf = require('@tensorflow/tfjs');
 const axios = require("axios");
-const {xportToExcel} = require("./exportToExcel");
+const path = require("path");
+
+const exportToExcel = async (method, data, trainingTime, fileName) => {
+    const workbook = XLSX.utils.book_new();
+
+    const transformedData = data[0].epoch.map((epochValue, index) => ({
+        epoch: epochValue,
+        loss: data[0].loss[index],
+    }));
+
+    const transformedDataWithTime = [...transformedData, {trainingTime: trainingTime}]
+
+    // Преобразуем данные в формат массива
+    const worksheet = XLSX.utils.json_to_sheet(transformedDataWithTime);
+
+    // Добавляем новый лист с данными
+    XLSX.utils.book_append_sheet(workbook, worksheet, method);
+
+    // Создаем файл Excel
+
+// Для сохранения в текущей директории
+    const currentDir = process.cwd(); // Получаем текущую директорию
+    const filePath = path.join(currentDir, `${fileName}1.xlsx`);
+    XLSX.writeFile(workbook, filePath);
+};
 
 // Подключение к базе данных MongoDB
 async function fetchProducts() {
@@ -64,15 +89,22 @@ async function mainFilter() {
     modelUsers.add(tf.layers.dense({ units: 64, activation: 'relu', inputShape: [inputSize] }));
     modelUsers.add(tf.layers.dense({ units: 32, activation: 'relu' }));
     modelUsers.add(tf.layers.dense({ units: outputSize, activation: 'sigmoid' }));
-    modelUsers.compile({ optimizer: 'adam', loss: 'binaryCrossentropy' });
+    modelUsers.compile({ optimizer:  tf.train.adamax(), loss: 'binaryCrossentropy' });
 
     const xs = tf.tensor2d(productVectors.map(p => [...p.cities, ...p.cars]));
     const ys = tf.tensor2d(products.map(product => encodeType(product.cities)));
 
+    const startTime = performance.now();
+
+    await modelUsers.fit(xs, ys, { epochs: 100 });
+
     const history = await modelUsers.fit(xs, ys, { epochs: 100 })
     console.log(history)
 
-    await modelUsers.fit(xs, ys, { epochs: 100 });
+    const endTime = performance.now();
+
+    const trainingTime = ((endTime - startTime) / 1000).toFixed(2);
+    await exportToExcel('adamax',[{ epoch: history.epoch, loss: history.history.loss}], trainingTime, 'emailRec')
 
     await predictRec(modelUsers, encodeType, encodeCar, cities, products, usersForDistribution);
 
