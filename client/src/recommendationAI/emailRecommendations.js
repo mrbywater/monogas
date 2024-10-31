@@ -86,10 +86,10 @@ async function mainFilter() {
     const outputSize = cities.length;
 
     const modelUsers = tf.sequential();
-    modelUsers.add(tf.layers.dense({ units: 64, activation: 'relu', inputShape: [inputSize] }));
-    modelUsers.add(tf.layers.dense({ units: 32, activation: 'relu' }));
-    modelUsers.add(tf.layers.dense({ units: outputSize, activation: 'sigmoid' }));
-    modelUsers.compile({ optimizer:  tf.train.adamax(), loss: 'binaryCrossentropy' });
+    modelUsers.add(tf.layers.dense({ units: 64, activation: 'swish', inputShape: [inputSize] }));
+    modelUsers.add(tf.layers.dense({ units: 32, activation: 'swish' }));
+    modelUsers.add(tf.layers.dense({ units: outputSize, activation: 'softmax' }));
+    modelUsers.compile({ optimizer:  tf.train.adam(), loss: 'binaryCrossentropy' });
 
     const xs = tf.tensor2d(productVectors.map(p => [...p.cities, ...p.cars]));
     const ys = tf.tensor2d(products.map(product => encodeType(product.cities)));

@@ -64,9 +64,9 @@
 
                     const model = tf.sequential();
                     model.add(tf.layers.dense({ units: 64, activation: 'relu', inputShape: [inputSize] }));
-                    model.add(tf.layers.dense({ units: 32, activation: 'relu' }));
-                    model.add(tf.layers.dense({ units: outputSize, activation: 'sigmoid' }));
-                    model.compile({ optimizer: tf.train.rmsprop(0.001), loss: 'binaryCrossentropy' });
+                    model.add(tf.layers.dense({ units: 32, activation: 'relu6'}));
+                    model.add(tf.layers.dense({ units: outputSize, activation: 'softmax' }));
+                    model.compile({ optimizer: tf.train.sgd(0.01), loss: 'binaryCrossentropy' });
 
                     const xs = tf.tensor2d(productVectors.map(p => [...p.type, p.price, ...p.cars]));
                     const ys = tf.tensor2d(products.map(product => encodeType(product.type)));
